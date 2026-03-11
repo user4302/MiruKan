@@ -7,6 +7,8 @@ import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.data.download.manga.model.MangaDownload
 import eu.kanade.tachiyomi.databinding.DownloadItemBinding
 import eu.kanade.tachiyomi.util.view.popupMenu
+import tachiyomi.core.common.i18n.stringResource
+import tachiyomi.i18n.aniyomi.AYMR
 
 /**
  * Class used to hold the data of a download.
@@ -30,7 +32,7 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
     /**
      * Binds this holder with the given category.
      *
-     * @param category The category to bind.
+     * @param download the download to bind.
      */
     fun bind(download: MangaDownload) {
         this.download = download
@@ -51,6 +53,8 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
             notifyProgress()
             notifyDownloadedPages()
         }
+
+        binding.reorder.visibility = if (download.status == MangaDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
     }
 
     /**
@@ -62,6 +66,7 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
             binding.downloadProgress.max = pages.size * 100
         }
         binding.downloadProgress.setProgressCompat(download.totalProgress, true)
+        binding.reorder.visibility = if (download.status == MangaDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
     }
 
     /**
@@ -69,7 +74,11 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
      */
     fun notifyDownloadedPages() {
         val pages = download.pages ?: return
-        binding.downloadProgressText.text = "${download.downloadedImages}/${pages.size}"
+        binding.downloadProgressText.text = view.context.stringResource(
+            AYMR.strings.episode_progress,
+            download.downloadedImages,
+            pages.size,
+        )
     }
 
     override fun onItemReleased(position: Int) {
@@ -89,9 +98,12 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
         view.popupMenu(
             menuRes = R.menu.download_single,
             initMenu = {
-                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1
+                val isDownloading = download.status == MangaDownload.State.DOWNLOADING
+                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading
                 findItem(R.id.move_to_bottom).isVisible =
-                    bindingAdapterPosition != adapter.itemCount - 1
+                    bindingAdapterPosition != adapter.itemCount - 1 && !isDownloading
+                findItem(R.id.move_to_top_series).isVisible = !isDownloading
+                findItem(R.id.move_to_bottom_series).isVisible = !isDownloading
             },
             onMenuItemClick = {
                 adapter.downloadItemListener.onMenuItemClick(bindingAdapterPosition, this)

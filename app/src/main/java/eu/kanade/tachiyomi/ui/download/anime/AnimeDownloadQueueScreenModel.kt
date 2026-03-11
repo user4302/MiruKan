@@ -188,15 +188,20 @@ class AnimeDownloadQueueScreenModel(
                 // Initial update of the downloaded pages
                 onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
+                updateHeader(download)
             }
             AnimeDownload.State.DOWNLOADED -> {
                 cancelProgressJob(download)
                 onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
+                updateHeader(download)
             }
-            AnimeDownload.State.ERROR -> cancelProgressJob(download)
+            AnimeDownload.State.ERROR -> {
+                cancelProgressJob(download)
+                updateHeader(download)
+            }
             else -> {
-                /* unused */
+                updateHeader(download)
             }
         }
     }
@@ -238,5 +243,15 @@ class AnimeDownloadQueueScreenModel(
      */
     private fun getHolder(download: AnimeDownload): AnimeDownloadHolder? {
         return controllerBinding.root.findViewHolderForItemId(download.episode.id) as? AnimeDownloadHolder
+    }
+
+    private fun updateHeader(download: AnimeDownload) {
+        val adapter = adapter ?: return
+        val header = adapter.headerItems.filterIsInstance<AnimeDownloadHeaderItem>()
+            .find { it.id == download.source.id } ?: return
+        val pos = adapter.getGlobalPositionOf(header)
+        if (pos != -1) {
+            adapter.notifyItemChanged(pos)
+        }
     }
 }

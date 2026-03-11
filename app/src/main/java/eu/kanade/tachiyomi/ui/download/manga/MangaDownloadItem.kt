@@ -51,7 +51,7 @@ class MangaDownloadItem(
      * Returns true if this item is draggable.
      */
     override fun isDraggable(): Boolean {
-        return true
+        return download.status != MangaDownload.State.DOWNLOADING
     }
 
     override fun equals(other: Any?): Boolean {

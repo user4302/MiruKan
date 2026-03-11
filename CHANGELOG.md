@@ -10,6 +10,12 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 - `Fixed` - for any bug fixes.
 - `Other` - for technical stuff.
 
+## [Unreleased]
+
+### Improved
+
+- Download queue stability and reordering behavior. ([@user4302](https://github.com/user4302))
+
 ## [v0.18.1.3] - 2026-03-11
 ### Added
 

@@ -54,6 +54,8 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             notifyProgress()
             notifyDownloadedPages()
         }
+
+        binding.reorder.visibility = if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
     }
 
     /**
@@ -69,6 +71,7 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             binding.downloadProgress.isIndeterminate = false
             binding.downloadProgress.setProgressCompat(download.progress, true)
         }
+        binding.reorder.visibility = if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
     }
 
     /**
@@ -99,9 +102,12 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
         view.popupMenu(
             menuRes = R.menu.download_single,
             initMenu = {
-                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1
+                val isDownloading = download.status == AnimeDownload.State.DOWNLOADING
+                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading
                 findItem(R.id.move_to_bottom).isVisible =
-                    bindingAdapterPosition != adapter.itemCount - 1
+                    bindingAdapterPosition != adapter.itemCount - 1 && !isDownloading
+                findItem(R.id.move_to_top_series).isVisible = !isDownloading
+                findItem(R.id.move_to_bottom_series).isVisible = !isDownloading
             },
             onMenuItemClick = {
                 adapter.downloadItemListener.onMenuItemClick(bindingAdapterPosition, this)

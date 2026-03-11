@@ -193,16 +193,22 @@ class MangaDownloadQueueScreenModel(
             MangaDownload.State.DOWNLOADING -> {
                 launchProgressJob(download)
                 // Initial update of the downloaded pages
+                onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
+                updateHeader(download)
             }
             MangaDownload.State.DOWNLOADED -> {
                 cancelProgressJob(download)
                 onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
+                updateHeader(download)
             }
-            MangaDownload.State.ERROR -> cancelProgressJob(download)
+            MangaDownload.State.ERROR -> {
+                cancelProgressJob(download)
+                updateHeader(download)
+            }
             else -> {
-                /* unused */
+                updateHeader(download)
             }
         }
     }
@@ -258,6 +264,7 @@ class MangaDownloadQueueScreenModel(
      */
     fun onUpdateDownloadedPages(download: MangaDownload) {
         getHolder(download)?.notifyDownloadedPages()
+        onUpdateProgress(download)
     }
 
     /**
@@ -268,5 +275,15 @@ class MangaDownloadQueueScreenModel(
      */
     private fun getHolder(download: MangaDownload): MangaDownloadHolder? {
         return controllerBinding.root.findViewHolderForItemId(download.chapter.id) as? MangaDownloadHolder
+    }
+
+    private fun updateHeader(download: MangaDownload) {
+        val adapter = adapter ?: return
+        val header = adapter.headerItems.filterIsInstance<MangaDownloadHeaderItem>()
+            .find { it.id == download.source.id } ?: return
+        val pos = adapter.getGlobalPositionOf(header)
+        if (pos != -1) {
+            adapter.notifyItemChanged(pos)
+        }
     }
 }

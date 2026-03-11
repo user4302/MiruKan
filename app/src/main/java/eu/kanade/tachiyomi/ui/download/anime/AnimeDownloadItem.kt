@@ -51,7 +51,7 @@ class AnimeDownloadItem(
      * Returns true if this item is draggable.
      */
     override fun isDraggable(): Boolean {
-        return true
+        return download.status != AnimeDownload.State.DOWNLOADING
     }
 
     override fun equals(other: Any?): Boolean {
