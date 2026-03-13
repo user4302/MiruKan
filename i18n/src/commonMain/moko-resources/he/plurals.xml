@@ -99,6 +99,7 @@
     <plurals name="upcoming_relative_time">
         <item quantity="one">מחר</item>
         <item quantity="two">מחרותיים</item>
+        <item quantity="many">בעוד %1$d ימים</item>
         <item quantity="other">בעוד %1$d ימים</item>
     </plurals>
 </resources>

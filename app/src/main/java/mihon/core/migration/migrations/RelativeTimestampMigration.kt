@@ -1,9 +1,9 @@
 package mihon.core.migration.migrations
 
-import eu.kanade.domain.ui.UiPreferences
+import com.user4302.domain.ui.UiPreferences
+import com.user4302.mika.core.common.preference.PreferenceStore
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.PreferenceStore
 
 class RelativeTimestampMigration : Migration {
     override val version = 106f

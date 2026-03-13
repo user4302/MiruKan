@@ -1,0 +1,44 @@
+package com.user4302.mika.ui.download.manga
+
+import android.annotation.SuppressLint
+import android.view.View
+import androidx.recyclerview.widget.ItemTouchHelper
+import com.user4302.mika.data.download.manga.model.MangaDownload
+import com.user4302.mika.databinding.DownloadHeaderBinding
+import eu.davidea.flexibleadapter.FlexibleAdapter
+import eu.davidea.viewholders.ExpandableViewHolder
+
+class MangaDownloadHeaderHolder(view: View, adapter: FlexibleAdapter<*>) : ExpandableViewHolder(
+    view,
+    adapter,
+) {
+
+    private val binding = DownloadHeaderBinding.bind(view)
+
+    @SuppressLint("SetTextI18n")
+    fun bind(item: MangaDownloadHeaderItem) {
+        setDragHandleView(binding.reorder)
+        binding.title.text = "${item.name} (${item.size})"
+        binding.reorder.visibility =
+            if (item.subItems?.any { it.download.status == MangaDownload.State.DOWNLOADING } == true) {
+                View.GONE
+            } else {
+                View.VISIBLE
+            }
+    }
+
+    override fun onActionStateChanged(position: Int, actionState: Int) {
+        super.onActionStateChanged(position, actionState)
+        if (actionState == ItemTouchHelper.ACTION_STATE_DRAG) {
+            binding.container.isDragged = true
+            mAdapter.collapseAll()
+        }
+    }
+
+    override fun onItemReleased(position: Int) {
+        super.onItemReleased(position)
+        binding.container.isDragged = false
+        mAdapter.expandAll()
+        (mAdapter as MangaDownloadAdapter).downloadItemListener.onItemReleased(position)
+    }
+}

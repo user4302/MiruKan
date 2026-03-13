@@ -1,9 +1,9 @@
 package mihon.core.migration.migrations
 
-import eu.kanade.domain.source.service.SourcePreferences
+import com.user4302.domain.source.service.SourcePreferences
+import com.user4302.mika.core.common.preference.plusAssign
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.plusAssign
 
 class AddAllLangMigration : Migration {
     override val version = 70f

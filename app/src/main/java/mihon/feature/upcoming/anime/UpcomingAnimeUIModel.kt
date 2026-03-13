@@ -1,6 +1,6 @@
 package mihon.feature.upcoming.anime
 
-import tachiyomi.domain.entries.anime.model.Anime
+import com.user4302.mika.domain.entries.anime.model.Anime
 import java.time.LocalDate
 
 sealed interface UpcomingAnimeUIModel {

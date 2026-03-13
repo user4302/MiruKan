@@ -1,9 +1,9 @@
 package mihon.core.migration.migrations
 
-import eu.kanade.domain.source.service.SourcePreferences
+import com.user4302.domain.source.service.SourcePreferences
+import com.user4302.mika.core.common.preference.getAndSet
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.getAndSet
 
 class ExternalRepoMigration : Migration {
     override val version = 114f
@@ -12,8 +12,8 @@ class ExternalRepoMigration : Migration {
     override suspend fun invoke(migrationContext: MigrationContext): Boolean {
         val sourcePreferences = migrationContext.get<SourcePreferences>() ?: return false
 
-        sourcePreferences.mangaExtensionRepos().getAndSet {
-            it.map { repo -> "https://raw.githubusercontent.com/$repo/repo" }.toSet()
+        sourcePreferences.mangaExtensionRepos().getAndSet { repos: Set<String> ->
+            repos.map { repo: String -> "https://raw.githubusercontent.com/$repo/repo" }.toSet()
         }
 
         return true

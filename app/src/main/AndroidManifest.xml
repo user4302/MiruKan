@@ -47,14 +47,14 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tachiyomi">
+        android:theme="@style/Theme.MiKa">
 
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustResize"
-            android:theme="@style/Theme.Tachiyomi.SplashScreen">
+            android:theme="@style/Theme.MiKa.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -68,7 +68,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="tachiyomi" />
+                <data android:scheme="mika" />
                 <data android:host="add-repo" />
             </intent-filter>
 
@@ -79,7 +79,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="aniyomi" />
+                <data android:scheme="mika" />
                 <data android:host="add-repo" />
             </intent-filter>
 
@@ -101,13 +101,13 @@
 
                 See https://stackoverflow.com/a/31028507
                 -->
-                <data android:pathPattern=".*\\.tachibk" />
-                <data android:pathPattern=".*\\..*\\.tachibk" />
-                <data android:pathPattern=".*\\..*\\..*\\.tachibk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\.tachibk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.tachibk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.tachibk" />
-                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\.tachibk" />
+                <data android:pathPattern=".*\.mikabk" />
+                <data android:pathPattern=".*\..*\.mikabk" />
+                <data android:pathPattern=".*\..*\..*\.mikabk" />
+                <data android:pathPattern=".*\..*\..*\..*\.mikabk" />
+                <data android:pathPattern=".*\..*\..*\..*\..*\.mikabk" />
+                <data android:pathPattern=".*\..*\..*\..*\..*\..*\.mikabk" />
+                <data android:pathPattern=".*\..*\..*\..*\..*\..*\..*\.mikabk" />
             </intent-filter>
 
             <!--suppress AndroidDomInspection -->
@@ -135,7 +135,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="eu.kanade.tachiyomi.ANIMESEARCH" />
+                <action android:name="com.user4302.mika.ANIMESEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
@@ -162,11 +162,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="eu.kanade.tachiyomi.SEARCH" />
+                <action android:name="com.user4302.mika.SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
-                <action android:name="eu.kanade.tachiyomi.ANIMESEARCH" />
+                <action android:name="com.user4302.mika.ANIMESEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
@@ -200,7 +200,7 @@
             android:launchMode="singleTask"
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true"
-            android:theme="@style/Theme.Tachiyomi">
+            android:theme="@style/Theme.MiKa">
             <intent-filter>
                 <action android:name="com.samsung.android.support.REMOTE_ACTION" />
             </intent-filter>
@@ -211,7 +211,7 @@
         <activity
             android:name=".ui.security.UnlockActivity"
             android:exported="false"
-            android:theme="@style/Theme.Tachiyomi" />
+            android:theme="@style/Theme.MiKa" />
 
         <activity
             android:name=".ui.webview.WebViewActivity"
@@ -238,7 +238,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="aniyomi"/>
+                <data android:scheme="mika"/>
 
                 <data android:host="myanimelist-auth" />
                 <data android:host="anilist-auth" />

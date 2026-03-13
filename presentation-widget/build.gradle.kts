@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "tachiyomi.presentation.widget"
+    namespace = "com.user4302.mika.presentation.widget"
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -18,7 +18,7 @@ dependencies {
     implementation(projects.domain)
     implementation(projects.presentationCore)
     api(projects.i18n)
-    api(projects.i18nAniyomi)
+    api(projects.i18nMika)
 
     implementation(compose.glance)
     implementation(libs.material)

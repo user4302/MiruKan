@@ -1,14 +1,14 @@
 package mihon.domain.extensionrepo.service
 
-import eu.kanade.tachiyomi.network.GET
-import eu.kanade.tachiyomi.network.NetworkHelper
-import eu.kanade.tachiyomi.network.awaitSuccess
-import eu.kanade.tachiyomi.network.parseAs
+import com.user4302.mika.core.common.util.lang.withIOContext
+import com.user4302.mika.core.common.util.system.logcat
+import com.user4302.mika.network.GET
+import com.user4302.mika.network.NetworkHelper
+import com.user4302.mika.network.awaitSuccess
+import com.user4302.mika.network.parseAs
 import kotlinx.serialization.json.Json
 import logcat.LogPriority
 import mihon.domain.extensionrepo.model.ExtensionRepo
-import tachiyomi.core.common.util.lang.withIOContext
-import tachiyomi.core.common.util.system.logcat
 
 class ExtensionRepoService(
     networkHelper: NetworkHelper,

@@ -1,0 +1,16 @@
+package com.user4302.presentation.more.storage
+
+import androidx.compose.runtime.Immutable
+import com.user4302.mika.domain.category.model.Category
+
+sealed class StorageScreenState {
+    @Immutable
+    object Loading : StorageScreenState()
+
+    @Immutable
+    data class Success(
+        val selectedCategory: Category,
+        val items: List<StorageItem>,
+        val categories: List<Category>,
+    ) : StorageScreenState()
+}

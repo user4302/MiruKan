@@ -2,6 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
   "labels": ["Dependencies"],
-  "includePaths": ["gradle/aniyomi.versions.toml"],
+  "includePaths": ["gradle/mika.versions.toml"],
   "semanticCommits": "disabled",
 }

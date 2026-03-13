@@ -3,9 +3,9 @@ package mihon.core.migration.migrations
 import android.app.Application
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
+import com.user4302.mika.core.common.preference.Preference
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.Preference
 
 class PermaTrustExtensionsMigration : Migration {
     override val version = 117f

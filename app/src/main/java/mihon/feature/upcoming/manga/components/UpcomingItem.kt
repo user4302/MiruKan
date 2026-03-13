@@ -14,10 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import eu.kanade.presentation.entries.components.ItemCover
-import tachiyomi.domain.entries.manga.model.Manga
-import tachiyomi.domain.entries.manga.model.asMangaCover
-import tachiyomi.presentation.core.components.material.padding
+import com.user4302.mika.domain.entries.manga.model.Manga
+import com.user4302.mika.domain.entries.manga.model.asMangaCover
+import com.user4302.mika.presentation.core.components.material.padding
+import com.user4302.presentation.entries.components.ItemCover
 
 private val UpcomingItemHeight = 96.dp
 

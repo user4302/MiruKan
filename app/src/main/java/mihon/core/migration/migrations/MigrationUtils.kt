@@ -1,6 +1,6 @@
 package mihon.core.migration.migrations
 
-import tachiyomi.core.common.preference.PreferenceStore
+import com.user4302.mika.core.common.preference.PreferenceStore
 
 @Suppress("UNCHECKED_CAST")
 fun replacePreferences(

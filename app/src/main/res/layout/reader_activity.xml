@@ -22,7 +22,7 @@
 
     </FrameLayout>
 
-    <eu.kanade.tachiyomi.ui.reader.ReaderNavigationOverlayView
+    <com.user4302.mika.ui.reader.ReaderNavigationOverlayView
         android:id="@+id/navigation_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -39,7 +39,7 @@ kotlin {
 }
 
 android {
-    namespace = "eu.kanade.tachiyomi.source"
+    namespace = "com.user4302.mika.source"
 
     defaultConfig {
         consumerProguardFile("consumer-proguard.pro")

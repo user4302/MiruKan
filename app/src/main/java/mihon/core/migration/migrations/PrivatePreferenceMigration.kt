@@ -1,9 +1,9 @@
 package mihon.core.migration.migrations
 
+import com.user4302.mika.core.common.preference.Preference
+import com.user4302.mika.core.common.preference.PreferenceStore
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.Preference
-import tachiyomi.core.common.preference.PreferenceStore
 
 class PrivatePreferenceMigration : Migration {
     override val version = 116f

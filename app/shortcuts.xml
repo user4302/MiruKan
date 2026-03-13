@@ -7,8 +7,8 @@
         android:shortcutLongLabel="@string/label_manga_library"
         android:shortcutShortLabel="@string/label_manga_library">
         <intent
-            android:action="eu.kanade.tachiyomi.SHOW_LIBRARY"
-            android:targetClass="eu.kanade.tachiyomi.ui.main.MainActivity" />
+            android:action="com.user4302.mika.SHOW_LIBRARY"
+            android:targetClass="com.user4302.mika.ui.main.MainActivity" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -18,8 +18,8 @@
         android:shortcutLongLabel="@string/label_anime_library"
         android:shortcutShortLabel="@string/label_anime_library">
         <intent
-            android:action="eu.kanade.tachiyomi.SHOW_ANIMELIB"
-            android:targetClass="eu.kanade.tachiyomi.ui.main.MainActivity" />
+            android:action="com.user4302.mika.SHOW_ANIMELIB"
+            android:targetClass="com.user4302.mika.ui.main.MainActivity" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -29,8 +29,8 @@
         android:shortcutLongLabel="@string/label_recent_updates"
         android:shortcutShortLabel="@string/label_recent_updates">
         <intent
-            android:action="eu.kanade.tachiyomi.SHOW_RECENTLY_UPDATED"
-            android:targetClass="eu.kanade.tachiyomi.ui.main.MainActivity" />
+            android:action="com.user4302.mika.SHOW_RECENTLY_UPDATED"
+            android:targetClass="com.user4302.mika.ui.main.MainActivity" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -40,8 +40,8 @@
         android:shortcutLongLabel="@string/label_recent_manga"
         android:shortcutShortLabel="@string/label_recent_manga">
         <intent
-            android:action="eu.kanade.tachiyomi.SHOW_RECENTLY_READ"
-            android:targetClass="eu.kanade.tachiyomi.ui.main.MainActivity" />
+            android:action="com.user4302.mika.SHOW_RECENTLY_READ"
+            android:targetClass="com.user4302.mika.ui.main.MainActivity" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -51,7 +51,7 @@
         android:shortcutLongLabel="@string/browse"
         android:shortcutShortLabel="@string/browse">
         <intent
-            android:action="eu.kanade.tachiyomi.SHOW_CATALOGUES"
-            android:targetClass="eu.kanade.tachiyomi.ui.main.MainActivity" />
+            android:action="com.user4302.mika.SHOW_CATALOGUES"
+            android:targetClass="com.user4302.mika.ui.main.MainActivity" />
     </shortcut>
 </shortcuts>

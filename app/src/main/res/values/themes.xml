@@ -6,48 +6,48 @@
     <!--============-->
 
     <!--== Theme Base ==-->
-    <style name="Base.Theme.Tachiyomi" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.MiKa" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Disallow "Force dark theme" -->
         <item name="android:forceDarkAllowed" tools:targetApi="Q">false</item>
 
         <!-- Theme Colors -->
-        <item name="colorPrimary">@color/tachiyomi_primary</item>
-        <item name="colorOnPrimary">@color/tachiyomi_onPrimary</item>
-        <item name="colorPrimaryContainer">@color/tachiyomi_primaryContainer</item>
-        <item name="colorOnPrimaryContainer">@color/tachiyomi_onPrimaryContainer</item>
-        <item name="colorPrimaryInverse">@color/tachiyomi_inversePrimary</item>
-        <item name="colorSecondary">@color/tachiyomi_secondary</item>
-        <item name="colorOnSecondary">@color/tachiyomi_onSecondary</item>
-        <item name="colorSecondaryContainer">@color/tachiyomi_secondaryContainer</item>
-        <item name="colorOnSecondaryContainer">@color/tachiyomi_onSecondaryContainer</item>
-        <item name="colorTertiary">@color/tachiyomi_tertiary</item>
-        <item name="colorOnTertiary">@color/tachiyomi_onTertiary</item>
-        <item name="colorTertiaryContainer">@color/tachiyomi_tertiaryContainer</item>
-        <item name="colorOnTertiaryContainer">@color/tachiyomi_onTertiaryContainer</item>
-        <item name="android:colorBackground">@color/tachiyomi_background</item>
-        <item name="colorOnBackground">@color/tachiyomi_onBackground</item>
-        <item name="colorSurface">@color/tachiyomi_surface</item>
-        <item name="colorOnSurface">@color/tachiyomi_onSurface</item>
-        <item name="colorSurfaceVariant">@color/tachiyomi_surfaceVariant</item>
-        <item name="colorOnSurfaceVariant">@color/tachiyomi_onSurfaceVariant</item>
-        <item name="elevationOverlayColor">@color/tachiyomi_surfaceTint</item>
-        <item name="colorSurfaceInverse">@color/tachiyomi_inverseSurface</item>
-        <item name="colorOnSurfaceInverse">@color/tachiyomi_inverseOnSurface</item>
-        <item name="colorError">@color/tachiyomi_error</item>
-        <item name="colorOnError">@color/tachiyomi_onError</item>
-        <item name="colorErrorContainer">@color/tachiyomi_errorContainer</item>
-        <item name="colorOnErrorContainer">@color/tachiyomi_onErrorContainer</item>
-        <item name="colorOutline">@color/tachiyomi_outline</item>
-        <item name="colorOutlineVariant">@color/tachiyomi_outlineVariant</item>
-        <item name="colorSurfaceContainer">@color/tachiyomi_surfaceContainer</item>
-        <item name="colorSurfaceContainerHigh">@color/tachiyomi_surfaceContainerHigh</item>
-        <item name="colorSurfaceContainerHighest">@color/tachiyomi_surfaceContainerHighest</item>
-        <item name="colorSurfaceContainerLow">@color/tachiyomi_surfaceContainerLow</item>
-        <item name="colorSurfaceContainerLowest">@color/tachiyomi_surfaceContainerLowest</item>
+        <item name="colorPrimary">@color/mika_primary</item>
+        <item name="colorOnPrimary">@color/mika_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/mika_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/mika_onPrimaryContainer</item>
+        <item name="colorPrimaryInverse">@color/mika_inversePrimary</item>
+        <item name="colorSecondary">@color/mika_secondary</item>
+        <item name="colorOnSecondary">@color/mika_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/mika_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/mika_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/mika_tertiary</item>
+        <item name="colorOnTertiary">@color/mika_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/mika_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/mika_onTertiaryContainer</item>
+        <item name="android:colorBackground">@color/mika_background </item>
+        <item name="colorOnBackground">@color/mika_onBackground</item>
+        <item name="colorSurface">@color/mika_surface</item>
+        <item name="colorOnSurface">@color/mika_onSurface</item>
+        <item name="colorSurfaceVariant">@color/mika_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/mika_onSurfaceVariant</item>
+        <item name="elevationOverlayColor">@color/mika_surfaceTint</item>
+        <item name="colorSurfaceInverse">@color/mika_inverseSurface</item>
+        <item name="colorOnSurfaceInverse">@color/mika_inverseOnSurface</item>
+        <item name="colorError">@color/mika_error</item>
+        <item name="colorOnError">@color/mika_onError</item>
+        <item name="colorErrorContainer">@color/mika_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/mika_onErrorContainer</item>
+        <item name="colorOutline">@color/mika_outline</item>
+        <item name="colorOutlineVariant">@color/mika_outlineVariant</item>
+        <item name="colorSurfaceContainer">@color/mika_surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/mika_surfaceContainerHigh</item>
+        <item name="colorSurfaceContainerHighest">@color/mika_surfaceContainerHighest</item>
+        <item name="colorSurfaceContainerLow">@color/mika_surfaceContainerLow</item>
+        <item name="colorSurfaceContainerLowest">@color/mika_surfaceContainerLowest</item>
 
         <item name="android:divider">@color/divider_default</item>
         <item name="android:listDivider">@drawable/line_divider</item>
-        <item name="materialDividerStyle">@style/Widget.Tachiyomi.MaterialDivider</item>
+        <item name="materialDividerStyle">@style/Widget.MiKa.MaterialDivider</item>
 
         <!-- Ripples -->
         <item name="colorControlHighlight">?attr/colorSurfaceVariant</item>
@@ -64,36 +64,36 @@
         <item name="android:enforceNavigationBarContrast" tools:targetApi="Q">false</item>
         <item name="android:enforceStatusBarContrast" tools:targetApi="Q">false</item>
         <item name="android:itemTextAppearance">@style/TextAppearance.Widget.Menu</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Tachiyomi.MaterialAlertDialog</item>
-        <item name="alertDialogTheme">@style/ThemeOverlay.Tachiyomi.MaterialAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MiKa.MaterialAlertDialog</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.MiKa.MaterialAlertDialog</item>
         <item name="textAppearanceButton">@style/TextAppearance.Widget.Button</item>
         <item name="android:buttonStyle">?attr/borderlessButtonStyle</item>
         <item name="android:backgroundDimAmount">0.32</item>
         <item name="windowActionModeOverlay">true</item>
-        <item name="actionOverflowButtonStyle">@style/Theme.Tachiyomi.ActionButton.Overflow</item>
+        <item name="actionOverflowButtonStyle">@style/Theme.MiKa.ActionButton.Overflow</item>
         <item name="actionModeCloseDrawable">@drawable/ic_close_24dp</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay.Tachiyomi</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.MiKa</item>
         <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.OutlinedBox</item>
         <item name="appBarLayoutStyle">@style/Widget.Material3.AppBarLayout</item>
         <item name="toolbarStyle">@style/Widget.Material3.Toolbar.Surface</item>
-        <item name="switchStyle">@style/Widget.Tachiyomi.Switch</item>
+        <item name="switchStyle">@style/Widget.MiKa.Switch</item>
         <item name="materialSwitchStyle">@style/Widget.Material3.CompoundButton.MaterialSwitch</item>
-        <item name="switchPreferenceCompatStyle">@style/Widget.Tachiyomi.Switch</item>
+        <item name="switchPreferenceCompatStyle">@style/Widget.MiKa.Switch</item>
         <item name="materialCardViewStyle">@style/Widget.Material3.CardView.Elevated</item>
 
         <!-- Preference text appearance -->
         <item name="android:textAppearanceListItem">?attr/textAppearanceBodyLarge</item>
-        <item name="android:textAppearanceListItemSecondary">@style/TextAppearance.Tachiyomi.Preference.Secondary</item>
+        <item name="android:textAppearanceListItemSecondary">@style/TextAppearance.MiKa.Preference.Secondary</item>
     </style>
 
     <!--== Default Theme ==-->
-    <style name="Theme.Tachiyomi" parent="Base.Theme.Tachiyomi" />
+    <style name="Theme.MiKa" parent="Base.Theme.MiKa" />
 
     <!-- Monet theme only support S+ -->
-    <style name="Theme.Tachiyomi.Monet" />
+    <style name="Theme.MiKa.Monet" />
 
     <!--== Cotton Candy Theme ==-->
-    <style name="Theme.Tachiyomi.CottonCandy">
+    <style name="Theme.MiKa.CottonCandy">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/cottoncandy_primary</item>
         <item name="colorOnPrimary">@color/cottoncandy_onPrimary</item>
@@ -120,7 +120,7 @@
     </style>
 
     <!--== Green Apple Theme ==-->
-    <style name="Theme.Tachiyomi.GreenApple">
+    <style name="Theme.MiKa.GreenApple">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/greenapple_primary</item>
         <item name="colorOnPrimary">@color/greenapple_onPrimary</item>
@@ -160,7 +160,7 @@
     </style>
 
     <!--== Lavender Theme ==-->
-    <style name="Theme.Tachiyomi.Lavender">
+    <style name="Theme.MiKa.Lavender">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/lavender_primary</item>
         <item name="colorOnPrimary">@color/lavender_onPrimary</item>
@@ -200,7 +200,7 @@
     </style>
 
     <!--== Midnight Dusk Theme ==-->
-    <style name="Theme.Tachiyomi.MidnightDusk">
+    <style name="Theme.MiKa.MidnightDusk">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/midnightdusk_primary</item>
         <item name="colorOnPrimary">@color/midnightdusk_onPrimary</item>
@@ -233,7 +233,7 @@
     </style>
 
     <!--== Mocha Theme ==-->
-    <style name="Theme.Tachiyomi.Mocha">
+    <style name="Theme.MiKa.Mocha">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/mocha_primary</item>
         <item name="colorOnPrimary">@color/mocha_onPrimary</item>
@@ -260,7 +260,7 @@
     </style>
 
     <!--== Strawberry Daiquiri Theme ==-->
-    <style name="Theme.Tachiyomi.StrawberryDaiquiri">
+    <style name="Theme.MiKa.StrawberryDaiquiri">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/strawberry_primary</item>
         <item name="colorOnPrimary">@color/strawberry_onPrimary</item>
@@ -300,7 +300,7 @@
     </style>
 
     <!--== Tako Theme ==-->
-    <style name="Theme.Tachiyomi.Tako">
+    <style name="Theme.MiKa.Tako">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/tako_primary</item>
         <item name="colorOnPrimary">@color/tako_onPrimary</item>
@@ -333,7 +333,7 @@
     </style>
 
     <!--== Teal & Turquoise Theme ==-->
-    <style name="Theme.Tachiyomi.TealTurquoise">
+    <style name="Theme.MiKa.TealTurquoise">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/tealturquoise_primary</item>
         <item name="colorOnPrimary">@color/tealturquoise_onPrimary</item>
@@ -366,7 +366,7 @@
     </style>
 
     <!--== Yin & Yang Theme ==-->
-    <style name="Theme.Tachiyomi.YinYang">
+    <style name="Theme.MiKa.YinYang">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/yinyang_primary</item>
         <item name="colorOnPrimary">@color/yinyang_onPrimary</item>
@@ -399,7 +399,7 @@
     </style>
 
     <!--== Yotsuba Theme ==-->
-    <style name="Theme.Tachiyomi.Yotsuba">
+    <style name="Theme.MiKa.Yotsuba">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/yotsuba_primary</item>
         <item name="colorOnPrimary">@color/yotsuba_onPrimary</item>
@@ -432,7 +432,7 @@
     </style>
 
     <!--== Cloudflare Theme ==-->
-    <style name="Theme.Tachiyomi.Cloudflare">
+    <style name="Theme.MiKa.Cloudflare">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/cloudflare_primary</item>
         <item name="colorOnPrimary">@color/cloudflare_onPrimary</item>
@@ -459,7 +459,7 @@
     </style>
 
     <!--== Sapphire Theme ==-->
-    <style name="Theme.Tachiyomi.Sapphire">
+    <style name="Theme.MiKa.Sapphire">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/sapphire_primary</item>
         <item name="colorOnPrimary">@color/sapphire_onPrimary</item>
@@ -486,7 +486,7 @@
     </style>
 
     <!--== Doom Theme ==-->
-    <style name="Theme.Tachiyomi.Doom">
+    <style name="Theme.MiKa.Doom">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/doom_primary</item>
         <item name="colorOnPrimary">@color/doom_onPrimary</item>
@@ -513,7 +513,7 @@
     </style>
 
     <!--== Matrix Theme ==-->
-    <style name="Theme.Tachiyomi.Matrix">
+    <style name="Theme.MiKa.Matrix">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/matrix_primary</item>
         <item name="colorOnPrimary">@color/matrix_onPrimary</item>
@@ -540,7 +540,7 @@
     </style>
 
     <!--== Tidal Wave Theme ==-->
-    <style name="Theme.Tachiyomi.TidalWave">
+    <style name="Theme.MiKa.TidalWave">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/tidalwave_primary</item>
         <item name="colorOnPrimary">@color/tidalwave_onPrimary</item>
@@ -573,7 +573,7 @@
     </style>
 
     <!--== Nord Theme ==-->
-    <style name="Theme.Tachiyomi.Nord">
+    <style name="Theme.MiKa.Nord">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/nord_primary</item>
         <item name="colorOnPrimary">@color/nord_onPrimary</item>
@@ -611,7 +611,7 @@
 
 
     <!--== Monochrome Theme ==-->
-    <style name="Theme.Tachiyomi.Monochrome">
+    <style name="Theme.MiKa.Monochrome">
         <!-- Theme Colors -->
         <item name="colorPrimary">@color/monochrome_primary</item>
         <item name="colorOnPrimary">@color/monochrome_onPrimary</item>
@@ -650,17 +650,17 @@
     </style>
 
     <!--== AMOLED Mode Overlay ==-->
-    <style name="ThemeOverlay.Tachiyomi.Amoled" parent="" />
+    <style name="ThemeOverlay.MiKa.Amoled" parent="" />
 
     <!--===============-->
     <!-- Launch Screen -->
     <!--===============-->
 
     <!--== Splash Theme ==-->
-    <style name="Theme.Tachiyomi.SplashScreen" parent="Theme.SplashScreen">
+    <style name="Theme.MiKa.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_tachi_splash</item>
         <item name="windowSplashScreenBackground">@color/splash</item>
-        <item name="postSplashScreenTheme">@style/Theme.Tachiyomi</item>
+        <item name="postSplashScreenTheme">@style/Theme.MiKa</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>

@@ -12,7 +12,7 @@ kotlin {
             dependencies {
                 implementation(projects.sourceApi)
                 api(projects.i18n)
-                api(projects.i18nAniyomi)
+                api(projects.i18nMika)
 
                 implementation(libs.unifile)
             }
@@ -41,7 +41,7 @@ kotlin {
 }
 
 android {
-    namespace = "tachiyomi.source.local"
+    namespace = "com.user4302.mika.source.local"
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -50,6 +50,6 @@ android {
 
     dependencies {
         // FFmpeg-kit
-        implementation(aniyomilibs.ffmpeg.kit)
+        implementation(mikalibs.ffmpeg.kit)
     }
 }

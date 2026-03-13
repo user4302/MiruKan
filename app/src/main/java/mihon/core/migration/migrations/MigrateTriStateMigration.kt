@@ -3,12 +3,12 @@ package mihon.core.migration.migrations
 import android.app.Application
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import eu.kanade.tachiyomi.data.track.TrackerManager
+import com.user4302.mika.core.common.preference.PreferenceStore
+import com.user4302.mika.core.common.preference.TriState
+import com.user4302.mika.core.common.preference.getEnum
+import com.user4302.mika.data.track.TrackerManager
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.PreferenceStore
-import tachiyomi.core.common.preference.TriState
-import tachiyomi.core.common.preference.getEnum
 
 class MigrateTriStateMigration : Migration {
     override val version = 99f

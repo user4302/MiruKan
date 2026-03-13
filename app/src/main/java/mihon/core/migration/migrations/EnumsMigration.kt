@@ -3,12 +3,12 @@ package mihon.core.migration.migrations
 import android.app.Application
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import eu.kanade.tachiyomi.ui.player.Debanding
-import eu.kanade.tachiyomi.ui.player.VideoAspect
+import com.user4302.mika.core.common.preference.PreferenceStore
+import com.user4302.mika.core.common.preference.getEnum
+import com.user4302.mika.ui.player.Debanding
+import com.user4302.mika.ui.player.VideoAspect
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.PreferenceStore
-import tachiyomi.core.common.preference.getEnum
 
 class EnumsMigration : Migration {
     override val version = 123f

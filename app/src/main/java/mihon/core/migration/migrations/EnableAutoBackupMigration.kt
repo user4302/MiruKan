@@ -1,10 +1,10 @@
 package mihon.core.migration.migrations
 
 import android.app.Application
-import eu.kanade.tachiyomi.data.backup.create.BackupCreateJob
+import com.user4302.mika.data.backup.create.BackupCreateJob
+import com.user4302.mika.domain.backup.service.BackupPreferences
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.domain.backup.service.BackupPreferences
 
 class EnableAutoBackupMigration : Migration {
     override val version = 84f

@@ -26,8 +26,8 @@ dependencyResolutionManagement {
         create("compose") {
             from(files("gradle/compose.versions.toml"))
         }
-        create("aniyomilibs") {
-            from(files("gradle/aniyomi.versions.toml"))
+        create("mikalibs") {
+            from(files("gradle/mika.versions.toml"))
         }
     }
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -44,7 +44,7 @@ plugins {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "Aniyomi"
+rootProject.name = "MiKa"
 include(":app")
 include(":core-metadata")
 include(":core:archive")
@@ -52,7 +52,7 @@ include(":core:common")
 include(":data")
 include(":domain")
 include(":i18n")
-include(":i18n-aniyomi")
+include(":i18n-mika")
 include(":macrobenchmark")
 include(":presentation-core")
 include(":presentation-widget")

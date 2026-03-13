@@ -1,0 +1,1487 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon JVM discovery is an incubating feature.
+Daemon will be stopped at the end of the build 
+Configuration on demand is an incubating feature.
+Type-safe project accessors is an incubating feature.
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :buildSrc:compilePluginsBlocks UP-TO-DATE
+> Task :buildSrc:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :buildSrc:generateScriptPluginAdapters UP-TO-DATE
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :presentation-core:preBuild UP-TO-DATE
+> Task :presentation-widget:preBuild UP-TO-DATE
+> Task :presentation-core:preDebugBuild UP-TO-DATE
+> Task :data:preBuild UP-TO-DATE
+> Task :domain:preBuild UP-TO-DATE
+> Task :i18n-mika:generateLocalesConfig UP-TO-DATE
+> Task :core-metadata:preBuild UP-TO-DATE
+> Task :domain:preDebugBuild UP-TO-DATE
+> Task :i18n:generateLocalesConfig UP-TO-DATE
+> Task :presentation-widget:preDebugBuild UP-TO-DATE
+> Task :data:preDebugBuild UP-TO-DATE
+> Task :core-metadata:preDebugBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :presentation-core:generateDebugResValues FROM-CACHE
+> Task :presentation-widget:generateDebugResValues FROM-CACHE
+> Task :domain:generateDebugResValues FROM-CACHE
+> Task :data:generateDebugResValues FROM-CACHE
+> Task :core-metadata:generateDebugResValues FROM-CACHE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-metadata:generateDebugResources FROM-CACHE
+> Task :presentation-widget:generateDebugResources FROM-CACHE
+> Task :domain:generateDebugResources FROM-CACHE
+> Task :data:generateDebugResources FROM-CACHE
+> Task :i18n:generateMRcommonMain FROM-CACHE
+> Task :i18n:generateMRandroidDebug SKIPPED
+> Task :presentation-core:generateDebugResources FROM-CACHE
+> Task :domain:packageDebugResources FROM-CACHE
+> Task :source-api:preBuild UP-TO-DATE
+> Task :source-api:preDebugBuild UP-TO-DATE
+> Task :i18n:generateMRandroidInstrumentedTest FROM-CACHE
+> Task :i18n:generateMRandroidInstrumentedTestDebug SKIPPED
+> Task :core-metadata:packageDebugResources FROM-CACHE
+> Task :source-local:preBuild UP-TO-DATE
+> Task :source-local:preDebugBuild UP-TO-DATE
+> Task :source-api:generateDebugResValues FROM-CACHE
+> Task :presentation-widget:packageDebugResources FROM-CACHE
+> Task :core:archive:preBuild UP-TO-DATE
+> Task :core:archive:preDebugBuild UP-TO-DATE
+> Task :source-local:generateDebugResValues FROM-CACHE
+> Task :source-api:generateDebugResources FROM-CACHE
+> Task :core:archive:generateDebugResValues FROM-CACHE
+> Task :source-local:generateDebugResources FROM-CACHE
+> Task :core:archive:generateDebugResources FROM-CACHE
+> Task :source-api:packageDebugResources FROM-CACHE
+> Task :core:common:preBuild UP-TO-DATE
+> Task :core:common:preDebugBuild UP-TO-DATE
+> Task :i18n-mika:generateMRcommonMain FROM-CACHE
+> Task :core:common:generateDebugResValues FROM-CACHE
+> Task :i18n-mika:generateMRandroidDebug SKIPPED
+> Task :data:packageDebugResources FROM-CACHE
+> Task :source-local:packageDebugResources FROM-CACHE
+> Task :core:common:generateDebugResources FROM-CACHE
+> Task :core:archive:packageDebugResources FROM-CACHE
+> Task :presentation-core:packageDebugResources FROM-CACHE
+> Task :i18n-mika:generateMRandroidInstrumentedTest FROM-CACHE
+> Task :core:common:packageDebugResources FROM-CACHE
+> Task :i18n-mika:generateMRandroidInstrumentedTestDebug SKIPPED
+> Task :presentation-widget:writeDebugAarMetadata
+> Task :core-metadata:writeDebugAarMetadata
+> Task :domain:writeDebugAarMetadata
+> Task :data:writeDebugAarMetadata
+> Task :presentation-core:writeDebugAarMetadata
+> Task :core-metadata:extractDeepLinksDebug FROM-CACHE
+> Task :core-metadata:processDebugManifest FROM-CACHE
+> Task :data:extractDeepLinksDebug FROM-CACHE
+> Task :data:processDebugManifest FROM-CACHE
+> Task :domain:extractDeepLinksDebug FROM-CACHE
+> Task :core:common:writeDebugAarMetadata
+> Task :core:archive:writeDebugAarMetadata
+> Task :presentation-core:extractDeepLinksDebug FROM-CACHE
+> Task :source-api:writeDebugAarMetadata
+> Task :source-local:writeDebugAarMetadata
+> Task :domain:processDebugManifest FROM-CACHE
+> Task :presentation-widget:extractDeepLinksDebug FROM-CACHE
+> Task :source-local:extractDeepLinksDebug FROM-CACHE
+> Task :source-api:extractDeepLinksDebug FROM-CACHE
+> Task :core:archive:extractDeepLinksDebug FROM-CACHE
+> Task :presentation-core:processDebugManifest FROM-CACHE
+> Task :core:common:extractDeepLinksDebug FROM-CACHE
+> Task :source-local:processDebugManifest FROM-CACHE
+> Task :core-metadata:compileDebugLibraryResources FROM-CACHE
+> Task :core:archive:processDebugManifest FROM-CACHE
+> Task :source-api:processDebugManifest FROM-CACHE
+> Task :core:common:processDebugManifest FROM-CACHE
+> Task :core-metadata:parseDebugLocalResources FROM-CACHE
+> Task :data:compileDebugLibraryResources FROM-CACHE
+> Task :data:parseDebugLocalResources FROM-CACHE
+> Task :core:common:parseDebugLocalResources FROM-CACHE
+> Task :source-api:parseDebugLocalResources FROM-CACHE
+> Task :presentation-core:compileDebugLibraryResources FROM-CACHE
+> Task :domain:parseDebugLocalResources FROM-CACHE
+> Task :source-local:compileDebugLibraryResources FROM-CACHE
+> Task :source-api:compileDebugLibraryResources FROM-CACHE
+> Task :domain:compileDebugLibraryResources FROM-CACHE
+> Task :core:archive:parseDebugLocalResources FROM-CACHE
+> Task :core:common:compileDebugLibraryResources FROM-CACHE
+> Task :core-metadata:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :presentation-core:parseDebugLocalResources FROM-CACHE
+> Task :source-api:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :source-api:javaPreCompileDebug FROM-CACHE
+> Task :core-metadata:javaPreCompileDebug FROM-CACHE
+> Task :data:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :source-local:parseDebugLocalResources FROM-CACHE
+> Task :domain:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:common:javaPreCompileDebug FROM-CACHE
+> Task :core:archive:generateDebugRFile FROM-CACHE
+> Task :presentation-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:archive:compileDebugLibraryResources FROM-CACHE
+> Task :presentation-widget:processDebugManifest FROM-CACHE
+> Task :source-local:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:archive:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :presentation-core:javaPreCompileDebug FROM-CACHE
+> Task :domain:javaPreCompileDebug FROM-CACHE
+> Task :source-local:javaPreCompileDebug FROM-CACHE
+> Task :presentation-widget:compileDebugLibraryResources FROM-CACHE
+> Task :presentation-widget:parseDebugLocalResources FROM-CACHE
+> Task :presentation-widget:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :presentation-widget:javaPreCompileDebug FROM-CACHE
+> Task :data:generateDebugAnimeDatabaseInterface FROM-CACHE
+> Task :data:generateDebugDatabaseInterface FROM-CACHE
+> Task :data:javaPreCompileDebug FROM-CACHE
+> Task :domain:mergeDebugShaders
+> Task :presentation-core:mergeDebugShaders
+> Task :core-metadata:mergeDebugShaders
+> Task :core-metadata:compileDebugShaders NO-SOURCE
+> Task :presentation-core:compileDebugShaders NO-SOURCE
+> Task :data:mergeDebugShaders
+> Task :domain:compileDebugShaders NO-SOURCE
+> Task :core-metadata:generateDebugAssets UP-TO-DATE
+> Task :domain:generateDebugAssets UP-TO-DATE
+> Task :presentation-core:generateDebugAssets UP-TO-DATE
+> Task :data:compileDebugShaders NO-SOURCE
+> Task :data:generateDebugAssets UP-TO-DATE
+> Task :domain:mergeDebugAssets
+> Task :data:mergeDebugAssets
+> Task :source-api:mergeDebugShaders
+> Task :core:archive:compileDebugKotlin FROM-CACHE
+> Task :presentation-widget:mergeDebugShaders
+> Task :i18n:generateMRandroidMain FROM-CACHE
+> Task :i18n:generateMRandroidRelease SKIPPED
+> Task :presentation-widget:compileDebugShaders NO-SOURCE
+> Task :source-api:compileDebugShaders NO-SOURCE
+> Task :presentation-widget:generateDebugAssets UP-TO-DATE
+> Task :core:archive:javaPreCompileDebug FROM-CACHE
+> Task :source-api:debugAssetsCopyForAGP NO-SOURCE
+> Task :core-metadata:mergeDebugAssets
+> Task :source-api:generateDebugAssets UP-TO-DATE
+> Task :core:archive:compileDebugJavaWithJavac NO-SOURCE
+> Task :presentation-core:mergeDebugAssets
+> Task :i18n:generateMRcommonTest FROM-CACHE
+> Task :presentation-widget:mergeDebugAssets
+> Task :source-api:mergeDebugAssets
+> Task :i18n:generateMRandroidUnitTest FROM-CACHE
+> Task :i18n:generateMRandroidUnitTestDebug SKIPPED
+> Task :i18n:generateMRandroidUnitTestRelease SKIPPED
+> Task :i18n:preBuild UP-TO-DATE
+> Task :i18n:preDebugBuild UP-TO-DATE
+> Task :i18n:generateDebugResValues FROM-CACHE
+> Task :i18n:generateDebugResources FROM-CACHE
+> Task :core-metadata:mergeDebugJniLibFolders
+> Task :data:mergeDebugJniLibFolders
+> Task :source-local:mergeDebugShaders
+> Task :core:common:mergeDebugShaders
+> Task :source-local:compileDebugShaders NO-SOURCE
+> Task :core-metadata:mergeDebugNativeLibs NO-SOURCE
+> Task :core:common:compileDebugShaders NO-SOURCE
+> Task :core:common:generateDebugAssets UP-TO-DATE
+> Task :source-local:debugAssetsCopyForAGP NO-SOURCE
+> Task :source-local:generateDebugAssets UP-TO-DATE
+> Task :core:archive:mergeDebugShaders
+> Task :core:archive:compileDebugShaders NO-SOURCE
+> Task :core:archive:generateDebugAssets UP-TO-DATE
+> Task :source-local:mergeDebugAssets
+> Task :core:common:mergeDebugAssets
+> Task :data:mergeDebugNativeLibs NO-SOURCE
+> Task :core:archive:mergeDebugAssets
+> Task :core-metadata:copyDebugJniLibsProjectOnly
+> Task :data:copyDebugJniLibsProjectOnly
+> Task :domain:mergeDebugJniLibFolders
+> Task :presentation-core:mergeDebugJniLibFolders
+> Task :presentation-core:mergeDebugNativeLibs NO-SOURCE
+> Task :domain:mergeDebugNativeLibs NO-SOURCE
+> Task :presentation-core:copyDebugJniLibsProjectOnly
+> Task :presentation-widget:mergeDebugJniLibFolders
+> Task :presentation-widget:mergeDebugNativeLibs NO-SOURCE
+> Task :domain:copyDebugJniLibsProjectOnly
+> Task :presentation-widget:copyDebugJniLibsProjectOnly
+> Task :source-local:mergeDebugJniLibFolders
+> Task :source-local:mergeDebugNativeLibs NO-SOURCE
+> Task :source-local:copyDebugJniLibsProjectOnly
+> Task :i18n-mika:generateMRandroidMain FROM-CACHE
+> Task :core:common:mergeDebugJniLibFolders
+> Task :core:common:mergeDebugNativeLibs NO-SOURCE
+> Task :core:common:copyDebugJniLibsProjectOnly
+> Task :i18n-mika:generateMRandroidRelease SKIPPED
+> Task :core-metadata:stripDebugDebugSymbols NO-SOURCE
+> Task :core-metadata:copyDebugJniLibsProjectAndLocalJars
+> Task :i18n-mika:generateMRcommonTest FROM-CACHE
+> Task :source-api:mergeDebugJniLibFolders
+> Task :source-api:mergeDebugNativeLibs NO-SOURCE
+> Task :core-metadata:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core-metadata:prepareDebugArtProfile UP-TO-DATE
+> Task :core-metadata:prepareLintJarForPublish UP-TO-DATE
+> Task :source-api:copyDebugJniLibsProjectOnly
+> Task :domain:stripDebugDebugSymbols NO-SOURCE
+> Task :data:stripDebugDebugSymbols NO-SOURCE
+> Task :data:copyDebugJniLibsProjectAndLocalJars
+> Task :data:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :data:prepareDebugArtProfile UP-TO-DATE
+> Task :data:prepareLintJarForPublish UP-TO-DATE
+> Task :domain:copyDebugJniLibsProjectAndLocalJars
+> Task :domain:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :domain:prepareDebugArtProfile UP-TO-DATE
+> Task :i18n-mika:generateMRandroidUnitTest FROM-CACHE
+> Task :i18n-mika:generateMRandroidUnitTestDebug SKIPPED
+> Task :domain:prepareLintJarForPublish UP-TO-DATE
+> Task :i18n-mika:generateMRandroidUnitTestRelease SKIPPED
+> Task :i18n-mika:preBuild UP-TO-DATE
+> Task :i18n-mika:preDebugBuild UP-TO-DATE
+> Task :i18n-mika:generateDebugResValues FROM-CACHE
+> Task :presentation-core:stripDebugDebugSymbols NO-SOURCE
+> Task :presentation-widget:stripDebugDebugSymbols NO-SOURCE
+> Task :i18n-mika:generateDebugResources FROM-CACHE
+> Task :presentation-widget:copyDebugJniLibsProjectAndLocalJars
+> Task :presentation-core:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :presentation-core:copyDebugJniLibsProjectAndLocalJars
+> Task :core:archive:processDebugJavaRes
+> Task :presentation-core:prepareDebugArtProfile UP-TO-DATE
+> Task :presentation-widget:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :presentation-core:prepareLintJarForPublish UP-TO-DATE
+> Task :presentation-widget:prepareDebugArtProfile UP-TO-DATE
+> Task :presentation-widget:prepareLintJarForPublish UP-TO-DATE
+> Task :core:archive:bundleLibRuntimeToJarDebug
+> Task :source-local:stripDebugDebugSymbols NO-SOURCE
+> Task :source-local:copyDebugJniLibsProjectAndLocalJars
+> Task :core:archive:mergeDebugJniLibFolders
+> Task :source-local:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :source-api:stripDebugDebugSymbols NO-SOURCE
+> Task :core:archive:mergeDebugNativeLibs NO-SOURCE
+> Task :core:archive:copyDebugJniLibsProjectOnly
+> Task :core:archive:bundleLibRuntimeToDirDebug
+> Task :source-local:prepareDebugArtProfile UP-TO-DATE
+> Task :source-local:prepareLintJarForPublish UP-TO-DATE
+> Task :core:archive:stripDebugDebugSymbols NO-SOURCE
+> Task :core:archive:copyDebugJniLibsProjectAndLocalJars
+> Task :source-api:copyDebugJniLibsProjectAndLocalJars
+> Task :source-api:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:archive:bundleLibCompileToJarDebug
+> Task :source-api:prepareDebugArtProfile UP-TO-DATE
+> Task :core:common:stripDebugDebugSymbols NO-SOURCE
+> Task :core-metadata:preReleaseBuild UP-TO-DATE
+> Task :core:common:copyDebugJniLibsProjectAndLocalJars
+> Task :source-api:prepareLintJarForPublish UP-TO-DATE
+> Task :core:common:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :domain:preReleaseBuild UP-TO-DATE
+> Task :data:preReleaseBuild UP-TO-DATE
+> Task :core:common:prepareDebugArtProfile UP-TO-DATE
+> Task :core:common:prepareLintJarForPublish UP-TO-DATE
+> Task :presentation-core:preReleaseBuild UP-TO-DATE
+> Task :core-metadata:mergeReleaseJniLibFolders
+> Task :core-metadata:mergeReleaseNativeLibs NO-SOURCE
+> Task :presentation-core:mergeReleaseJniLibFolders
+> Task :presentation-core:mergeReleaseNativeLibs NO-SOURCE
+> Task :data:mergeReleaseJniLibFolders
+> Task :i18n:packageDebugResources FROM-CACHE
+> Task :data:mergeReleaseNativeLibs NO-SOURCE
+> Task :core-metadata:copyReleaseJniLibsProjectOnly
+> Task :presentation-core:copyReleaseJniLibsProjectOnly
+> Task :core:archive:extractDebugAnnotations FROM-CACHE
+> Task :domain:mergeReleaseJniLibFolders
+> Task :presentation-widget:preReleaseBuild UP-TO-DATE
+> Task :source-api:preReleaseBuild UP-TO-DATE
+> Task :domain:mergeReleaseNativeLibs NO-SOURCE
+> Task :core:archive:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:archive:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :i18n:writeDebugAarMetadata
+> Task :core:archive:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :data:copyReleaseJniLibsProjectOnly
+> Task :source-local:preReleaseBuild UP-TO-DATE
+> Task :core:archive:prepareDebugArtProfile UP-TO-DATE
+> Task :domain:copyReleaseJniLibsProjectOnly
+> Task :i18n:extractDeepLinksDebug FROM-CACHE
+> Task :source-api:mergeReleaseJniLibFolders
+> Task :core:common:preReleaseBuild UP-TO-DATE
+> Task :core:archive:prepareLintJarForPublish UP-TO-DATE
+> Task :source-api:mergeReleaseNativeLibs NO-SOURCE
+> Task :presentation-widget:mergeReleaseJniLibFolders
+> Task :source-api:copyReleaseJniLibsProjectOnly
+> Task :core-metadata:prepareReleaseArtProfile UP-TO-DATE
+> Task :data:prepareReleaseArtProfile UP-TO-DATE
+> Task :presentation-widget:mergeReleaseNativeLibs NO-SOURCE
+> Task :domain:prepareReleaseArtProfile UP-TO-DATE
+> Task :presentation-core:prepareReleaseArtProfile UP-TO-DATE
+> Task :source-api:prepareReleaseArtProfile UP-TO-DATE
+> Task :core:archive:preReleaseBuild UP-TO-DATE
+> Task :source-local:mergeReleaseJniLibFolders
+> Task :presentation-widget:copyReleaseJniLibsProjectOnly
+> Task :i18n:processDebugManifest FROM-CACHE
+> Task :source-local:mergeReleaseNativeLibs NO-SOURCE
+> Task :presentation-widget:prepareReleaseArtProfile UP-TO-DATE
+> Task :core:common:mergeReleaseJniLibFolders
+> Task :core:common:mergeReleaseNativeLibs NO-SOURCE
+> Task :core-metadata:generateReleaseResValues FROM-CACHE
+> Task :core:archive:mergeReleaseJniLibFolders
+> Task :source-local:copyReleaseJniLibsProjectOnly
+> Task :core:archive:mergeReleaseNativeLibs NO-SOURCE
+> Task :source-local:prepareReleaseArtProfile UP-TO-DATE
+> Task :core:common:copyReleaseJniLibsProjectOnly
+> Task :core-metadata:generateReleaseResources FROM-CACHE
+> Task :i18n:parseDebugLocalResources FROM-CACHE
+> Task :core:archive:copyReleaseJniLibsProjectOnly
+> Task :core:common:prepareReleaseArtProfile UP-TO-DATE
+> Task :core:archive:prepareReleaseArtProfile UP-TO-DATE
+> Task :source-api:generateReleaseResValues FROM-CACHE
+> Task :core:common:generateReleaseResValues FROM-CACHE
+> Task :core-metadata:packageReleaseResources FROM-CACHE
+> Task :domain:generateReleaseResValues FROM-CACHE
+> Task :source-api:generateReleaseResources FROM-CACHE
+> Task :core:common:generateReleaseResources FROM-CACHE
+> Task :i18n-mika:packageDebugResources FROM-CACHE
+> Task :core-metadata:parseReleaseLocalResources FROM-CACHE
+> Task :core-metadata:javaPreCompileRelease FROM-CACHE
+> Task :i18n-mika:writeDebugAarMetadata
+> Task :source-local:generateReleaseResValues FROM-CACHE
+> Task :i18n:generateDebugRFile FROM-CACHE
+> Task :domain:generateReleaseResources FROM-CACHE
+> Task :source-local:generateReleaseResources FROM-CACHE
+> Task :i18n-mika:extractDeepLinksDebug FROM-CACHE
+> Task :i18n:compileDebugLibraryResources FROM-CACHE
+> Task :i18n:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :source-api:packageReleaseResources FROM-CACHE
+> Task :core:common:packageReleaseResources FROM-CACHE
+> Task :i18n-mika:processDebugManifest FROM-CACHE
+> Task :source-local:packageReleaseResources FROM-CACHE
+> Task :source-local:parseReleaseLocalResources FROM-CACHE
+> Task :i18n-mika:parseDebugLocalResources FROM-CACHE
+> Task :core:common:parseReleaseLocalResources FROM-CACHE
+> Task :core:archive:generateReleaseResValues FROM-CACHE
+> Task :core:common:javaPreCompileRelease FROM-CACHE
+> Task :source-api:parseReleaseLocalResources FROM-CACHE
+> Task :source-local:javaPreCompileRelease FROM-CACHE
+> Task :i18n-mika:generateDebugRFile FROM-CACHE
+> Task :core:archive:generateReleaseResources FROM-CACHE
+> Task :domain:packageReleaseResources FROM-CACHE
+> Task :source-api:javaPreCompileRelease FROM-CACHE
+> Task :data:generateReleaseAnimeDatabaseInterface FROM-CACHE
+> Task :domain:parseReleaseLocalResources FROM-CACHE
+> Task :i18n:compileDebugKotlinAndroid FROM-CACHE
+> Task :i18n-mika:compileDebugLibraryResources FROM-CACHE
+> Task :i18n-mika:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:archive:mergeDebugJavaResource
+> Task :presentation-core:generateReleaseResValues FROM-CACHE
+> Task :core:archive:packageReleaseResources FROM-CACHE
+> Task :domain:javaPreCompileRelease FROM-CACHE
+> Task :presentation-core:generateReleaseResources FROM-CACHE
+> Task :i18n:javaPreCompileDebug FROM-CACHE
+> Task :i18n:compileDebugJavaWithJavac NO-SOURCE
+> Task :data:generateReleaseDatabaseInterface FROM-CACHE
+> Task :presentation-widget:generateReleaseResValues FROM-CACHE
+> Task :data:generateReleaseResValues FROM-CACHE
+> Task :presentation-core:packageReleaseResources FROM-CACHE
+> Task :core:archive:syncDebugLibJars FROM-CACHE
+> Task :presentation-core:parseReleaseLocalResources FROM-CACHE
+> Task :presentation-core:javaPreCompileRelease FROM-CACHE
+> Task :presentation-widget:generateReleaseResources FROM-CACHE
+> Task :data:generateReleaseResources FROM-CACHE
+> Task :data:packageReleaseResources FROM-CACHE
+> Task :presentation-widget:packageReleaseResources FROM-CACHE
+> Task :data:parseReleaseLocalResources FROM-CACHE
+> Task :presentation-widget:parseReleaseLocalResources FROM-CACHE
+> Task :presentation-widget:javaPreCompileRelease FROM-CACHE
+> Task :data:javaPreCompileRelease FROM-CACHE
+> Task :i18n:mergeDebugShaders
+> Task :i18n:compileDebugShaders NO-SOURCE
+> Task :i18n:debugAssetsCopyForAGP NO-SOURCE
+> Task :i18n:generateDebugAssets UP-TO-DATE
+> Task :data:writeReleaseAarMetadata
+> Task :domain:writeReleaseAarMetadata
+> Task :core:archive:bundleDebugAar
+> Task :core:archive:assembleDebug
+> Task :core-metadata:writeReleaseAarMetadata
+> Task :i18n:bundleLibCompileToJarDebug
+> Task :source-api:writeReleaseAarMetadata
+> Task :core:archive:parseReleaseLocalResources FROM-CACHE
+> Task :core:archive:generateReleaseRFile FROM-CACHE
+> Task :presentation-widget:writeReleaseAarMetadata
+> Task :core-metadata:extractDeepLinksRelease FROM-CACHE
+> Task :core:archive:compileReleaseKotlin FROM-CACHE
+> Task :core:archive:javaPreCompileRelease FROM-CACHE
+> Task :core:archive:compileReleaseJavaWithJavac NO-SOURCE
+> Task :core-metadata:processReleaseManifest FROM-CACHE
+> Task :data:extractDeepLinksRelease FROM-CACHE
+> Task :core:archive:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :core:archive:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :i18n:mergeDebugAssets
+> Task :presentation-core:writeReleaseAarMetadata
+> Task :core:archive:writeReleaseAarMetadata
+> Task :source-local:writeReleaseAarMetadata
+> Task :domain:extractDeepLinksRelease FROM-CACHE
+> Task :i18n:bundleLibRuntimeToJarDebug
+> Task :data:processReleaseManifest FROM-CACHE
+> Task :i18n-mika:compileDebugKotlinAndroid FROM-CACHE
+> Task :presentation-widget:extractDeepLinksRelease FROM-CACHE
+> Task :core:common:generateDebugRFile FROM-CACHE
+> Task :domain:processReleaseManifest FROM-CACHE
+> Task :presentation-core:extractDeepLinksRelease FROM-CACHE
+> Task :i18n-mika:javaPreCompileDebug FROM-CACHE
+> Task :i18n:processDebugJavaRes
+> Task :presentation-widget:processReleaseManifest FROM-CACHE
+> Task :i18n-mika:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:common:writeReleaseAarMetadata
+> Task :source-local:extractDeepLinksRelease FROM-CACHE
+> Task :source-api:generateDebugRFile FROM-CACHE
+> Task :core:archive:bundleLibCompileToJarRelease
+> Task :i18n:mergeDebugJniLibFolders
+> Task :i18n:mergeDebugNativeLibs NO-SOURCE
+> Task :i18n-mika:bundleLibCompileToJarDebug
+> Task :source-api:extractDeepLinksRelease FROM-CACHE
+> Task :i18n:bundleLibRuntimeToDirDebug
+> Task :core-metadata:generateDebugRFile FROM-CACHE
+> Task :source-local:processReleaseManifest FROM-CACHE
+> Task :core:archive:extractDeepLinksRelease FROM-CACHE
+> Task :core:common:extractDeepLinksRelease FROM-CACHE
+> Task :core:archive:processReleaseManifest FROM-CACHE
+> Task :source-api:processReleaseManifest FROM-CACHE
+> Task :core:archive:bundleLibRuntimeToJarRelease
+> Task :core:common:processReleaseManifest FROM-CACHE
+> Task :core-metadata:mergeReleaseShaders
+> Task :data:mergeReleaseShaders
+> Task :data:compileReleaseShaders NO-SOURCE
+> Task :core-metadata:compileReleaseShaders NO-SOURCE
+> Task :core-metadata:generateReleaseAssets UP-TO-DATE
+> Task :data:generateReleaseAssets UP-TO-DATE
+> Task :core:archive:processReleaseJavaRes
+> Task :core-metadata:mergeReleaseAssets
+> Task :data:mergeReleaseAssets
+> Task :source-api:mergeReleaseShaders
+> Task :i18n-mika:mergeDebugShaders
+> Task :i18n:copyDebugJniLibsProjectOnly
+> Task :source-local:mergeReleaseShaders
+> Task :source-api:compileReleaseShaders NO-SOURCE
+> Task :i18n:stripDebugDebugSymbols NO-SOURCE
+> Task :i18n-mika:compileDebugShaders NO-SOURCE
+> Task :i18n-mika:debugAssetsCopyForAGP NO-SOURCE
+> Task :i18n-mika:generateDebugAssets UP-TO-DATE
+> Task :i18n:copyDebugJniLibsProjectAndLocalJars
+> Task :presentation-widget:mergeReleaseShaders
+> Task :presentation-widget:compileReleaseShaders NO-SOURCE
+> Task :presentation-widget:generateReleaseAssets UP-TO-DATE
+> Task :i18n-mika:mergeDebugAssets
+> Task :source-api:generateReleaseAssets UP-TO-DATE
+> Task :source-api:releaseAssetsCopyForAGP NO-SOURCE
+> Task :app:generateDebugResValues FROM-CACHE
+> Task :i18n-mika:bundleLibRuntimeToJarDebug
+> Task :i18n:extractDebugAnnotations FROM-CACHE
+> Task :presentation-widget:mergeReleaseAssets
+> Task :domain:generateDebugRFile FROM-CACHE
+> Task :i18n:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :app:generateDebugResources FROM-CACHE
+> Task :i18n-mika:processDebugJavaRes
+> Task :i18n:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+> Task :i18n-mika:bundleLibRuntimeToDirDebug
+> Task :domain:mergeReleaseShaders
+> Task :domain:compileReleaseShaders NO-SOURCE
+> Task :domain:generateReleaseAssets UP-TO-DATE
+> Task :i18n:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :i18n:prepareDebugArtProfile UP-TO-DATE
+> Task :i18n:prepareLintJarForPublish UP-TO-DATE
+> Task :domain:mergeReleaseAssets
+> Task :i18n:preReleaseBuild UP-TO-DATE
+> Task :i18n:mergeReleaseJniLibFolders
+> Task :data:generateDebugRFile FROM-CACHE
+> Task :i18n:mergeDebugJavaResource
+> Task :i18n:mergeReleaseNativeLibs NO-SOURCE
+> Task :source-api:mergeReleaseAssets
+> Task :core-metadata:stripReleaseDebugSymbols NO-SOURCE
+> Task :source-local:generateDebugRFile FROM-CACHE
+> Task :source-local:compileReleaseShaders NO-SOURCE
+> Task :source-local:generateReleaseAssets UP-TO-DATE
+> Task :source-local:releaseAssetsCopyForAGP NO-SOURCE
+> Task :i18n:syncDebugLibJars FROM-CACHE
+> Task :i18n-mika:mergeDebugJniLibFolders
+> Task :core:archive:mergeReleaseShaders
+> Task :source-local:mergeReleaseAssets
+> Task :core-metadata:copyReleaseJniLibsProjectAndLocalJars
+> Task :core:archive:compileReleaseShaders NO-SOURCE
+> Task :i18n-mika:mergeDebugNativeLibs NO-SOURCE
+> Task :core:archive:generateReleaseAssets UP-TO-DATE
+> Task :core-metadata:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :i18n-mika:copyDebugJniLibsProjectOnly
+> Task :source-api:compileReleaseLibraryResources FROM-CACHE
+> Task :core:archive:mergeReleaseAssets
+> Task :presentation-core:generateDebugRFile FROM-CACHE
+> Task :i18n-mika:stripDebugDebugSymbols NO-SOURCE
+> Task :data:stripReleaseDebugSymbols NO-SOURCE
+> Task :i18n-mika:copyDebugJniLibsProjectAndLocalJars
+> Task :domain:compileReleaseLibraryResources FROM-CACHE
+> Task :domain:stripReleaseDebugSymbols NO-SOURCE
+> Task :data:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :data:copyReleaseJniLibsProjectAndLocalJars
+> Task :source-api:stripReleaseDebugSymbols NO-SOURCE
+> Task :domain:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :source-api:copyReleaseJniLibsProjectAndLocalJars
+> Task :i18n-mika:extractDebugAnnotations FROM-CACHE
+> Task :source-api:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :source-local:stripReleaseDebugSymbols NO-SOURCE
+> Task :i18n-mika:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :source-local:copyReleaseJniLibsProjectAndLocalJars
+> Task :source-local:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :i18n-mika:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :i18n-mika:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :i18n-mika:prepareDebugArtProfile UP-TO-DATE
+> Task :core-metadata:compileReleaseLibraryResources FROM-CACHE
+> Task :i18n-mika:prepareLintJarForPublish UP-TO-DATE
+> Task :presentation-core:processReleaseManifest FROM-CACHE
+> Task :i18n-mika:preReleaseBuild UP-TO-DATE
+> Task :core:archive:compileReleaseLibraryResources FROM-CACHE
+> Task :domain:copyReleaseJniLibsProjectAndLocalJars
+> Task :i18n-mika:mergeDebugJavaResource
+> Task :core-metadata:preDebugUnitTestBuild UP-TO-DATE
+> Task :core:archive:stripReleaseDebugSymbols NO-SOURCE
+> Task :presentation-core:mergeReleaseShaders
+> Task :i18n-mika:mergeReleaseJniLibFolders
+> Task :core:archive:copyReleaseJniLibsProjectAndLocalJars
+> Task :presentation-core:compileReleaseShaders NO-SOURCE
+> Task :presentation-core:generateReleaseAssets UP-TO-DATE
+> Task :core:archive:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :core:archive:extractReleaseAnnotations FROM-CACHE
+> Task :i18n-mika:syncDebugLibJars FROM-CACHE
+> Task :core:archive:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :presentation-core:mergeReleaseAssets
+> Task :presentation-core:stripReleaseDebugSymbols NO-SOURCE
+> Task :core:archive:mergeReleaseJavaResource
+> Task :presentation-core:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :presentation-core:compileReleaseLibraryResources FROM-CACHE
+> Task :core:archive:syncReleaseLibJars FROM-CACHE
+> Task :core:archive:bundleReleaseAar
+> Task :presentation-core:copyReleaseJniLibsProjectAndLocalJars
+> Task :data:preDebugUnitTestBuild UP-TO-DATE
+> Task :core-metadata:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :core-metadata:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :domain:preDebugUnitTestBuild UP-TO-DATE
+> Task :presentation-widget:generateDebugRFile FROM-CACHE
+> Task :presentation-widget:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:prepareDebugShortcutXML
+> Task :app:collectDependenciesDebug FROM-CACHE
+> Task :core:archive:mapReleaseSourceSetPaths
+> Task :app:prepareLibraryDefinitionsDebug FROM-CACHE
+> Task :presentation-widget:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :presentation-widget:copyReleaseJniLibsProjectAndLocalJars
+> Task :data:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :presentation-core:preDebugUnitTestBuild UP-TO-DATE
+> Task :domain:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :domain:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :presentation-widget:preDebugUnitTestBuild UP-TO-DATE
+> Task :data:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :source-api:preDebugUnitTestBuild UP-TO-DATE
+> Task :core:common:compileDebugKotlin FROM-CACHE
+> Task :core:common:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:archive:mergeReleaseResources FROM-CACHE
+> Task :source-api:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :core:common:bundleLibRuntimeToJarDebug
+> Task :core:common:bundleLibCompileToJarDebug
+> Task :source-api:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :source-local:preDebugUnitTestBuild UP-TO-DATE
+> Task :presentation-core:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :core:archive:verifyReleaseResources FROM-CACHE
+> Task :core:archive:assembleRelease
+> Task :core:archive:preDebugUnitTestBuild UP-TO-DATE
+> Task :presentation-core:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :core:archive:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :core-metadata:writeDebugLintModelMetadata
+> Task :core:archive:compileDebugUnitTestKotlin NO-SOURCE
+> Task :core:archive:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :data:writeDebugLintModelMetadata
+> Task :presentation-widget:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :core:common:processDebugJavaRes
+> Task :presentation-widget:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :source-local:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :source-local:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :core:common:extractDebugAnnotations FROM-CACHE
+> Task :core:common:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :core:common:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :core:common:mergeDebugJavaResource
+> Task :domain:writeDebugLintModelMetadata
+> Task :core:archive:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :core:archive:processDebugUnitTestJavaRes NO-SOURCE
+> Task :core:archive:testDebugUnitTest NO-SOURCE
+> Task :core:archive:bundleDebugLocalLintAar
+> Task :presentation-widget:writeDebugLintModelMetadata
+> Task :source-local:writeDebugLintModelMetadata
+> Task :core:common:syncDebugLibJars FROM-CACHE
+> Task :core:common:bundleDebugAar
+> Task :core:common:assembleDebug
+> Task :core:common:mergeReleaseShaders
+> Task :core:common:compileReleaseShaders NO-SOURCE
+> Task :core:common:generateReleaseAssets UP-TO-DATE
+> Task :core:archive:createFullJarDebug
+> Task :core:archive:writeDebugLintModelMetadata
+> Task :core:common:mergeReleaseAssets
+> Task :core:common:compileReleaseLibraryResources FROM-CACHE
+> Task :core:common:stripReleaseDebugSymbols NO-SOURCE
+> Task :core:common:copyReleaseJniLibsProjectAndLocalJars
+> Task :core:common:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :core:common:preDebugUnitTestBuild UP-TO-DATE
+> Task :core-metadata:extractProguardFiles
+> Task :core:common:bundleLibRuntimeToDirDebug
+> Task :domain:extractProguardFiles
+> Task :data:extractProguardFiles
+> Task :core:common:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :source-local:extractProguardFiles
+> Task :core:common:compileDebugUnitTestKotlin NO-SOURCE
+> Task :core:common:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :presentation-widget:extractProguardFiles
+> Task :core:common:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :core:common:processDebugUnitTestJavaRes NO-SOURCE
+> Task :core:archive:extractProguardFiles
+> Task :core:common:testDebugUnitTest NO-SOURCE
+> Task :core:common:bundleDebugLocalLintAar
+> Task :presentation-core:compileDebugKotlin FROM-CACHE
+> Task :presentation-core:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:archive:generateDebugLintModel
+> Task :source-api:compileDebugKotlinAndroid FROM-CACHE
+> Task :source-api:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:common:createFullJarDebug
+> Task :core:common:writeDebugLintModelMetadata
+> Task :presentation-core:processDebugJavaRes
+> Task :core:common:extractProguardFiles
+> Task :presentation-core:extractDebugAnnotations FROM-CACHE
+> Task :source-api:bundleLibCompileToJarDebug
+> Task :presentation-core:bundleLibRuntimeToJarDebug
+> Task :presentation-core:bundleLibCompileToJarDebug
+> Task :source-api:bundleLibRuntimeToJarDebug
+> Task :presentation-core:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :source-api:processDebugJavaRes
+> Task :presentation-core:mergeDebugConsumerProguardFiles
+> Task :presentation-core:mergeDebugJavaResource
+> Task :presentation-core:bundleLibRuntimeToDirDebug
+> Task :presentation-core:syncDebugLibJars FROM-CACHE
+> Task :app:mergeDebugResources FROM-CACHE
+> Task :source-api:extractDebugAnnotations FROM-CACHE
+> Task :i18n:bundleDebugAar
+> Task :i18n:assembleDebug
+> Task :source-api:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :source-api:mergeDebugConsumerProguardFiles
+> Task :source-api:mergeDebugJavaResource
+> Task :presentation-core:bundleDebugAar
+> Task :presentation-core:assembleDebug
+> Task :source-api:syncDebugLibJars FROM-CACHE
+> Task :i18n:copyReleaseJniLibsProjectOnly
+> Task :app:dataBindingGenBaseClassesDebug FROM-CACHE
+> Task :i18n:prepareReleaseArtProfile UP-TO-DATE
+> Task :i18n:generateReleaseResValues FROM-CACHE
+> Task :presentation-core:compileDebugUnitTestKotlin NO-SOURCE
+> Task :source-api:bundleDebugAar
+> Task :source-api:assembleDebug
+> Task :presentation-core:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :presentation-core:processDebugUnitTestJavaRes NO-SOURCE
+> Task :source-api:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :presentation-core:testDebugUnitTest NO-SOURCE
+> Task :source-api:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :source-api:processDebugUnitTestJavaRes NO-SOURCE
+> Task :source-api:testDebugUnitTest NO-SOURCE
+> Task :presentation-core:bundleDebugLocalLintAar
+> Task :source-api:bundleDebugLocalLintAar
+> Task :core-metadata:compileDebugKotlin FROM-CACHE
+> Task :core-metadata:compileDebugJavaWithJavac NO-SOURCE
+> Task :presentation-core:createFullJarDebug
+> Task :source-api:createFullJarDebug
+> Task :presentation-core:writeDebugLintModelMetadata
+> Task :source-api:writeDebugLintModelMetadata
+> Task :source-api:extractProguardFiles
+> Task :i18n-mika:bundleDebugAar
+> Task :i18n-mika:assembleDebug
+> Task :presentation-core:extractProguardFiles
+> Task :data:preDebugAndroidTestBuild UP-TO-DATE
+> Task :i18n-mika:mergeReleaseNativeLibs NO-SOURCE
+> Task :i18n-mika:copyReleaseJniLibsProjectOnly
+> Task :i18n-mika:prepareReleaseArtProfile UP-TO-DATE
+> Task :core-metadata:bundleLibCompileToJarDebug
+> Task :core-metadata:bundleLibRuntimeToJarDebug
+> Task :source-api:bundleLibRuntimeToDirDebug
+> Task :core-metadata:processDebugJavaRes
+> Task :core-metadata:bundleLibRuntimeToDirDebug
+> Task :domain:compileDebugKotlin FROM-CACHE
+> Task :app:generateDebugBuildConfig
+> Task :i18n-mika:generateReleaseResValues FROM-CACHE
+> Task :i18n:generateReleaseResources FROM-CACHE
+> Task :data:generateDebugAndroidTestResValues FROM-CACHE
+> Task :core:archive:lintAnalyzeDebug FROM-CACHE
+> Task :presentation-core:preDebugAndroidTestBuild UP-TO-DATE
+> Task :presentation-core:generateDebugAndroidTestResValues FROM-CACHE
+> Task :presentation-widget:preDebugAndroidTestBuild UP-TO-DATE
+> Task :core-metadata:extractDebugAnnotations FROM-CACHE
+> Task :core-metadata:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :presentation-widget:generateDebugAndroidTestResValues FROM-CACHE
+> Task :source-api:preDebugAndroidTestBuild UP-TO-DATE
+> Task :core-metadata:mergeDebugConsumerProguardFiles
+> Task :source-api:generateDebugAndroidTestResValues FROM-CACHE
+> Task :source-local:preDebugAndroidTestBuild UP-TO-DATE
+> Task :source-local:generateDebugAndroidTestResValues FROM-CACHE
+> Task :core-metadata:compileDebugUnitTestKotlin NO-SOURCE
+> Task :core-metadata:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :core-metadata:processDebugUnitTestJavaRes NO-SOURCE
+> Task :domain:compileDebugJavaWithJavac NO-SOURCE
+> Task :core-metadata:testDebugUnitTest NO-SOURCE
+> Task :core-metadata:createFullJarDebug
+> Task :i18n-mika:generateReleaseResources FROM-CACHE
+> Task :core-metadata:preDebugAndroidTestBuild UP-TO-DATE
+> Task :core:archive:preDebugAndroidTestBuild UP-TO-DATE
+> Task :core-metadata:generateDebugAndroidTestResValues FROM-CACHE
+> Task :core:common:preDebugAndroidTestBuild UP-TO-DATE
+> Task :core:common:generateDebugAndroidTestResValues FROM-CACHE
+> Task :app:checkDebugAarMetadata
+> Task :core:archive:generateDebugAndroidTestResValues FROM-CACHE
+> Task :core:archive:generateDebugAndroidTestLintModel
+> Task :app:mapDebugSourceSetPaths
+> Task :core-metadata:mergeDebugJavaResource
+> Task :i18n-mika:packageReleaseResources FROM-CACHE
+> Task :core-metadata:syncDebugLibJars FROM-CACHE
+> Task :i18n-mika:parseReleaseLocalResources FROM-CACHE
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug FROM-CACHE
+> Task :core-metadata:bundleDebugAar
+> Task :core-metadata:assembleDebug
+> Task :i18n-mika:generateReleaseRFile FROM-CACHE
+> Task :core-metadata:bundleDebugLocalLintAar
+> Task :core:archive:generateDebugUnitTestLintModel
+> Task :i18n:packageReleaseResources FROM-CACHE
+> Task :core:archive:lintAnalyzeDebugAndroidTest FROM-CACHE
+> Task :i18n:parseReleaseLocalResources FROM-CACHE
+> Task :i18n:generateReleaseRFile FROM-CACHE
+> Task :i18n-mika:compileReleaseKotlinAndroid FROM-CACHE
+> Task :core:common:generateReleaseRFile FROM-CACHE
+> Task :i18n:compileReleaseKotlinAndroid FROM-CACHE
+> Task :i18n:javaPreCompileRelease FROM-CACHE
+> Task :i18n:compileReleaseJavaWithJavac NO-SOURCE
+> Task :i18n:bundleLibCompileToJarRelease
+> Task :i18n-mika:javaPreCompileRelease FROM-CACHE
+> Task :i18n-mika:compileReleaseJavaWithJavac NO-SOURCE
+> Task :i18n-mika:bundleLibCompileToJarRelease
+> Task :core-metadata:mapReleaseSourceSetPaths
+> Task :app:processDebugMainManifest FROM-CACHE
+> Task :app:processDebugManifest FROM-CACHE
+> Task :app:processDebugManifestForPackage FROM-CACHE
+> Task :source-api:generateReleaseRFile FROM-CACHE
+> Task :core-metadata:generateReleaseRFile FROM-CACHE
+> Task :i18n:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :i18n:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :i18n-mika:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :i18n-mika:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :i18n:writeReleaseAarMetadata
+> Task :data:mapReleaseSourceSetPaths
+> Task :i18n-mika:writeReleaseAarMetadata
+> Task :presentation-core:generateReleaseRFile FROM-CACHE
+> Task :i18n-mika:extractDeepLinksRelease FROM-CACHE
+> Task :i18n:extractDeepLinksRelease FROM-CACHE
+> Task :core:common:compileReleaseKotlin FROM-CACHE
+> Task :i18n-mika:processReleaseManifest FROM-CACHE
+> Task :i18n:processReleaseManifest FROM-CACHE
+> Task :core:common:compileReleaseJavaWithJavac NO-SOURCE
+> Task :core:common:bundleLibCompileToJarRelease
+> Task :domain:processDebugJavaRes
+> Task :i18n-mika:bundleLibRuntimeToJarRelease
+> Task :i18n:bundleLibRuntimeToJarRelease
+> Task :domain:extractDebugAnnotations FROM-CACHE
+> Task :domain:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :domain:mergeDebugConsumerProguardFiles
+> Task :domain:mergeDebugJavaResource
+> Task :domain:syncDebugLibJars FROM-CACHE
+> Task :domain:bundleDebugAar
+> Task :domain:assembleDebug
+> Task :domain:generateReleaseRFile FROM-CACHE
+> Task :source-api:compileReleaseKotlinAndroid FROM-CACHE
+> Task :source-api:compileReleaseJavaWithJavac NO-SOURCE
+> Task :source-api:bundleLibCompileToJarRelease
+> Task :source-local:generateReleaseRFile FROM-CACHE
+> Task :data:generateReleaseRFile FROM-CACHE
+> Task :presentation-widget:generateReleaseRFile FROM-CACHE
+> Task :source-api:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :source-api:exportReleaseConsumerProguardFiles
+> Task :core:common:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :core:common:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :source-api:bundleLibRuntimeToJarRelease
+> Task :domain:compileReleaseKotlin FROM-CACHE
+> Task :domain:compileReleaseJavaWithJavac NO-SOURCE
+> Task :core:common:bundleLibRuntimeToJarRelease
+> Task :domain:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :domain:exportReleaseConsumerProguardFiles
+> Task :presentation-core:compileReleaseKotlin FROM-CACHE
+> Task :presentation-core:compileReleaseJavaWithJavac NO-SOURCE
+> Task :presentation-core:bundleLibCompileToJarRelease
+> Task :presentation-core:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :presentation-core:exportReleaseConsumerProguardFiles
+> Task :presentation-core:bundleLibRuntimeToJarRelease
+> Task :domain:bundleLibRuntimeToJarRelease
+> Task :domain:bundleLibRuntimeToJarDebug
+> Task :domain:bundleLibCompileToJarRelease
+> Task :i18n:processReleaseJavaRes
+> Task :i18n-mika:processReleaseJavaRes
+> Task :presentation-core:processReleaseJavaRes
+> Task :domain:bundleLibRuntimeToDirDebug
+> Task :core:common:processReleaseJavaRes
+> Task :domain:bundleLibCompileToJarDebug
+> Task :i18n:mergeReleaseShaders
+> Task :app:processDebugResources FROM-CACHE
+> Task :i18n-mika:mergeReleaseShaders
+> Task :i18n:compileReleaseShaders NO-SOURCE
+> Task :i18n-mika:compileReleaseShaders NO-SOURCE
+> Task :i18n-mika:generateReleaseAssets UP-TO-DATE
+> Task :i18n-mika:releaseAssetsCopyForAGP NO-SOURCE
+> Task :i18n:generateReleaseAssets UP-TO-DATE
+> Task :app:javaPreCompileDebug FROM-CACHE
+> Task :i18n:releaseAssetsCopyForAGP NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :source-api:processReleaseJavaRes
+> Task :i18n:mergeReleaseAssets
+> Task :i18n:compileReleaseLibraryResources FROM-CACHE
+> Task :i18n:stripReleaseDebugSymbols NO-SOURCE
+> Task :presentation-core:extractReleaseAnnotations FROM-CACHE
+> Task :presentation-core:mergeReleaseConsumerProguardFiles
+> Task :i18n:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :i18n:extractReleaseAnnotations FROM-CACHE
+> Task :i18n:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :i18n:mergeReleaseJavaResource
+> Task :i18n:syncReleaseLibJars FROM-CACHE
+> Task :i18n:copyReleaseJniLibsProjectAndLocalJars
+> Task :i18n-mika:mergeReleaseAssets
+> Task :i18n:mapReleaseSourceSetPaths
+> Task :i18n-mika:compileReleaseLibraryResources FROM-CACHE
+> Task :i18n-mika:stripReleaseDebugSymbols NO-SOURCE
+> Task :presentation-widget:mapReleaseSourceSetPaths
+> Task :presentation-core:mergeReleaseJavaResource
+> Task :i18n-mika:copyReleaseJniLibsProjectAndLocalJars
+> Task :i18n-mika:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :i18n-mika:extractReleaseAnnotations FROM-CACHE
+> Task :i18n-mika:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :presentation-core:mapReleaseSourceSetPaths
+> Task :i18n-mika:mergeReleaseJavaResource
+> Task :i18n-mika:mapReleaseSourceSetPaths
+> Task :i18n-mika:syncReleaseLibJars FROM-CACHE
+> Task :app:mergeDebugAssets
+> Task :presentation-core:syncReleaseLibJars FROM-CACHE
+> Task :domain:processReleaseJavaRes
+> Task :app:compressDebugAssets FROM-CACHE
+> Task :presentation-core:bundleReleaseAar
+> Task :app:l8DexDesugarLibDebug FROM-CACHE
+> Task :app:desugarDebugFileDependencies FROM-CACHE
+> Task :i18n-mika:bundleReleaseAar
+> Task :domain:extractReleaseAnnotations FROM-CACHE
+> Task :domain:mergeReleaseConsumerProguardFiles
+> Task :i18n:bundleReleaseAar
+> Task :domain:mapReleaseSourceSetPaths
+> Task :domain:mergeReleaseJavaResource
+> Task :app:mergeDebugJniLibFolders
+> Task :app:checkDebugDuplicateClasses
+> Task :source-local:compileDebugKotlinAndroid FROM-CACHE
+> Task :source-local:compileDebugJavaWithJavac NO-SOURCE
+> Task :source-local:bundleLibCompileToJarDebug
+> Task :source-local:bundleLibRuntimeToJarDebug
+> Task :source-local:processDebugJavaRes
+> Task :core-metadata:mergeReleaseResources FROM-CACHE
+> Task :app:mergeDebugNativeLibs
+> Task :source-local:extractDebugAnnotations FROM-CACHE
+> Task :source-local:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :source-local:mergeDebugConsumerProguardFiles
+> Task :source-local:bundleLibRuntimeToDirDebug
+> Task :i18n:mergeReleaseResources FROM-CACHE
+> Task :source-local:mergeDebugJavaResource
+> Task :source-local:syncDebugLibJars FROM-CACHE
+> Task :source-local:bundleDebugAar
+> Task :source-local:assembleDebug
+> Task :core-metadata:compileReleaseKotlin FROM-CACHE
+> Task :core-metadata:compileReleaseJavaWithJavac NO-SOURCE
+> Task :domain:mergeReleaseResources FROM-CACHE
+> Task :core-metadata:bundleLibCompileToJarRelease
+> Task :data:mergeReleaseResources FROM-CACHE
+> Task :i18n-mika:mergeReleaseResources FROM-CACHE
+> Task :core-metadata:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :core-metadata:exportReleaseConsumerProguardFiles
+> Task :domain:syncReleaseLibJars FROM-CACHE
+> Task :core-metadata:bundleLibRuntimeToJarRelease
+> Task :core-metadata:processReleaseJavaRes
+> Task :core-metadata:extractReleaseAnnotations FROM-CACHE
+> Task :core-metadata:mergeReleaseConsumerProguardFiles
+> Task :domain:bundleReleaseAar
+> Task :core-metadata:mergeReleaseJavaResource
+> Task :i18n:verifyReleaseResources FROM-CACHE
+> Task :i18n:assembleRelease
+> Task :source-local:compileReleaseKotlinAndroid FROM-CACHE
+> Task :source-local:compileReleaseJavaWithJavac NO-SOURCE
+> Task :source-local:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :source-local:exportReleaseConsumerProguardFiles
+> Task :i18n-mika:verifyReleaseResources FROM-CACHE
+> Task :source-local:bundleLibRuntimeToJarRelease
+> Task :source-local:bundleLibCompileToJarRelease
+> Task :i18n-mika:assembleRelease
+> Task :source-local:processReleaseJavaRes
+> Task :source-local:extractReleaseAnnotations FROM-CACHE
+> Task :source-local:mergeReleaseConsumerProguardFiles
+> Task :source-api:extractReleaseAnnotations FROM-CACHE
+> Task :source-local:mergeReleaseJavaResource
+> Task :source-api:mergeReleaseConsumerProguardFiles
+> Task :source-local:syncReleaseLibJars FROM-CACHE
+> Task :source-api:mapReleaseSourceSetPaths
+> Task :source-api:mergeReleaseJavaResource
+> Task :source-local:bundleReleaseAar
+> Task :source-local:mapReleaseSourceSetPaths
+> Task :presentation-widget:mergeReleaseResources FROM-CACHE
+> Task :core-metadata:verifyReleaseResources FROM-CACHE
+> Task :core-metadata:syncReleaseLibJars FROM-CACHE
+> Task :core-metadata:bundleReleaseAar
+> Task :core-metadata:assembleRelease
+> Task :core:common:extractReleaseAnnotations FROM-CACHE
+> Task :core:common:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :core:common:mergeReleaseJavaResource
+> Task :core:common:syncReleaseLibJars FROM-CACHE
+> Task :core:common:bundleReleaseAar
+> Task :domain:verifyReleaseResources FROM-CACHE
+> Task :domain:assembleRelease
+> Task :core:common:mapReleaseSourceSetPaths
+> Task :presentation-widget:compileDebugKotlin FROM-CACHE
+> Task :presentation-widget:compileDebugJavaWithJavac NO-SOURCE
+> Task :presentation-widget:bundleLibCompileToJarDebug
+> Task :presentation-widget:bundleLibRuntimeToJarDebug
+> Task :app:mergeExtDexDebug FROM-CACHE
+> Task :presentation-widget:processDebugJavaRes
+> Task :data:compileDebugKotlin FROM-CACHE
+> Task :data:compileDebugJavaWithJavac NO-SOURCE
+> Task :presentation-widget:bundleLibRuntimeToDirDebug
+> Task :presentation-core:mergeReleaseResources FROM-CACHE
+> Task :data:bundleLibCompileToJarDebug
+> Task :data:bundleLibRuntimeToJarDebug
+> Task :source-api:mergeReleaseResources FROM-CACHE
+> Task :source-local:mergeReleaseResources FROM-CACHE
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:stripDebugDebugSymbols
+> Task :presentation-widget:extractDebugAnnotations FROM-CACHE
+> Task :presentation-widget:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :presentation-widget:mergeDebugConsumerProguardFiles
+> Task :source-api:syncReleaseLibJars FROM-CACHE
+> Task :presentation-widget:mergeDebugJavaResource
+> Task :presentation-widget:syncDebugLibJars FROM-CACHE
+> Task :data:processDebugJavaRes
+> Task :presentation-widget:bundleDebugAar
+> Task :presentation-widget:assembleDebug
+> Task :app:mergeReleaseArtProfile
+> Task :data:extractDebugAnnotations FROM-CACHE
+> Task :data:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :data:mergeDebugConsumerProguardFiles
+> Task :core:common:mergeReleaseResources FROM-CACHE
+> Task :data:mergeDebugJavaResource
+> Task :source-api:bundleReleaseAar
+> Task :presentation-widget:compileReleaseKotlin FROM-CACHE
+> Task :presentation-widget:compileReleaseJavaWithJavac NO-SOURCE
+> Task :presentation-widget:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :presentation-widget:exportReleaseConsumerProguardFiles
+> Task :presentation-widget:bundleLibCompileToJarRelease
+> Task :presentation-widget:bundleLibRuntimeToJarRelease
+> Task :presentation-widget:processReleaseJavaRes
+> Task :presentation-widget:extractReleaseAnnotations FROM-CACHE
+> Task :presentation-widget:mergeReleaseConsumerProguardFiles
+> Task :presentation-widget:mergeReleaseJavaResource
+> Task :presentation-widget:syncReleaseLibJars FROM-CACHE
+> Task :presentation-core:verifyReleaseResources FROM-CACHE
+> Task :presentation-core:assembleRelease
+> Task :app:mergeReleaseNativeLibs
+> Task :presentation-widget:bundleReleaseAar
+
+> Task :source-api:verifyReleaseResources
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-da\values-da.xml:320: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:888: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:774: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:902: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:793: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:823: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:842: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:1297: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+
+> Task :data:compileReleaseKotlin FROM-CACHE
+> Task :data:syncDebugLibJars FROM-CACHE
+> Task :data:bundleLibRuntimeToDirDebug
+> Task :i18n:preDebugUnitTestBuild UP-TO-DATE
+
+> Task :source-api:verifyReleaseResources
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ceb\values-ceb.xml:395: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ca\values-ca.xml:779: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:593: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:909: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:822: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:841: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:639: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:848: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-hi\values-hi.xml:701: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-eu\values-eu.xml:570: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-hu\values-hu.xml:768: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:708: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:926: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:849: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:868: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:714: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-kn\values-kn.xml:480: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:966: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-lv\values-lv.xml:720: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+
+> Task :data:bundleDebugAar
+> Task :i18n:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :data:assembleDebug
+> Task :data:compileReleaseJavaWithJavac NO-SOURCE
+> Task :data:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+
+> Task :source-local:verifyReleaseResources
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-bn\values-bn.xml:675: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:888: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-am\values-am.xml:302: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:902: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:1297: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ca\values-ca.xml:779: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:801: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:820: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-lt\values-lt.xml:665: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-eu\values-eu.xml:570: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-pl\values-pl.xml:817: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-kk\values-kk.xml:683: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-sah\values-sah.xml:357: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:849: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:868: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-sa\values-sa.xml:543: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:745: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:756: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:1111: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-kn\values-kn.xml:480: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:829: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:848: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-lv\values-lv.xml:720: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-nb-rNO\values-nb-rNO.xml:717: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:867: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:886: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:774: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:793: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:823: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:842: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-cv\values-cv.xml:565: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ceb\values-ceb.xml:395: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:593: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:909: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:757: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:768: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-hi\values-hi.xml:701: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:523: Multiple substitutions specified in non-positional format of string resource string/episode_download_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:524: Multiple substitutions specified in non-positional format of string resource string/episode_downloading_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-da\values-da.xml:320: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:827: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:846: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:822: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:841: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:837: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:855: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:1267: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-hu\values-hu.xml:768: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1174: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1181: Multiple substitutions specified in non-positional format of string resource string/player_gesture_seek_indicator. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1194: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1243: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_lang_wo_title. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1245: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_w_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1246: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_wo_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:639: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:848: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:671: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:969: Multiple substitutions specified in non-positional format of string resource string/recent_anime_time. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:982: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rTW\values-zh-rTW.xml:733: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:708: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-nn\values-nn.xml:246: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:926: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-bg\values-bg.xml:618: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-de\values-de.xml:787: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:854: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:873: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+
+> Task :data:exportReleaseConsumerProguardFiles
+
+> Task :source-api:verifyReleaseResources
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-nb-rNO\values-nb-rNO.xml:717: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-nn\values-nn.xml:246: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:837: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:855: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:1267: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:811: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:826: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:1204: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:867: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:886: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:773: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:792: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-am\values-am.xml:302: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-cv\values-cv.xml:565: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:757: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:768: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:523: Multiple substitutions specified in non-positional format of string resource string/episode_download_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:524: Multiple substitutions specified in non-positional format of string resource string/episode_downloading_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:827: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:846: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:671: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:969: Multiple substitutions specified in non-positional format of string resource string/recent_anime_time. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:982: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-lt\values-lt.xml:665: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1174: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1181: Multiple substitutions specified in non-positional format of string resource string/player_gesture_seek_indicator. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1194: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1243: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_lang_wo_title. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1245: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_w_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1246: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_wo_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rTW\values-zh-rTW.xml:733: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-pl\values-pl.xml:817: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-bg\values-bg.xml:618: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-sah\values-sah.xml:357: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-de\values-de.xml:787: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:854: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:873: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:829: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:848: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ms\values-ms.xml:729: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:838: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:857: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-sq\values-sq.xml:638: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-th\values-th.xml:765: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-vi\values-vi.xml:728: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-bn\values-bn.xml:675: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:801: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:820: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-kk\values-kk.xml:683: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-sa\values-sa.xml:543: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:745: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:756: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-api\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:1111: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+
+> Task :data:bundleLibRuntimeToJarRelease
+> Task :data:bundleLibCompileToJarRelease
+
+> Task :core:common:verifyReleaseResources
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-bn\values-bn.xml:675: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:801: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:820: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-kk\values-kk.xml:683: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-sa\values-sa.xml:543: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:745: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:756: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:1111: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:774: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:793: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:888: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:902: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:1297: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ca\values-ca.xml:779: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ceb\values-ceb.xml:395: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:639: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:848: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-eu\values-eu.xml:570: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:849: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:868: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:708: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:926: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:823: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:842: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-kn\values-kn.xml:480: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:714: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:966: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:593: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-lv\values-lv.xml:720: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:909: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-nb-rNO\values-nb-rNO.xml:717: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-hi\values-hi.xml:701: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-cv\values-cv.xml:565: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:867: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:886: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:757: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:768: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:811: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:826: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:1204: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-am\values-am.xml:302: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:523: Multiple substitutions specified in non-positional format of string resource string/episode_download_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:837: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:855: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:1267: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:773: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:792: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:524: Multiple substitutions specified in non-positional format of string resource string/episode_downloading_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:827: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:846: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-da\values-da.xml:320: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-lt\values-lt.xml:665: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1174: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1181: Multiple substitutions specified in non-positional format of string resource string/player_gesture_seek_indicator. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1194: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1243: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_lang_wo_title. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1245: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_w_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:1246: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_wo_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:822: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:841: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:671: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-bg\values-bg.xml:618: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:969: Multiple substitutions specified in non-positional format of string resource string/recent_anime_time. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:982: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-de\values-de.xml:787: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-hu\values-hu.xml:768: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-pl\values-pl.xml:817: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-nn\values-nn.xml:246: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-sah\values-sah.xml:357: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rTW\values-zh-rTW.xml:733: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:854: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:873: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ms\values-ms.xml:729: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:838: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:857: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:829: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:848: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-sq\values-sq.xml:638: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-th\values-th.xml:765: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\core\common\build\intermediates\merged_res\release\mergeReleaseResources\values-vi\values-vi.xml:728: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+
+> Task :data:processReleaseJavaRes
+> Task :data:extractReleaseAnnotations FROM-CACHE
+> Task :data:mergeReleaseConsumerProguardFiles
+> Task :data:mergeReleaseJavaResource
+> Task :data:syncReleaseLibJars FROM-CACHE
+
+> Task :source-local:verifyReleaseResources
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ms\values-ms.xml:729: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:714: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:966: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:838: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:857: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-sq\values-sq.xml:638: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:811: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:826: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:1204: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-th\values-th.xml:765: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-vi\values-vi.xml:728: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:773: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\source-local\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:792: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+
+> Task :i18n:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :i18n:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :i18n:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :i18n:processDebugUnitTestJavaRes NO-SOURCE
+> Task :i18n:testDebugUnitTest NO-SOURCE
+> Task :i18n-mika:preDebugUnitTestBuild UP-TO-DATE
+> Task :i18n-mika:generateDebugUnitTestStubRFile FROM-CACHE
+> Task :i18n-mika:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :i18n-mika:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :i18n-mika:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :i18n-mika:processDebugUnitTestJavaRes NO-SOURCE
+> Task :i18n-mika:testDebugUnitTest NO-SOURCE
+> Task :data:bundleReleaseAar
+> Task :presentation-widget:compileDebugUnitTestKotlin NO-SOURCE
+> Task :presentation-widget:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :presentation-widget:processDebugUnitTestJavaRes NO-SOURCE
+> Task :presentation-widget:testDebugUnitTest NO-SOURCE
+> Task :source-local:compileDebugUnitTestKotlinAndroid NO-SOURCE
+> Task :source-local:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :source-local:processDebugUnitTestJavaRes NO-SOURCE
+> Task :source-local:testDebugUnitTest NO-SOURCE
+> Task :source-local:bundleDebugLocalLintAar
+> Task :presentation-widget:bundleDebugLocalLintAar
+> Task :i18n:bundleDebugLocalLintAar
+> Task :i18n-mika:bundleDebugLocalLintAar
+> Task :domain:bundleDebugLocalLintAar
+> Task :domain:createFullJarDebug
+> Task :i18n:createFullJarDebug
+> Task :i18n:writeDebugLintModelMetadata
+> Task :i18n-mika:createFullJarDebug
+> Task :i18n-mika:writeDebugLintModelMetadata
+> Task :presentation-widget:createFullJarDebug
+> Task :source-local:createFullJarDebug
+> Task :i18n:extractProguardFiles
+> Task :data:verifyReleaseResources FROM-CACHE
+> Task :data:assembleRelease
+> Task :data:compileDebugUnitTestKotlin NO-SOURCE
+> Task :data:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :data:processDebugUnitTestJavaRes NO-SOURCE
+> Task :data:testDebugUnitTest NO-SOURCE
+> Task :data:bundleDebugLocalLintAar
+> Task :data:createFullJarDebug
+> Task :i18n-mika:extractProguardFiles
+
+> Task :presentation-widget:verifyReleaseResources
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:1043: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:1057: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ar\values-ar.xml:1454: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:4010: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:4017: Multiple substitutions specified in non-positional format of string resource string/player_gesture_seek_indicator. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:4030: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:4079: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_lang_wo_title. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:4081: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_w_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values\values.xml:4082: Multiple substitutions specified in non-positional format of string resource string/player_sheets_track_title_wo_lang. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-am\values-am.xml:456: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:548: Multiple substitutions specified in non-positional format of string resource string/episode_download_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:549: Multiple substitutions specified in non-positional format of string resource string/episode_downloading_progress. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:979: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-hr\values-hr.xml:998: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-bn\values-bn.xml:828: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-da\values-da.xml:474: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:886: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:901: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-pt\values-pt.xml:1281: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:973: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fr\values-fr.xml:992: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-bg\values-bg.xml:772: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-hi\values-hi.xml:854: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:1000: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-it\values-it.xml:1019: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:1020: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-uk\values-uk.xml:1039: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-kn\values-kn.xml:634: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-lt\values-lt.xml:821: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-sa\values-sa.xml:543: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-sq\values-sq.xml:792: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-de\values-de.xml:938: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-th\values-th.xml:918: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:1005: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-es\values-es.xml:1024: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:861: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-iw\values-iw.xml:1081: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:865: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ko\values-ko.xml:1119: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-lv\values-lv.xml:874: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-nb-rNO\values-nb-rNO.xml:717: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-pl\values-pl.xml:970: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-sah\values-sah.xml:357: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:897: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:908: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-sr\values-sr.xml:1265: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:980: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-tr\values-tr.xml:999: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ceb\values-ceb.xml:395: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:790: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fa\values-fa.xml:1001: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:976: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-cs\values-cs.xml:995: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:925: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-as\values-as.xml:944: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ca\values-ca.xml:930: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:744: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fi\values-fi.xml:1062: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-eu\values-eu.xml:723: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:952: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-in\values-in.xml:971: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-hu\values-hu.xml:921: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-kk\values-kk.xml:836: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ms\values-ms.xml:882: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-nn\values-nn.xml:246: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:822: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:1122: Multiple substitutions specified in non-positional format of string resource string/recent_anime_time. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ta\values-ta.xml:1135: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:988: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:1006: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-pt-rBR\values-pt-rBR.xml:1420: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rTW\values-zh-rTW.xml:884: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-cv\values-cv.xml:565: Multiple substitutions specified in non-positional format of string resource string/restore_duration. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-vi\values-vi.xml:879: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:924: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-zh-rCN\values-zh-rCN.xml:943: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:757: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-fil\values-fil.xml:768: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:991: Multiple substitutions specified in non-positional format of string resource string/player_aniskip_dontskip_toast. Did you mean to add the formatted="false" attribute?
+D:\Projects\Android\aniyomi\presentation-widget\build\intermediates\merged_res\release\mergeReleaseResources\values-ru\values-ru.xml:1010: Multiple substitutions specified in non-positional format of string resource string/player_sheets_decoder_formatted. Did you mean to add the formatted="false" attribute?
+
+> Task :i18n-mika:generateDebugLintModel
+> Task :i18n:generateDebugLintModel
+> Task :core:common:generateDebugLintModel
+> Task :source-api:generateDebugLintModel
+> Task :core-metadata:generateDebugLintModel
+> Task :domain:generateDebugLintModel
+> Task :app:mergeLibDexDebug FROM-CACHE
+> Task :data:generateDebugLintModel
+> Task :app:expandReleaseL8ArtProfileWildcards FROM-CACHE
+> Task :app:buildKotlinToolingMetadata
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:dataBindingMergeDependencyArtifactsRelease
+> Task :app:generateReleaseResValues FROM-CACHE
+> Task :app:generateReleaseResources FROM-CACHE
+> Task :app:collectDependenciesRelease FROM-CACHE
+> Task :app:prepareLibraryDefinitionsRelease FROM-CACHE
+> Task :app:prepareReleaseShortcutXML
+
+> Task :domain:compileDebugUnitTestKotlin
+
+> Task :app:compileDebugKotlin
+> Task :app:stripReleaseDebugSymbols
+
+> Task :domain:compileDebugUnitTestKotlin FAILED
+
+> Task :source-local:generateDebugLintModel
+> Task :presentation-core:generateDebugLintModel
+> Task :presentation-widget:generateDebugLintModel
+> Task :source-local:assembleRelease
+> Task :core:common:assembleRelease
+> Task :app:mergeReleaseResources FROM-CACHE
+> Task :app:extractReleaseNativeSymbolTables FROM-CACHE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingGenBaseClassesRelease FROM-CACHE
+> Task :app:generateReleaseBuildConfig FROM-CACHE
+> Task :data:generateDebugAndroidTestLintModel
+> Task :app:checkReleaseAarMetadata
+> Task :app:mapReleaseSourceSetPaths
+> Task :data:generateDebugUnitTestLintModel
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease FROM-CACHE
+> Task :core-metadata:generateDebugAndroidTestLintModel
+> Task :app:processReleaseMainManifest FROM-CACHE
+> Task :app:processReleaseManifest FROM-CACHE
+> Task :app:processReleaseManifestForPackage FROM-CACHE
+> Task :core-metadata:generateDebugUnitTestLintModel
+> Task :app:javaPreCompileRelease FROM-CACHE
+> Task :source-api:assembleRelease
+> Task :app:extractProguardFiles
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:compressReleaseAssets FROM-CACHE
+> Task :app:extractReleaseVersionControlInfo
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:generateDebugAndroidTestResValues FROM-CACHE
+> Task :core-metadata:lintAnalyzeDebugAndroidTest
+> Task :core-metadata:lintAnalyzeDebugUnitTest
+> Task :domain:preDebugAndroidTestBuild UP-TO-DATE
+> Task :data:lintAnalyzeDebugAndroidTest
+> Task :i18n:preDebugAndroidTestBuild UP-TO-DATE
+> Task :domain:generateDebugAndroidTestResValues FROM-CACHE
+> Task :i18n:generateDebugAndroidTestResValues FROM-CACHE
+> Task :domain:generateDebugAndroidTestLintModel
+> Task :domain:generateDebugUnitTestLintModel
+> Task :i18n:generateDebugAndroidTestLintModel
+> Task :i18n:lintAnalyzeDebug
+> Task :i18n-mika:lintAnalyzeDebug
+> Task :presentation-widget:assembleRelease
+> Task :i18n:generateDebugUnitTestLintModel
+> Task :app:processReleaseResources
+> Task :data:lintAnalyzeDebugUnitTest
+> Task :domain:lintAnalyzeDebugAndroidTest
+> Task :i18n-mika:preDebugAndroidTestBuild UP-TO-DATE
+> Task :i18n-mika:generateDebugAndroidTestResValues FROM-CACHE
+> Task :i18n-mika:generateDebugAndroidTestLintModel
+> Task :domain:lintAnalyzeDebugUnitTest
+> Task :i18n:lintAnalyzeDebugAndroidTest
+> Task :i18n-mika:generateDebugUnitTestLintModel
+> Task :i18n:lintAnalyzeDebugUnitTest
+> Task :presentation-core:generateDebugAndroidTestLintModel
+> Task :presentation-core:generateDebugUnitTestLintModel
+> Task :i18n-mika:lintAnalyzeDebugUnitTest
+> Task :i18n-mika:lintAnalyzeDebugAndroidTest
+> Task :source-api:generateDebugAndroidTestLintModel
+> Task :source-api:generateDebugUnitTestLintModel
+> Task :presentation-widget:generateDebugAndroidTestLintModel
+> Task :presentation-widget:generateDebugUnitTestLintModel

@@ -3,7 +3,7 @@
     <application>
 
         <receiver
-            android:name="tachiyomi.presentation.widget.entries.manga.MangaUpdatesGridGlanceReceiver"
+            android:name="mika.presentation.widget.entries.manga.MangaUpdatesGridGlanceReceiver"
             android:enabled="@bool/glance_appwidget_available"
             android:exported="false"
             android:label="@string/label_recent_updates">
@@ -17,7 +17,7 @@
         </receiver>
 
         <receiver
-            android:name="tachiyomi.presentation.widget.entries.anime.AnimeUpdatesGridGlanceReceiver"
+            android:name="mika.presentation.widget.entries.anime.AnimeUpdatesGridGlanceReceiver"
             android:enabled="@bool/glance_appwidget_available"
             android:exported="false"
             android:label="@string/label_recent_anime_updates">
@@ -30,7 +30,7 @@
         </receiver>
 
         <receiver
-            android:name="tachiyomi.presentation.widget.entries.manga.MangaUpdatesGridCoverScreenGlanceReceiver"
+            android:name="mika.presentation.widget.entries.manga.MangaUpdatesGridCoverScreenGlanceReceiver"
             android:enabled="@bool/glance_appwidget_available"
             android:exported="false"
             android:label="@string/label_recent_updates">
@@ -50,7 +50,7 @@
         </receiver>
 
         <receiver
-            android:name="tachiyomi.presentation.widget.entries.anime.AnimeUpdatesGridCoverScreenGlanceReceiver"
+            android:name="mika.presentation.widget.entries.anime.AnimeUpdatesGridCoverScreenGlanceReceiver"
             android:enabled="@bool/glance_appwidget_available"
             android:exported="false"
             android:label="@string/label_recent_anime_updates">

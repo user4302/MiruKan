@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "eu.kanade.tachiyomi.core.common"
+    namespace = "com.user4302.mika.core.common"
 }
 
 kotlin {
@@ -19,6 +19,7 @@ kotlin {
 
 dependencies {
     implementation(projects.i18n)
+    implementation(projects.i18nMika)
 
     api(libs.logcat)
 
@@ -50,7 +51,7 @@ dependencies {
     implementation(libs.bundles.js.engine)
 
     // FFmpeg-kit
-    implementation(aniyomilibs.ffmpeg.kit)
+    implementation(mikalibs.ffmpeg.kit)
 
     // Tests
     testImplementation(libs.bundles.test)

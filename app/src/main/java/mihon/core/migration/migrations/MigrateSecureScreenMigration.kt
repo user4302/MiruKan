@@ -2,9 +2,9 @@ package mihon.core.migration.migrations
 
 import android.app.Application
 import androidx.preference.PreferenceManager
-import eu.kanade.domain.base.BasePreferences
-import eu.kanade.tachiyomi.core.security.SecurityPreferences
-import eu.kanade.tachiyomi.util.system.DeviceUtil
+import com.user4302.domain.base.BasePreferences
+import com.user4302.mika.core.security.SecurityPreferences
+import com.user4302.mika.util.system.DeviceUtil
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
 

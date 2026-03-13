@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "tachiyomi.macrobenchmark"
+    namespace = "mika.macrobenchmark"
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

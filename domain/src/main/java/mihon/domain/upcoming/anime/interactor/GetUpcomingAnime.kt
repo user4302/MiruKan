@@ -1,9 +1,9 @@
 package mihon.domain.upcoming.anime.interactor
 
-import eu.kanade.tachiyomi.animesource.model.SAnime
+import com.user4302.mika.animesource.model.SAnime
+import com.user4302.mika.domain.entries.anime.model.Anime
+import com.user4302.mika.domain.entries.anime.repository.AnimeRepository
 import kotlinx.coroutines.flow.Flow
-import tachiyomi.domain.entries.anime.model.Anime
-import tachiyomi.domain.entries.anime.repository.AnimeRepository
 
 class GetUpcomingAnime(
     private val animeRepository: AnimeRepository,

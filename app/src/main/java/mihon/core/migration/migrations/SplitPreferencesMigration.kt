@@ -3,7 +3,7 @@ package mihon.core.migration.migrations
 import android.app.Application
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import eu.kanade.domain.ui.UiPreferences
+import com.user4302.domain.ui.UiPreferences
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
 

@@ -1,0 +1,32 @@
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:4:38 Unresolved reference 'preference'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:5:26 Unresolved reference 'domain'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:11:23 Unresolved reference 'Source'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:13:24 Unresolved reference 'id'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:13:41 Unresolved reference 'it'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:14:17 Unresolved reference 'it'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:14:29 Unresolved reference 'id'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:16:17 Unresolved reference 'it'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/com/user4302/mika/app/domain/source/manga/interactor/ToggleExcludeFromMangaDataSaver.kt:16:29 Unresolved reference 'id'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:12:39 Unresolved reference 'Response'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:16:27 Unresolved reference 'injectAll'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:47:30 Operator '!=' cannot be applied to 'MatchGroup' and 'SourcePreferences.DataSaver'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:47:120 Unresolved reference 'orEmpty'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:50:12 'when' expression must be exhaustive. Add an 'else' branch.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:51:9 Incompatible types 'MatchGroup?' and 'SourcePreferences.DataSaver'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:52:9 Incompatible types 'MatchGroup?' and 'SourcePreferences.DataSaver'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:53:9 Incompatible types 'MatchGroup?' and 'SourcePreferences.DataSaver'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:54:9 Incompatible types 'MatchGroup?' and 'SourcePreferences.DataSaver'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:59:71 None of the following candidates is applicable:
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:69:52 Unresolved reference 'not' for operator '!'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:71:92 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:78:56 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:92:17 Unresolved reference 'Preference'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:92:65 Unresolved reference 'Preference'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:92:65 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:92:68 No value passed for parameter 'name'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:104:88 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:111:52 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:124:17 Unresolved reference 'not' for operator '!'.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:132:17 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:155:88 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.
+e: file:///D:/Projects/Android/aniyomi/app/src/main/java/mika/util/DataSaver.kt:162:52 Condition type mismatch: inferred type is 'MatchGroup?' but 'Boolean' was expected.

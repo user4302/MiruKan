@@ -4,12 +4,12 @@ import android.app.Application
 import android.content.pm.ActivityInfo
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import eu.kanade.tachiyomi.ui.player.PlayerOrientation
-import eu.kanade.tachiyomi.ui.player.settings.PlayerPreferences
+import com.user4302.mika.core.common.preference.PreferenceStore
+import com.user4302.mika.core.common.preference.getEnum
+import com.user4302.mika.ui.player.PlayerOrientation
+import com.user4302.mika.ui.player.settings.PlayerPreferences
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.PreferenceStore
-import tachiyomi.core.common.preference.getEnum
 
 class VideoOrientationMigration : Migration {
     override val version = 127f

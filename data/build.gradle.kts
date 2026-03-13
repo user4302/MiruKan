@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "tachiyomi.data"
+    namespace = "com.user4302.mika.data"
 
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")
@@ -15,13 +15,13 @@ android {
     sqldelight {
         databases {
             create("Database") {
-                packageName.set("tachiyomi.data")
+                packageName.set("com.user4302.mika.data")
                 dialect(libs.sqldelight.dialects.sql)
                 schemaOutputDirectory.set(project.file("./src/main/sqldelight"))
                 srcDirs.from(project.file("./src/main/sqldelight"))
             }
             create("AnimeDatabase") {
-                packageName.set("tachiyomi.mi.data")
+                packageName.set("com.user4302.mika.data.anime")
                 dialect(libs.sqldelight.dialects.sql)
                 schemaOutputDirectory.set(project.file("./src/main/sqldelightanime"))
                 srcDirs.from(project.file("./src/main/sqldelightanime"))

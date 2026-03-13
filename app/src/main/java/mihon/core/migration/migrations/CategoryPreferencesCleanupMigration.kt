@@ -1,12 +1,12 @@
 package mihon.core.migration.migrations
 
+import com.user4302.mika.core.common.util.lang.withIOContext
+import com.user4302.mika.domain.category.anime.interactor.GetAnimeCategories
+import com.user4302.mika.domain.category.manga.interactor.GetMangaCategories
+import com.user4302.mika.domain.download.service.DownloadPreferences
+import com.user4302.mika.domain.library.service.LibraryPreferences
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.util.lang.withIOContext
-import tachiyomi.domain.category.anime.interactor.GetAnimeCategories
-import tachiyomi.domain.category.manga.interactor.GetMangaCategories
-import tachiyomi.domain.download.service.DownloadPreferences
-import tachiyomi.domain.library.service.LibraryPreferences
 
 class CategoryPreferencesCleanupMigration : Migration {
     override val version: Float = 129f

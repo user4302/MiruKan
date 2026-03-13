@@ -2,11 +2,11 @@ package mihon.core.migration.migrations
 
 import android.app.Application
 import androidx.preference.PreferenceManager
+import com.user4302.mika.core.common.preference.minusAssign
+import com.user4302.mika.domain.library.service.LibraryPreferences
+import com.user4302.mika.domain.library.service.LibraryPreferences.Companion.ENTRY_NON_COMPLETED
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.minusAssign
-import tachiyomi.domain.library.service.LibraryPreferences
-import tachiyomi.domain.library.service.LibraryPreferences.Companion.ENTRY_NON_COMPLETED
 
 class CombineUpdateRestrictionMigration : Migration {
     override val version = 72f

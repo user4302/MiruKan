@@ -1,5 +1,5 @@
-import eu.kanade.tachiyomi.animesource.model.AnimeUpdateStrategy;
-import eu.kanade.tachiyomi.animesource.model.FetchType;
+import com.user4302.mika.animesource.model.AnimeUpdateStrategy;
+import com.user4302.mika.animesource.model.FetchType;
 import kotlin.Boolean;
 import kotlin.String;
 import kotlin.collections.List;

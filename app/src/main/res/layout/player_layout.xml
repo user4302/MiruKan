@@ -4,7 +4,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:fitsSystemWindows="false">
 
-<eu.kanade.tachiyomi.ui.player.AniyomiMPVView
+<com.user4302.mika.ui.player.MikaMPVView
     android:id="@+id/player"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />

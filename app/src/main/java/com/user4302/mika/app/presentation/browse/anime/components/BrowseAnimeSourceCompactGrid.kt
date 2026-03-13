@@ -1,0 +1,82 @@
+package com.user4302.presentation.browse.anime.components
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.unit.dp
+import androidx.paging.LoadState
+import androidx.paging.compose.LazyPagingItems
+import com.user4302.mika.domain.entries.anime.model.Anime
+import com.user4302.mika.domain.entries.anime.model.AnimeCover
+import com.user4302.mika.presentation.core.util.plus
+import com.user4302.presentation.browse.BrowseSourceLoadingItem
+import com.user4302.presentation.browse.InLibraryBadge
+import com.user4302.presentation.library.components.CommonEntryItemDefaults
+import com.user4302.presentation.library.components.EntryCompactGridItem
+import kotlinx.coroutines.flow.StateFlow
+
+@Composable
+fun BrowseAnimeSourceCompactGrid(
+    animeList: LazyPagingItems<StateFlow<Anime>>,
+    columns: GridCells,
+    contentPadding: PaddingValues,
+    onAnimeClick: (Anime) -> Unit,
+    onAnimeLongClick: (Anime) -> Unit,
+) {
+    LazyVerticalGrid(
+        columns = columns,
+        contentPadding = contentPadding + PaddingValues(8.dp),
+        verticalArrangement = Arrangement.spacedBy(CommonEntryItemDefaults.GridVerticalSpacer),
+        horizontalArrangement = Arrangement.spacedBy(CommonEntryItemDefaults.GridHorizontalSpacer),
+    ) {
+        if (animeList.loadState.prepend is LoadState.Loading) {
+            item(span = { GridItemSpan(maxLineSpan) }) {
+                BrowseSourceLoadingItem()
+            }
+        }
+
+        items(count = animeList.itemCount) { index ->
+            val anime by animeList[index]?.collectAsState() ?: return@items
+            BrowseAnimeSourceCompactGridItem(
+                anime = anime,
+                onClick = { onAnimeClick(anime) },
+                onLongClick = { onAnimeLongClick(anime) },
+            )
+        }
+
+        if (animeList.loadState.refresh is LoadState.Loading || animeList.loadState.append is LoadState.Loading) {
+            item(span = { GridItemSpan(maxLineSpan) }) {
+                BrowseSourceLoadingItem()
+            }
+        }
+    }
+}
+
+@Composable
+private fun BrowseAnimeSourceCompactGridItem(
+    anime: Anime,
+    onClick: () -> Unit = {},
+    onLongClick: () -> Unit = onClick,
+) {
+    EntryCompactGridItem(
+        title = anime.title,
+        coverData = AnimeCover(
+            animeId = anime.id,
+            sourceId = anime.source,
+            isAnimeFavorite = anime.favorite,
+            url = anime.thumbnailUrl,
+            lastModified = anime.coverLastModified,
+        ),
+        coverAlpha = if (anime.favorite) CommonEntryItemDefaults.BrowseFavoriteCoverAlpha else 1f,
+        coverBadgeStart = {
+            InLibraryBadge(enabled = anime.favorite)
+        },
+        onLongClick = onLongClick,
+        onClick = onClick,
+    )
+}

@@ -1,0 +1,15 @@
+package com.user4302.mika.presentation.widget.entries.anime
+
+import android.annotation.SuppressLint
+import androidx.compose.ui.unit.dp
+import androidx.glance.ImageProvider
+import androidx.glance.unit.ColorProvider
+import com.user4302.mika.presentation.widget.R
+
+class AnimeUpdatesGridGlanceWidget : BaseAnimeUpdatesGridGlanceWidget() {
+    @SuppressLint("RestrictedApi")
+    override val foreground = ColorProvider(R.color.appwidget_on_secondary_container)
+    override val background = ImageProvider(R.drawable.appwidget_background)
+    override val topPadding = 0.dp
+    override val bottomPadding = 0.dp
+}

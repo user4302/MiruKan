@@ -14,10 +14,10 @@ plugins {
 shortcutHelper.setFilePath("./shortcuts.xml")
 
 android {
-    namespace = "eu.kanade.tachiyomi"
+    namespace = "com.user4302.mika"
 
     defaultConfig {
-        applicationId = "xyz.jmir.tachiyomi.mi"
+        applicationId = "com.user4302.mika"
 
         versionCode = 131
         versionName = "0.18.1.2"
@@ -182,7 +182,7 @@ kotlin {
 
 dependencies {
     implementation(projects.i18n)
-    implementation(projects.i18nAniyomi)
+    implementation(projects.i18nMika)
     implementation(projects.core.archive)
     implementation(projects.core.common)
     implementation(projects.coreMetadata)
@@ -222,13 +222,13 @@ dependencies {
     implementation(androidx.appcompat)
     implementation(androidx.biometricktx)
     implementation(androidx.constraintlayout)
-    implementation(aniyomilibs.compose.constraintlayout)
+    implementation(mikalibs.compose.constraintlayout)
     implementation(androidx.corektx)
     implementation(androidx.splashscreen)
     implementation(androidx.recyclerview)
     implementation(androidx.viewpager)
     implementation(androidx.profileinstaller)
-    implementation(aniyomilibs.mediasession)
+    implementation(mikalibs.mediasession)
 
     implementation(androidx.bundles.lifecycle)
 
@@ -301,14 +301,14 @@ dependencies {
     testImplementation(kotlinx.coroutines.test)
 
     // mpv-android
-    implementation(aniyomilibs.aniyomi.mpv)
+    implementation(mikalibs.aniyomi.mpv)
     // FFmpeg-kit
-    implementation(aniyomilibs.ffmpeg.kit)
-    implementation(aniyomilibs.arthenica.smartexceptions)
+    implementation(mikalibs.ffmpeg.kit)
+    implementation(mikalibs.arthenica.smartexceptions)
     // seeker seek bar
-    implementation(aniyomilibs.seeker)
+    implementation(mikalibs.seeker)
     // true type parser
-    implementation(aniyomilibs.truetypeparser)
+    implementation(mikalibs.truetypeparser)
 }
 
 androidComponents {

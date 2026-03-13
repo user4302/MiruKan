@@ -12,10 +12,10 @@ dependencyResolutionManagement {
         create("kotlinx") {
             from(files("../gradle/kotlinx.versions.toml"))
         }
-        create("aniyomilibs") {
-            from(files("../gradle/aniyomi.versions.toml"))
+        create("mikalibs") {
+            from(files("../gradle/mika.versions.toml"))
         }
     }
 }
 
-rootProject.name = "Aniyomi"
+rootProject.name = "MiKa"

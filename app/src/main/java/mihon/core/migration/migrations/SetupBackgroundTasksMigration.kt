@@ -1,8 +1,8 @@
 package mihon.core.migration.migrations
 
 import android.app.Application
-import eu.kanade.tachiyomi.data.library.anime.AnimeLibraryUpdateJob
-import eu.kanade.tachiyomi.data.library.manga.MangaLibraryUpdateJob
+import com.user4302.mika.data.library.anime.AnimeLibraryUpdateJob
+import com.user4302.mika.data.library.manga.MangaLibraryUpdateJob
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
 

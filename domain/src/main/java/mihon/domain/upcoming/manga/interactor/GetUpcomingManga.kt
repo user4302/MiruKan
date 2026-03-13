@@ -1,9 +1,9 @@
 package mihon.domain.upcoming.manga.interactor
 
-import eu.kanade.tachiyomi.source.model.SManga
+import com.user4302.mika.domain.entries.manga.model.Manga
+import com.user4302.mika.domain.entries.manga.repository.MangaRepository
+import com.user4302.mika.source.model.SManga
 import kotlinx.coroutines.flow.Flow
-import tachiyomi.domain.entries.manga.model.Manga
-import tachiyomi.domain.entries.manga.repository.MangaRepository
 
 class GetUpcomingManga(
     private val mangaRepository: MangaRepository,

@@ -1,11 +1,11 @@
 package mihon.core.migration
 
+import com.user4302.mika.core.common.util.system.logcat
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
-import tachiyomi.core.common.util.system.logcat
 
 class MigrationJobFactory(
     private val migrationContext: MigrationContext,

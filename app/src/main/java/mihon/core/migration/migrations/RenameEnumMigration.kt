@@ -3,9 +3,9 @@ package mihon.core.migration.migrations
 import android.app.Application
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
+import com.user4302.mika.domain.library.service.LibraryPreferences
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.domain.library.service.LibraryPreferences
 
 class RenameEnumMigration : Migration {
     override val version = 81f

@@ -1,0 +1,20 @@
+package com.user4302.presentation.track.components
+
+import android.graphics.Color
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import com.user4302.mika.R
+import com.user4302.mika.data.track.Tracker
+import com.user4302.test.DummyTracker
+
+internal class TrackLogoIconPreviewProvider : PreviewParameterProvider<Tracker> {
+
+    override val values: Sequence<Tracker>
+        get() = sequenceOf(
+            DummyTracker(
+                id = 1L,
+                name = "Dummy Tracker",
+                valLogoColor = Color.rgb(18, 25, 35),
+                valLogo = R.drawable.ic_tracker_anilist,
+            ),
+        )
+}

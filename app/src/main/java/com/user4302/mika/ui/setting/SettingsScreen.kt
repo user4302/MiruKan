@@ -1,0 +1,86 @@
+package com.user4302.mika.ui.setting
+
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.Modifier
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.navigator.currentOrThrow
+import com.user4302.mika.presentation.core.components.TwoPanelBox
+import com.user4302.presentation.more.settings.screen.SettingsAppearanceScreen
+import com.user4302.presentation.more.settings.screen.SettingsDataScreen
+import com.user4302.presentation.more.settings.screen.SettingsMainScreen
+import com.user4302.presentation.more.settings.screen.SettingsTrackingScreen
+import com.user4302.presentation.more.settings.screen.about.AboutScreen
+import com.user4302.presentation.util.DefaultNavigatorScreenTransition
+import com.user4302.presentation.util.LocalBackPress
+import com.user4302.presentation.util.Screen
+import com.user4302.presentation.util.isTabletUi
+
+class SettingsScreen(
+    private val destination: Int? = null,
+) : Screen() {
+
+    constructor(destination: Destination) : this(destination.id)
+
+    @Composable
+    override fun Content() {
+        val parentNavigator = LocalNavigator.currentOrThrow
+        if (!isTabletUi()) {
+            Navigator(
+                screen = when (destination) {
+                    Destination.About.id -> AboutScreen
+                    Destination.DataAndStorage.id -> SettingsDataScreen
+                    Destination.Tracking.id -> SettingsTrackingScreen
+                    else -> SettingsMainScreen
+                },
+                content = {
+                    val pop: () -> Unit = {
+                        if (it.canPop) {
+                            it.pop()
+                        } else {
+                            parentNavigator.pop()
+                        }
+                    }
+                    CompositionLocalProvider(LocalBackPress provides pop) {
+                        DefaultNavigatorScreenTransition(navigator = it)
+                    }
+                },
+            )
+        } else {
+            Navigator(
+                screen = when (destination) {
+                    Destination.About.id -> AboutScreen
+                    Destination.DataAndStorage.id -> SettingsDataScreen
+                    Destination.Tracking.id -> SettingsTrackingScreen
+                    else -> SettingsAppearanceScreen
+                },
+            ) {
+                val insets = WindowInsets.systemBars.only(WindowInsetsSides.Horizontal)
+                TwoPanelBox(
+                    modifier = Modifier
+                        .windowInsetsPadding(insets)
+                        .consumeWindowInsets(insets),
+                    startContent = {
+                        CompositionLocalProvider(LocalBackPress provides parentNavigator::pop) {
+                            SettingsMainScreen.Content(twoPane = true)
+                        }
+                    },
+                    endContent = { DefaultNavigatorScreenTransition(navigator = it) },
+                )
+            }
+        }
+    }
+
+    sealed class Destination(val id: Int) {
+        data object About : Destination(0)
+        data object DataAndStorage : Destination(1)
+        data object Tracking : Destination(2)
+    }
+}

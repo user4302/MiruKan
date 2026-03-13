@@ -1,0 +1,82 @@
+package com.user4302.mika.ui.browse.manga.source.globalsearch
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import cafe.adriel.voyager.core.model.rememberScreenModel
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
+import com.user4302.core.util.ifMangaSourcesLoaded
+import com.user4302.mika.presentation.core.screens.LoadingScreen
+import com.user4302.mika.ui.browse.manga.source.browse.BrowseMangaSourceScreen
+import com.user4302.mika.ui.entries.manga.MangaScreen
+import com.user4302.presentation.browse.manga.GlobalMangaSearchScreen
+import com.user4302.presentation.util.Screen
+
+class GlobalMangaSearchScreen(
+    val searchQuery: String = "",
+    private val extensionFilter: String? = null,
+) : Screen() {
+
+    @Composable
+    override fun Content() {
+        if (!ifMangaSourcesLoaded()) {
+            LoadingScreen()
+            return
+        }
+
+        val navigator = LocalNavigator.currentOrThrow
+
+        val screenModel = rememberScreenModel {
+            GlobalMangaSearchScreenModel(
+                initialQuery = searchQuery,
+                initialExtensionFilter = extensionFilter,
+            )
+        }
+        val state by screenModel.state.collectAsState()
+        var showSingleLoadingScreen by remember {
+            mutableStateOf(
+                searchQuery.isNotEmpty() && !extensionFilter.isNullOrEmpty() && state.total == 1,
+            )
+        }
+
+        if (showSingleLoadingScreen) {
+            LoadingScreen()
+
+            LaunchedEffect(state.items) {
+                when (val result = state.items.values.singleOrNull()) {
+                    MangaSearchItemResult.Loading -> return@LaunchedEffect
+                    is MangaSearchItemResult.Success -> {
+                        val manga = result.result.singleOrNull()
+                        if (manga != null) {
+                            navigator.replace(MangaScreen(manga.id, true))
+                        } else {
+                            // Backoff to result screen
+                            showSingleLoadingScreen = false
+                        }
+                    }
+                    else -> showSingleLoadingScreen = false
+                }
+            }
+        } else {
+            GlobalMangaSearchScreen(
+                state = state,
+                navigateUp = navigator::pop,
+                onChangeSearchQuery = screenModel::updateSearchQuery,
+                onSearch = { screenModel.search() },
+                getManga = { screenModel.getManga(it) },
+                onChangeSearchFilter = screenModel::setSourceFilter,
+                onToggleResults = screenModel::toggleFilterResults,
+                onClickSource = {
+                    navigator.push(BrowseMangaSourceScreen(it.id, state.searchQuery))
+                },
+                onClickItem = { navigator.push(MangaScreen(it.id, true)) },
+                onLongClickItem = { navigator.push(MangaScreen(it.id, true)) },
+            )
+        }
+    }
+}

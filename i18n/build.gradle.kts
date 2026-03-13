@@ -30,7 +30,7 @@ kotlin {
 val generatedAndroidResourceDir = generatedBuildDir.resolve("android/res")
 
 android {
-    namespace = "tachiyomi.i18n"
+    namespace = "com.user4302.mika.i18n"
 
     sourceSets {
         val main by getting
@@ -46,7 +46,7 @@ android {
 }
 
 multiplatformResources {
-    resourcesPackage.set("tachiyomi.i18n")
+    resourcesPackage.set("com.user4302.mika.i18n")
 }
 
 tasks {

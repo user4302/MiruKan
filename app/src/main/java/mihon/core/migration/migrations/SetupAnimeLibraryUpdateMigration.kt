@@ -1,7 +1,7 @@
 package mihon.core.migration.migrations
 
 import android.app.Application
-import eu.kanade.tachiyomi.data.library.anime.AnimeLibraryUpdateJob
+import com.user4302.mika.data.library.anime.AnimeLibraryUpdateJob
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
 

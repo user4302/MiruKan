@@ -3,7 +3,7 @@ package mihon.core.migration.migrations
 import android.app.Application
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import eu.kanade.tachiyomi.ui.player.settings.SubtitlePreferences
+import com.user4302.mika.ui.player.settings.SubtitlePreferences
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json

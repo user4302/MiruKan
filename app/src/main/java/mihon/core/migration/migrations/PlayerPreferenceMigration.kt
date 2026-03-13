@@ -3,7 +3,7 @@ package mihon.core.migration.migrations
 import android.app.Application
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import eu.kanade.tachiyomi.ui.player.settings.PlayerPreferences
+import com.user4302.mika.ui.player.settings.PlayerPreferences
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
 

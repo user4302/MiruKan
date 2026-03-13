@@ -1,9 +1,9 @@
 package mihon.core.migration.migrations
 
+import com.user4302.mika.core.common.preference.getAndSet
+import com.user4302.mika.domain.library.service.LibraryPreferences
 import mihon.core.migration.Migration
 import mihon.core.migration.MigrationContext
-import tachiyomi.core.common.preference.getAndSet
-import tachiyomi.domain.library.service.LibraryPreferences
 
 class DontRunJobsMigration : Migration {
     override val version = 105f

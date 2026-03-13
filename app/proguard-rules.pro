@@ -1,7 +1,7 @@
 -dontobfuscate
 
--keep,allowoptimization class eu.kanade.**
--keep,allowoptimization class tachiyomi.**
+-keep,allowoptimization class com.user4302.mika.**
+-keep,allowoptimization class mika.**
 -keep,allowoptimization class mihon.**
 
 # Keep common dependencies used in extensions
@@ -22,12 +22,12 @@
 -keep,allowoptimization class com.arthenica.** { public protected *; }
 
 # From extensions-lib
--keep,allowoptimization class eu.kanade.tachiyomi.network.interceptor.RateLimitInterceptorKt { public protected *; }
--keep,allowoptimization class eu.kanade.tachiyomi.network.interceptor.SpecificHostRateLimitInterceptorKt { public protected *; }
--keep,allowoptimization class eu.kanade.tachiyomi.network.NetworkHelper { public protected *; }
--keep,allowoptimization class eu.kanade.tachiyomi.network.OkHttpExtensionsKt { public protected *; }
--keep,allowoptimization class eu.kanade.tachiyomi.network.RequestsKt { public protected *; }
--keep,allowoptimization class eu.kanade.tachiyomi.AppInfo { public protected *; }
+-keep,allowoptimization class com.user4302.mika.network.interceptor.RateLimitInterceptorKt { public protected *; }
+-keep,allowoptimization class com.user4302.mika.network.interceptor.SpecificHostRateLimitInterceptorKt { public protected *; }
+-keep,allowoptimization class com.user4302.mika.network.NetworkHelper { public protected *; }
+-keep,allowoptimization class com.user4302.mika.network.OkHttpExtensionsKt { public protected *; }
+-keep,allowoptimization class com.user4302.mika.network.RequestsKt { public protected *; }
+-keep,allowoptimization class com.user4302.mika.AppInfo { public protected *; }
 
 ##---------------Begin: proguard configuration for RxJava 1.x  ----------
 -dontwarn sun.misc.**
@@ -64,11 +64,11 @@
     kotlinx.serialization.KSerializer serializer(...);
 }
 
--keep,includedescriptorclasses class eu.kanade.**$$serializer { *; }
--keepclassmembers class eu.kanade.** {
+-keep,includedescriptorclasses class com.user4302.mika.**$$serializer { *; }
+-keepclassmembers class com.user4302.mika.** {
     *** Companion;
 }
--keepclasseswithmembers class eu.kanade.** {
+-keepclasseswithmembers class com.user4302.mika.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
 

@@ -6,8 +6,8 @@ import androidx.compose.runtime.getValue
 import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import eu.kanade.presentation.util.Screen
-import eu.kanade.tachiyomi.ui.entries.anime.AnimeScreen
+import com.user4302.mika.ui.entries.anime.AnimeScreen
+import com.user4302.presentation.util.Screen
 
 class UpcomingAnimeScreen : Screen() {
 
