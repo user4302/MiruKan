@@ -16,11 +16,6 @@ class AnimeDownloadAdapter(val downloadItemListener: DownloadItemListener) : Fle
 ) {
 
     override fun shouldMove(fromPosition: Int, toPosition: Int): Boolean {
-        // Don't let sub-items changing group
-        if (getHeaderOf(getItem(fromPosition)) != getHeaderOf(getItem(toPosition))) {
-            return false
-        }
-
         val item = getItem(fromPosition)
         if (item?.isDraggable != true) {
             return false

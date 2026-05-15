@@ -198,12 +198,8 @@ class AnimeDownloader(
                         .filter {
                             it.status.value <= AnimeDownload.State.DOWNLOADING.value
                         } // Ignore completed downloads, leave them in the queue
-                        .groupBy { it.source }
-                        .toList().take(3) // Concurrently download from 3 different sources
-                        .map { (_, downloads) ->
-                            // Prefer already downloading items to avoid restarting on reorder
-                            downloads.find { it.status == AnimeDownload.State.DOWNLOADING } ?: downloads.first()
-                        }
+                        .take(1)
+                        .toList()
                     emit(activeDownloads)
 
                     if (activeDownloads.isEmpty()) break

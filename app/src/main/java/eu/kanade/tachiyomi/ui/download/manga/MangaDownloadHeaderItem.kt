@@ -3,7 +3,7 @@ package eu.kanade.tachiyomi.ui.download.manga
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import eu.davidea.flexibleadapter.FlexibleAdapter
-import eu.davidea.flexibleadapter.items.AbstractExpandableHeaderItem
+import eu.davidea.flexibleadapter.items.AbstractExpandableItem
 import eu.davidea.flexibleadapter.items.IFlexible
 import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.data.download.manga.model.MangaDownload
@@ -12,7 +12,7 @@ data class MangaDownloadHeaderItem(
     val id: Long,
     val name: String,
     val size: Int,
-) : AbstractExpandableHeaderItem<MangaDownloadHeaderHolder, MangaDownloadItem>() {
+) : AbstractExpandableItem<MangaDownloadHeaderHolder, MangaDownloadItem>() {
 
     override fun getLayoutRes(): Int {
         return R.layout.download_header

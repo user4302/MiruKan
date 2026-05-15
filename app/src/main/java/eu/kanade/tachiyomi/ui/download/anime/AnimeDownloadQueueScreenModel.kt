@@ -22,7 +22,7 @@ class AnimeDownloadQueueScreenModel(
     private val downloadManager: AnimeDownloadManager = Injekt.get(),
 ) : ScreenModel {
 
-    private val _state = MutableStateFlow(emptyList<AnimeDownloadHeaderItem>())
+    private val _state = MutableStateFlow(emptyList<AnimeDownloadItem>())
     val state = _state.asStateFlow()
 
     lateinit var controllerBinding: DownloadListBinding
@@ -45,11 +45,7 @@ class AnimeDownloadQueueScreenModel(
          */
         override fun onItemReleased(position: Int) {
             val adapter = adapter ?: return
-            val downloads = adapter.headerItems.flatMap { header ->
-                adapter.getSectionItems(header).map { item ->
-                    (item as AnimeDownloadItem).download
-                }
-            }
+            val downloads = adapter.currentItems.filterIsInstance<AnimeDownloadItem>().map { it.download }
             reorder(downloads)
         }
 
@@ -64,21 +60,18 @@ class AnimeDownloadQueueScreenModel(
             if (item is AnimeDownloadItem) {
                 when (menuItem.itemId) {
                     R.id.move_to_top, R.id.move_to_bottom -> {
-                        val headerItems = adapter?.headerItems ?: return
-                        val newAnimeDownloads = mutableListOf<AnimeDownload>()
-                        headerItems.forEach { headerItem ->
-                            headerItem as AnimeDownloadHeaderItem
-                            if (headerItem == item.header) {
-                                headerItem.removeSubItem(item)
-                                if (menuItem.itemId == R.id.move_to_top) {
-                                    headerItem.addSubItem(0, item)
-                                } else {
-                                    headerItem.addSubItem(item)
-                                }
+                        val items = adapter?.currentItems?.filterIsInstance<AnimeDownloadItem>()?.toMutableList() ?: return
+                        val index = items.indexOf(item)
+                        if (index != -1) {
+                            items.removeAt(index)
+                            if (menuItem.itemId == R.id.move_to_top) {
+                                val targetIndex = if (items.isNotEmpty() && !items[0].isDraggable) 1 else 0
+                                items.add(targetIndex, item)
+                            } else {
+                                items.add(item)
                             }
-                            newAnimeDownloads.addAll(headerItem.subItems.map { it.download })
+                            reorder(items.map { it.download })
                         }
-                        reorder(newAnimeDownloads)
                     }
                     R.id.move_to_top_series, R.id.move_to_bottom_series -> {
                         val (selectedSeries, otherSeries) = adapter?.currentItems
@@ -113,13 +106,7 @@ class AnimeDownloadQueueScreenModel(
         screenModelScope.launch {
             downloadManager.queueState
                 .map { downloads ->
-                    downloads
-                        .groupBy { it.source }
-                        .map { entry ->
-                            AnimeDownloadHeaderItem(entry.key.id, entry.key.name, entry.value.size).apply {
-                                addSubItems(0, entry.value.map { AnimeDownloadItem(it, this) })
-                            }
-                        }
+                    downloads.map { AnimeDownloadItem(it) }
                 }
                 .collect { newList -> _state.update { newList } }
         }
@@ -164,17 +151,13 @@ class AnimeDownloadQueueScreenModel(
         reverse: Boolean = false,
     ) {
         val adapter = adapter ?: return
-        val newAnimeDownloads = mutableListOf<AnimeDownload>()
-        adapter.headerItems.forEach { headerItem ->
-            headerItem as AnimeDownloadHeaderItem
-            headerItem.subItems = headerItem.subItems.sortedBy(selector).toMutableList().apply {
-                if (reverse) {
-                    reverse()
-                }
-            }
-            newAnimeDownloads.addAll(headerItem.subItems.map { it.download })
+        val items = adapter.currentItems.filterIsInstance<AnimeDownloadItem>().toMutableList()
+        val downloadingItem = if (items.isNotEmpty() && !items[0].isDraggable) items.removeAt(0) else null
+        items.sortWith(if (reverse) compareByDescending(selector) else compareBy(selector))
+        if (downloadingItem != null) {
+            items.add(0, downloadingItem)
         }
-        reorder(newAnimeDownloads)
+        reorder(items.map { it.download })
     }
 
     /**
@@ -188,21 +171,16 @@ class AnimeDownloadQueueScreenModel(
                 // Initial update of the downloaded pages
                 onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
-                updateHeader(download)
             }
             AnimeDownload.State.DOWNLOADED -> {
                 cancelProgressJob(download)
                 onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
-                updateHeader(download)
             }
             AnimeDownload.State.ERROR -> {
                 cancelProgressJob(download)
-                updateHeader(download)
             }
-            else -> {
-                updateHeader(download)
-            }
+            else -> {}
         }
     }
 
@@ -243,15 +221,5 @@ class AnimeDownloadQueueScreenModel(
      */
     private fun getHolder(download: AnimeDownload): AnimeDownloadHolder? {
         return controllerBinding.root.findViewHolderForItemId(download.episode.id) as? AnimeDownloadHolder
-    }
-
-    private fun updateHeader(download: AnimeDownload) {
-        val adapter = adapter ?: return
-        val header = adapter.headerItems.filterIsInstance<AnimeDownloadHeaderItem>()
-            .find { it.id == download.source.id } ?: return
-        val pos = adapter.getGlobalPositionOf(header)
-        if (pos != -1) {
-            adapter.notifyItemChanged(pos)
-        }
     }
 }

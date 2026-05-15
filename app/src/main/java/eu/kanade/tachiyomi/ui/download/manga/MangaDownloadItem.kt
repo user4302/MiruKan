@@ -3,15 +3,14 @@ package eu.kanade.tachiyomi.ui.download.manga
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import eu.davidea.flexibleadapter.FlexibleAdapter
-import eu.davidea.flexibleadapter.items.AbstractSectionableItem
+import eu.davidea.flexibleadapter.items.AbstractFlexibleItem
 import eu.davidea.flexibleadapter.items.IFlexible
 import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.data.download.manga.model.MangaDownload
 
 class MangaDownloadItem(
     val download: MangaDownload,
-    header: MangaDownloadHeaderItem,
-) : AbstractSectionableItem<MangaDownloadHolder, MangaDownloadHeaderItem>(header) {
+) : AbstractFlexibleItem<MangaDownloadHolder>() {
 
     override fun getLayoutRes(): Int {
         return R.layout.download_item

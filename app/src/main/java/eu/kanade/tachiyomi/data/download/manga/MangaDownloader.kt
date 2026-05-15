@@ -217,12 +217,8 @@ class MangaDownloader(
                         .filter {
                             it.status.value <= MangaDownload.State.DOWNLOADING.value
                         } // Ignore completed downloads, leave them in the queue
-                        .groupBy { it.source }
-                        .toList().take(5) // Concurrently download from 5 different sources
-                        .map { (_, downloads) ->
-                            // Prefer already downloading items to avoid restarting on reorder
-                            downloads.find { it.status == MangaDownload.State.DOWNLOADING } ?: downloads.first()
-                        }
+                        .take(1)
+                        .toList()
                     emit(activeDownloads)
 
                     if (activeDownloads.isEmpty()) break
