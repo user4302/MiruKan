@@ -43,6 +43,9 @@ data class AnimeDownload(
             progressStateFlow.value = value
         }
 
+    var totalBytes: Long = 0
+    var bytesDownloaded: Long = 0
+
     /**
      * Updates the status of the download
      *
@@ -51,6 +54,8 @@ data class AnimeDownload(
      * @param done whether progress has completed or not
      */
     override fun update(bytesRead: Long, contentLength: Long, done: Boolean) {
+        bytesDownloaded = bytesRead
+        totalBytes = contentLength
         val newProgress = if (contentLength > 0) {
             (100 * bytesRead / contentLength).toInt()
         } else {

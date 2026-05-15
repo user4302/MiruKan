@@ -537,9 +537,18 @@ class AnimeDownloader(
             if (duration != 0L && outTime > 0) {
                 download.progress = (100 * outTime / duration).toInt()
             }
+            download.bytesDownloaded = s.size
         }
 
         duration = getDuration(ffprobeCommand(video.videoUrl, headerOptions))?.toLong() ?: 0L
+
+        if (video.videoUrl.contains(".m3u8").not()) {
+            try {
+                download.totalBytes = download.source.getVideoSize(video, 3)
+            } catch (e: Exception) {
+                logcat(LogPriority.ERROR, e)
+            }
+        }
 
         suspendCancellableCoroutine { continuation ->
             val session = FFmpegKit.executeWithArgumentsAsync(

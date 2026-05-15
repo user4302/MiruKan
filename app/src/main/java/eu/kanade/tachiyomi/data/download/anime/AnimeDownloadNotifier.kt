@@ -99,8 +99,20 @@ internal class AnimeDownloadNotifier(private val context: Context) {
                 context.stringResource(AYMR.strings.episode_downloading_progress, download.progress)
             }
 
+            val finalProgressText = if (download.bytesDownloaded > 0) {
+                val downloadedSize = android.text.format.Formatter.formatFileSize(context, download.bytesDownloaded)
+                if (download.totalBytes > 0) {
+                    val totalSize = android.text.format.Formatter.formatFileSize(context, download.totalBytes)
+                    context.stringResource(AYMR.strings.episode_download_progress_with_size, downloadingProgressText, downloadedSize, totalSize)
+                } else {
+                    context.stringResource(AYMR.strings.episode_download_progress_with_downloaded_size, downloadingProgressText, downloadedSize)
+                }
+            } else {
+                downloadingProgressText
+            }
+
             if (preferences.hideNotificationContent().get()) {
-                setContentTitle(downloadingProgressText)
+                setContentTitle(finalProgressText)
                 setContentText(null)
             } else {
                 val title = download.anime.title.chop(15)
@@ -110,7 +122,7 @@ internal class AnimeDownloadNotifier(private val context: Context) {
                     "",
                 )
                 setContentTitle("$title - $episode".chop(30))
-                setContentText(downloadingProgressText)
+                setContentText(finalProgressText)
             }
             if (download.progress == 0) {
                 setProgress(100, download.progress, true)

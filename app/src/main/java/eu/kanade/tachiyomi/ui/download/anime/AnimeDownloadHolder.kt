@@ -78,10 +78,23 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
      * Updates the text field of the number of downloaded pages.
      */
     fun notifyDownloadedPages() {
-        binding.downloadProgressText.text = if (download.progress == 0) {
-            view.context.stringResource(MR.strings.update_check_notification_download_in_progress)
+        val context = view.context
+        val progressText = if (download.progress == 0) {
+            context.stringResource(MR.strings.update_check_notification_download_in_progress)
         } else {
-            view.context.stringResource(AYMR.strings.episode_download_progress, download.progress)
+            context.stringResource(AYMR.strings.episode_download_progress, download.progress)
+        }
+
+        if (download.bytesDownloaded > 0) {
+            val downloadedSize = android.text.format.Formatter.formatFileSize(context, download.bytesDownloaded)
+            binding.downloadProgressText.text = if (download.totalBytes > 0) {
+                val totalSize = android.text.format.Formatter.formatFileSize(context, download.totalBytes)
+                context.stringResource(AYMR.strings.episode_download_progress_with_size, progressText, downloadedSize, totalSize)
+            } else {
+                context.stringResource(AYMR.strings.episode_download_progress_with_downloaded_size, progressText, downloadedSize)
+            }
+        } else {
+            binding.downloadProgressText.text = progressText
         }
     }
 
