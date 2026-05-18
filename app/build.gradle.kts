@@ -2,6 +2,16 @@ import mihon.buildlogic.Config
 import mihon.buildlogic.getBuildTime
 import mihon.buildlogic.getCommitCount
 import mihon.buildlogic.getGitSha
+import java.util.Properties
+import java.io.FileInputStream
+
+// Read the untracked local.properties file safely
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        load(FileInputStream(localPropertiesFile))
+    }
+}
 
 plugins {
     id("mihon.android.application")
@@ -14,6 +24,29 @@ plugins {
 shortcutHelper.setFilePath("./shortcuts.xml")
 
 android {
+    signingConfigs {
+// 1. Keep your local debug setup working seamlessly
+        getByName("debug") {
+            val path = localProperties.getProperty("debug.keystore.path")
+            if (!path.isNullOrEmpty()) {
+                storeFile = file(path)
+                storePassword = localProperties.getProperty("debug.keystore.pass")
+                keyAlias = localProperties.getProperty("debug.key.alias")
+                keyPassword = localProperties.getProperty("debug.key.pass")
+            }
+        }
+
+        // 2. Add the production release configuration using the exact same properties
+        create("release") {
+            val path = localProperties.getProperty("debug.keystore.path")
+            if (!path.isNullOrEmpty()) {
+                storeFile = file(path)
+                storePassword = localProperties.getProperty("debug.keystore.pass")
+                keyAlias = localProperties.getProperty("debug.key.alias")
+                keyPassword = localProperties.getProperty("debug.key.pass")
+            }
+        }
+    }
     namespace = "eu.kanade.tachiyomi"
 
     defaultConfig {
@@ -43,10 +76,16 @@ android {
     }
 
     buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
+        }
         val debug by getting {
             applicationIdSuffix = ".dev"
             versionNameSuffix = "-${getCommitCount()}"
             isPseudoLocalesEnabled = true
+
+            // 1. Force debug flavor to read your secure local config
+            signingConfig = signingConfigs.getByName("debug")
         }
         val release by getting {
             isMinifyEnabled = Config.enableCodeShrink
@@ -55,6 +94,9 @@ android {
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
 
             buildConfigField("String", "BUILD_TIME", "\"${getBuildTime(useLastCommitTime = true)}\"")
+
+            // 2. Force production release flavor to use your secure keys
+            signingConfig = signingConfigs.getByName("release")
         }
 
         val commonMatchingFallbacks = listOf(release.name)
