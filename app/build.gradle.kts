@@ -50,10 +50,10 @@ android {
     namespace = "eu.kanade.tachiyomi"
 
     defaultConfig {
-        applicationId = "xyz.user4302.mika"
+        applicationId = "xyz.user4302.mirukan"
 
-        versionCode = 131
-        versionName = "0.18.1.2"
+        versionCode = 100
+        versionName = "1.0.0"
 
         buildConfigField("String", "COMMIT_COUNT", "\"${getCommitCount()}\"")
         buildConfigField("String", "COMMIT_SHA", "\"${getGitSha()}\"")
