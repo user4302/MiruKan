@@ -20,6 +20,8 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 
 ### Changed
 - **Application ID Shift:** Migrated the core Android system configuration packaging layer, explicitly changing the unique `applicationId` identifier from the legacy upstream namespace (`eu.kanade.tachiyomi`) to your custom standalone domain structure.
+- **Project Context Initialization:** Updated the initialization configuration in `settings.gradle.kts` to identify the root project structure natively as **MiruKan** rather than inheriting the legacy naming footprint.
+- **CI Artifact Retrieval Target:** Reconfigured the GitHub Actions artifact upload path patterns to capture standard production-signed production binaries (`*-release.apk`) rather than legacy unsigned outputs.
 
 ### Fixed
 - **CI Pipeline Constraints:** Stripped hardcoded conditional guards within the GitHub Actions configuration files that locked deployment executions exclusively to the upstream repository, routing builds to target your custom environment workspace seamlessly.
@@ -28,6 +30,10 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 ### Improved
 - **Download Core:** Enhanced overall download queue stability and background thread reordering behavior ([@user4302](https://github.com/user4302)).
 
+### Removed
+- **Redundant Third-Party Signing:** Eliminated the legacy external `r0adkll/sign-android-release` pipeline action to clear out multi-step build processing overhead.
+
 ### Other
 - **Semantic Version Alignment:** Transitioned the project tracking matrix away from the downstream 4-digit layout to native 3-digit Semantic Versioning (`v1.0.0`) to establish a clean standalone maintenance baseline.
 - **Project Foundation:** Officially established independent fork branch structures to ensure long-term framework preservation and independent issue remediation.
+- **Native Gradle Key Signing Infrastructure:** Integrated an end-to-end automated app signing architecture directly within `build.gradle.kts`, using runtime environment injection (`SIGNING_KEY_FILE`, `KEY_STORE_PASSWORD`, `ALIAS`) to compile fully production-signed APK outputs natively during the core build phase.
