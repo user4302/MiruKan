@@ -63,13 +63,13 @@ jobs:
 
       # FIX 2: Swapped the order so we rename the files FIRST before any archiving happens
       - name: Clean up and calculate checksums
-        if: (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main') && github.repository == 'user4302/MiruKan'
+        if: github.repository == 'user4302/MiruKan'
         run: |
           set -e
           cd app/build/outputs/apk/release/
 
-          mv app-universal-release.apk mirukan-${{ env.VERSION_TAG }}.apk
-          echo "APK_UNIVERSAL_SHA=$(sha256sum mirukan-${{ env.VERSION_TAG }}.apk | awk '{ print $1 }')" >> $GITHUB_ENV
+          mv app-universal-release.apk mirukan-universal-${{ env.VERSION_TAG }}.apk
+          echo "APK_UNIVERSAL_SHA=$(sha256sum mirukan-universal-${{ env.VERSION_TAG }}.apk | awk '{ print $1 }')" >> $GITHUB_ENV
 
           mv app-arm64-v8a-release.apk mirukan-arm64-v8a-${{ env.VERSION_TAG }}.apk
           echo "APK_ARM64_V8A_SHA=$(sha256sum mirukan-arm64-v8a-${{ env.VERSION_TAG }}.apk | awk '{ print $1 }')" >> $GITHUB_ENV
