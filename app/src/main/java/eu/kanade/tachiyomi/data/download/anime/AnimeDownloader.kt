@@ -34,7 +34,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
@@ -199,9 +198,8 @@ class AnimeDownloader(
                         .filter {
                             it.status.value <= AnimeDownload.State.DOWNLOADING.value
                         } // Ignore completed downloads, leave them in the queue
-                        .groupBy { it.source }
-                        .toList().take(3) // Concurrently download from 5 different sources
-                        .map { (_, downloads) -> downloads.first() }
+                        .take(1)
+                        .toList()
                     emit(activeDownloads)
 
                     if (activeDownloads.isEmpty()) break
@@ -221,7 +219,7 @@ class AnimeDownloader(
             supervisorScope {
                 val downloadJobs = mutableMapOf<AnimeDownload, Job>()
 
-                activeDownloadsFlow.collectLatest { activeDownloads ->
+                activeDownloadsFlow.collect { activeDownloads ->
                     val downloadJobsToStop = downloadJobs.filter { it.key !in activeDownloads }
                     downloadJobsToStop.forEach { (download, job) ->
                         job.cancel()
@@ -365,7 +363,7 @@ class AnimeDownloader(
                 getOrDownloadVideoFile(download, tmpDir)
             }
 
-            if (!isDownloadSuccessful(download, tmpDir)) {
+            if (!isDownloadSuccessful(tmpDir)) {
                 download.status = AnimeDownload.State.ERROR
                 return
             }
@@ -477,7 +475,9 @@ class AnimeDownloader(
             try {
                 ffmpegDownload(download, tmpDir, videoFile, filename)
             } catch (e: Exception) {
-                videoFile.delete()
+                if (e !is CancellationException) {
+                    videoFile.delete()
+                }
                 throw e
             }
 
@@ -537,9 +537,18 @@ class AnimeDownloader(
             if (duration != 0L && outTime > 0) {
                 download.progress = (100 * outTime / duration).toInt()
             }
+            download.bytesDownloaded = s.size
         }
 
         duration = getDuration(ffprobeCommand(video.videoUrl, headerOptions))?.toLong() ?: 0L
+
+        if (video.videoUrl.contains(".m3u8").not()) {
+            try {
+                download.totalBytes = download.source.getVideoSize(video, 3)
+            } catch (e: Exception) {
+                logcat(LogPriority.ERROR, e)
+            }
+        }
 
         suspendCancellableCoroutine { continuation ->
             val session = FFmpegKit.executeWithArgumentsAsync(
@@ -739,47 +748,13 @@ class AnimeDownloader(
     /**
      * Checks if the download was successful.
      *
-     * @param download the download to check.
      * @param tmpDir the directory where the download is currently stored.
      */
     private fun isDownloadSuccessful(
-        download: AnimeDownload,
         tmpDir: UniFile,
     ): Boolean {
         val downloadedVideo = tmpDir.listFiles().orEmpty().filterNot { it.extension == ".tmp" }
         return downloadedVideo.size == 1
-    }
-
-    /**
-     * Checks if the download was successful.
-     *
-     * @param download the download to check.
-     * @param animeDir the anime directory of the download.
-     * @param tmpDir the directory where the download is currently stored.
-     * @param dirname the real (non temporary) directory name of the download.
-     */
-    private suspend fun ensureSuccessfulAnimeDownload(
-        download: AnimeDownload,
-        animeDir: UniFile,
-        tmpDir: UniFile,
-        dirname: String,
-    ) {
-        // Ensure that the episode folder has the full video
-        val downloadedVideo = tmpDir.listFiles().orEmpty().filterNot { it.extension == ".tmp" }
-
-        download.status = if (downloadedVideo.size == 1) {
-            // Only rename the directory if it's downloaded
-            val filename = DiskUtil.buildValidFilename("${download.anime.title} - ${download.episode.name}")
-            tmpDir.findFile("${filename}_tmp.mkv")?.delete()
-            tmpDir.renameTo(dirname)
-
-            cache.addEpisode(dirname, animeDir, download.anime)
-
-            DiskUtil.createNoMediaFile(tmpDir, context)
-            AnimeDownload.State.DOWNLOADED
-        } else {
-            throw Exception("Unable to finalize download")
-        }
     }
 
     /**
@@ -848,7 +823,7 @@ class AnimeDownloader(
     }
 
     fun updateQueue(downloads: List<AnimeDownload>) {
-        if (queueState == downloads) return
+        if (_queueState.value == downloads) return
 
         if (downloads.isEmpty()) {
             clearQueue()
@@ -858,12 +833,32 @@ class AnimeDownloader(
 
         val wasRunning = isRunning
 
-        pause()
-        internalClearQueue()
-        addAllToQueue(downloads)
-
         if (wasRunning) {
-            start()
+            _queueState.update { oldQueue ->
+                val removed = oldQueue - downloads.toSet()
+                removed.forEach { download ->
+                    if (download.status == AnimeDownload.State.DOWNLOADING ||
+                        download.status == AnimeDownload.State.QUEUE
+                    ) {
+                        download.status = AnimeDownload.State.NOT_DOWNLOADED
+                    }
+                }
+
+                val added = downloads - oldQueue.toSet()
+                added.forEach {
+                    if (it.status != AnimeDownload.State.DOWNLOADED) {
+                        it.status = AnimeDownload.State.QUEUE
+                    }
+                }
+
+                store.clear()
+                store.addAll(downloads)
+                downloads
+            }
+        } else {
+            pause()
+            internalClearQueue()
+            addAllToQueue(downloads)
         }
     }
 

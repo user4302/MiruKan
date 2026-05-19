@@ -54,6 +54,9 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             notifyProgress()
             notifyDownloadedPages()
         }
+
+        binding.reorder.visibility =
+            if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
     }
 
     /**
@@ -69,16 +72,40 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             binding.downloadProgress.isIndeterminate = false
             binding.downloadProgress.setProgressCompat(download.progress, true)
         }
+        binding.reorder.visibility =
+            if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
     }
 
     /**
      * Updates the text field of the number of downloaded pages.
      */
     fun notifyDownloadedPages() {
-        binding.downloadProgressText.text = if (download.progress == 0) {
-            view.context.stringResource(MR.strings.update_check_notification_download_in_progress)
+        val context = view.context
+        val progressText = if (download.progress == 0) {
+            context.stringResource(MR.strings.update_check_notification_download_in_progress)
         } else {
-            view.context.stringResource(AYMR.strings.episode_download_progress, download.progress)
+            context.stringResource(AYMR.strings.episode_download_progress, download.progress)
+        }
+
+        if (download.bytesDownloaded > 0) {
+            val downloadedSize = android.text.format.Formatter.formatFileSize(context, download.bytesDownloaded)
+            binding.downloadProgressText.text = if (download.totalBytes > 0) {
+                val totalSize = android.text.format.Formatter.formatFileSize(context, download.totalBytes)
+                context.stringResource(
+                    AYMR.strings.episode_download_progress_with_size,
+                    progressText,
+                    downloadedSize,
+                    totalSize,
+                )
+            } else {
+                context.stringResource(
+                    AYMR.strings.episode_download_progress_with_downloaded_size,
+                    progressText,
+                    downloadedSize,
+                )
+            }
+        } else {
+            binding.downloadProgressText.text = progressText
         }
     }
 
@@ -99,9 +126,13 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
         view.popupMenu(
             menuRes = R.menu.download_single,
             initMenu = {
-                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1
+                val isDownloading = download.status == AnimeDownload.State.DOWNLOADING
+                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading
                 findItem(R.id.move_to_bottom).isVisible =
-                    bindingAdapterPosition != adapter.itemCount - 1
+                    bindingAdapterPosition != adapter.itemCount - 1 &&
+                    !isDownloading
+                findItem(R.id.move_to_top_series).isVisible = !isDownloading
+                findItem(R.id.move_to_bottom_series).isVisible = !isDownloading
             },
             onMenuItemClick = {
                 adapter.downloadItemListener.onMenuItemClick(bindingAdapterPosition, this)

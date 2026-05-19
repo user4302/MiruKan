@@ -28,7 +28,7 @@ class MangaDownloadQueueScreenModel(
     private val downloadManager: MangaDownloadManager = Injekt.get(),
 ) : ScreenModel {
 
-    private val _state = MutableStateFlow(emptyList<MangaDownloadHeaderItem>())
+    private val _state = MutableStateFlow(emptyList<MangaDownloadItem>())
     val state = _state.asStateFlow()
 
     lateinit var controllerBinding: DownloadListBinding
@@ -51,11 +51,7 @@ class MangaDownloadQueueScreenModel(
          */
         override fun onItemReleased(position: Int) {
             val adapter = adapter ?: return
-            val downloads = adapter.headerItems.flatMap { header ->
-                adapter.getSectionItems(header).map { item ->
-                    (item as MangaDownloadItem).download
-                }
-            }
+            val downloads = adapter.currentItems.filterIsInstance<MangaDownloadItem>().map { it.download }
             reorder(downloads)
         }
 
@@ -70,21 +66,19 @@ class MangaDownloadQueueScreenModel(
             if (item is MangaDownloadItem) {
                 when (menuItem.itemId) {
                     R.id.move_to_top, R.id.move_to_bottom -> {
-                        val headerItems = adapter?.headerItems ?: return
-                        val newDownloads = mutableListOf<MangaDownload>()
-                        headerItems.forEach { headerItem ->
-                            headerItem as MangaDownloadHeaderItem
-                            if (headerItem == item.header) {
-                                headerItem.removeSubItem(item)
-                                if (menuItem.itemId == R.id.move_to_top) {
-                                    headerItem.addSubItem(0, item)
-                                } else {
-                                    headerItem.addSubItem(item)
-                                }
+                        val items =
+                            adapter?.currentItems?.filterIsInstance<MangaDownloadItem>()?.toMutableList() ?: return
+                        val index = items.indexOf(item)
+                        if (index != -1) {
+                            items.removeAt(index)
+                            if (menuItem.itemId == R.id.move_to_top) {
+                                val targetIndex = if (items.isNotEmpty() && !items[0].isDraggable) 1 else 0
+                                items.add(targetIndex, item)
+                            } else {
+                                items.add(item)
                             }
-                            newDownloads.addAll(headerItem.subItems.map { it.download })
+                            reorder(items.map { it.download })
                         }
-                        reorder(newDownloads)
                     }
                     R.id.move_to_top_series, R.id.move_to_bottom_series -> {
                         val (selectedSeries, otherSeries) = adapter?.currentItems
@@ -119,13 +113,7 @@ class MangaDownloadQueueScreenModel(
         screenModelScope.launch {
             downloadManager.queueState
                 .map { downloads ->
-                    downloads
-                        .groupBy { it.source }
-                        .map { entry ->
-                            MangaDownloadHeaderItem(entry.key.id, entry.key.name, entry.value.size).apply {
-                                addSubItems(0, entry.value.map { MangaDownloadItem(it, this) })
-                            }
-                        }
+                    downloads.map { MangaDownloadItem(it) }
                 }
                 .collect { newList -> _state.update { newList } }
         }
@@ -170,17 +158,13 @@ class MangaDownloadQueueScreenModel(
         reverse: Boolean = false,
     ) {
         val adapter = adapter ?: return
-        val newDownloads = mutableListOf<MangaDownload>()
-        adapter.headerItems.forEach { headerItem ->
-            headerItem as MangaDownloadHeaderItem
-            headerItem.subItems = headerItem.subItems.sortedBy(selector).toMutableList().apply {
-                if (reverse) {
-                    reverse()
-                }
-            }
-            newDownloads.addAll(headerItem.subItems.map { it.download })
+        val items = adapter.currentItems.filterIsInstance<MangaDownloadItem>().toMutableList()
+        val downloadingItem = if (items.isNotEmpty() && !items[0].isDraggable) items.removeAt(0) else null
+        items.sortWith(if (reverse) compareByDescending(selector) else compareBy(selector))
+        if (downloadingItem != null) {
+            items.add(0, downloadingItem)
         }
-        reorder(newDownloads)
+        reorder(items.map { it.download })
     }
 
     /**
@@ -193,6 +177,7 @@ class MangaDownloadQueueScreenModel(
             MangaDownload.State.DOWNLOADING -> {
                 launchProgressJob(download)
                 // Initial update of the downloaded pages
+                onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
             }
             MangaDownload.State.DOWNLOADED -> {
@@ -200,10 +185,10 @@ class MangaDownloadQueueScreenModel(
                 onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
             }
-            MangaDownload.State.ERROR -> cancelProgressJob(download)
-            else -> {
-                /* unused */
+            MangaDownload.State.ERROR -> {
+                cancelProgressJob(download)
             }
+            else -> {}
         }
     }
 
@@ -258,6 +243,7 @@ class MangaDownloadQueueScreenModel(
      */
     fun onUpdateDownloadedPages(download: MangaDownload) {
         getHolder(download)?.notifyDownloadedPages()
+        onUpdateProgress(download)
     }
 
     /**

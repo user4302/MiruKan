@@ -5,6 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import eu.davidea.flexibleadapter.FlexibleAdapter
 import eu.davidea.viewholders.ExpandableViewHolder
+import eu.kanade.tachiyomi.data.download.anime.model.AnimeDownload
 import eu.kanade.tachiyomi.databinding.DownloadHeaderBinding
 
 class AnimeDownloadHeaderHolder(view: View, adapter: FlexibleAdapter<*>) : ExpandableViewHolder(
@@ -18,6 +19,12 @@ class AnimeDownloadHeaderHolder(view: View, adapter: FlexibleAdapter<*>) : Expan
     fun bind(item: AnimeDownloadHeaderItem) {
         setDragHandleView(binding.reorder)
         binding.title.text = "${item.name} (${item.size})"
+        binding.reorder.visibility =
+            if (item.subItems?.any { it.download.status == AnimeDownload.State.DOWNLOADING } == true) {
+                View.GONE
+            } else {
+                View.VISIBLE
+            }
     }
 
     override fun onActionStateChanged(position: Int, actionState: Int) {

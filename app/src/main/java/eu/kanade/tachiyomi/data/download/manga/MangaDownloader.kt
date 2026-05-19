@@ -19,6 +19,7 @@ import eu.kanade.tachiyomi.util.storage.DiskUtil.NOMEDIA_FILE
 import eu.kanade.tachiyomi.util.storage.saveTo
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
@@ -72,11 +73,12 @@ import java.util.Locale
  * This class is the one in charge of downloading chapters.
  *
  * Its queue contains the list of chapters to download. In order to download them, the downloader
- * subscription must be running and the list of chapters must be sent to them by [downloadsRelay].
+ * subscription must be running and the list of chapters must be sent to them by [queueState].
  *
  * The queue manipulation must be done in one thread (currently the main thread) to avoid unexpected
  * behavior, but it's safe to read it from multiple threads.
  */
+@OptIn(DelicateCoroutinesApi::class)
 class MangaDownloader(
     private val context: Context,
     private val provider: MangaDownloadProvider,
@@ -215,9 +217,8 @@ class MangaDownloader(
                         .filter {
                             it.status.value <= MangaDownload.State.DOWNLOADING.value
                         } // Ignore completed downloads, leave them in the queue
-                        .groupBy { it.source }
-                        .toList().take(5) // Concurrently download from 5 different sources
-                        .map { (_, downloads) -> downloads.first() }
+                        .take(1)
+                        .toList()
                     emit(activeDownloads)
 
                     if (activeDownloads.isEmpty()) break
@@ -331,6 +332,7 @@ class MangaDownloader(
      *
      * @param download the chapter to be downloaded.
      */
+    @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
     private suspend fun downloadChapter(download: MangaDownload) {
         val mangaDir = provider.getMangaDir(download.manga.title, download.source)
 
@@ -394,7 +396,7 @@ class MangaDownloader(
                             page.status = Page.State.LOAD_PAGE
                             try {
                                 page.imageUrl = download.source.getImageUrl(page)
-                            } catch (e: Throwable) {
+                            } catch (_: Throwable) {
                                 page.status = Page.State.ERROR
                             }
                         }
@@ -530,8 +532,10 @@ class MangaDownloader(
                 val extension = getImageExtension(response, file)
                 file.renameTo("$filename.$extension")
             } catch (e: Exception) {
-                response.close()
-                file.delete()
+                if (e !is CancellationException) {
+                    response.close()
+                    file.delete()
+                }
                 throw e
             }
             emit(file)
@@ -717,7 +721,7 @@ class MangaDownloader(
                     download.status = MangaDownload.State.NOT_DOWNLOADED
                 }
             }
-            queue - downloads
+            queue - downloads.toSet()
         }
     }
 
@@ -745,6 +749,8 @@ class MangaDownloader(
     }
 
     fun updateQueue(downloads: List<MangaDownload>) {
+        if (_queueState.value == downloads) return
+
         val wasRunning = isRunning
 
         if (downloads.isEmpty()) {
@@ -753,12 +759,32 @@ class MangaDownloader(
             return
         }
 
-        pause()
-        internalClearQueue()
-        addAllToQueue(downloads)
-
         if (wasRunning) {
-            start()
+            _queueState.update { oldQueue ->
+                val removed = oldQueue - downloads.toSet()
+                removed.forEach { download ->
+                    if (download.status == MangaDownload.State.DOWNLOADING ||
+                        download.status == MangaDownload.State.QUEUE
+                    ) {
+                        download.status = MangaDownload.State.NOT_DOWNLOADED
+                    }
+                }
+
+                val added = downloads - oldQueue.toSet()
+                added.forEach {
+                    if (it.status != MangaDownload.State.DOWNLOADED) {
+                        it.status = MangaDownload.State.QUEUE
+                    }
+                }
+
+                store.clear()
+                store.addAll(downloads)
+                downloads
+            }
+        } else {
+            pause()
+            internalClearQueue()
+            addAllToQueue(downloads)
         }
     }
 

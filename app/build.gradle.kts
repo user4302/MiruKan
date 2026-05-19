@@ -2,6 +2,16 @@ import mihon.buildlogic.Config
 import mihon.buildlogic.getBuildTime
 import mihon.buildlogic.getCommitCount
 import mihon.buildlogic.getGitSha
+import java.io.FileInputStream
+import java.util.Properties
+
+// Read the untracked local.properties file safely
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        load(FileInputStream(localPropertiesFile))
+    }
+}
 
 plugins {
     id("mihon.android.application")
@@ -14,39 +24,71 @@ plugins {
 shortcutHelper.setFilePath("./shortcuts.xml")
 
 android {
+    signingConfigs {
+        // 1. Your standard local debug configuration
+        getByName("debug") {
+            val path = localProperties.getProperty("debug.keystore.path")
+            if (!path.isNullOrEmpty()) {
+                storeFile = file(path)
+                storePassword = localProperties.getProperty("debug.keystore.pass")
+                keyAlias = localProperties.getProperty("debug.key.alias")
+                keyPassword = localProperties.getProperty("debug.key.pass")
+            }
+        }
+
+        // 2. The Hybrid Release Setup: Works perfectly on BOTH GitHub and your local PC!
+        create("release") {
+            val envKeyFile = System.getenv("SIGNING_KEY_FILE")
+
+            if (!envKeyFile.isNullOrEmpty()) {
+                // Cloud pipeline execution route
+                storeFile = file(envKeyFile)
+                val masterPass = System.getenv("KEY_STORE_PASSWORD")
+                storePassword = masterPass
+                keyAlias = System.getenv("ALIAS")
+                keyPassword = masterPass
+            } else {
+                // Local desktop machine fallback route
+                val path =
+                    localProperties.getProperty("release.keystore.path")
+                        ?: localProperties.getProperty("debug.keystore.path")
+                if (!path.isNullOrEmpty()) {
+                    storeFile = file(path)
+                    val localPass = localProperties.getProperty("release.keystore.pass")
+                    storePassword = localPass
+                    keyAlias = localProperties.getProperty("release.key.alias")
+                    keyPassword = localProperties.getProperty("release.key.pass") ?: localPass
+                }
+            }
+        }
+    }
     namespace = "eu.kanade.tachiyomi"
 
     defaultConfig {
-        applicationId = "xyz.jmir.tachiyomi.mi"
+        applicationId = "xyz.user4302.mirukan"
 
-        versionCode = 131
-        versionName = "0.18.1.2"
+        versionCode = 100
+        versionName = "1.0.0"
 
         buildConfigField("String", "COMMIT_COUNT", "\"${getCommitCount()}\"")
         buildConfigField("String", "COMMIT_SHA", "\"${getGitSha()}\"")
         buildConfigField("String", "BUILD_TIME", "\"${getBuildTime(useLastCommitTime = false)}\"")
         buildConfigField("boolean", "UPDATER_ENABLED", "${Config.enableUpdater}")
 
-        // Put these fields in acra.properties
-        // val acraProperties = Properties()
-        // rootProject.file("acra.properties")
-        //     .takeIf { it.exists() }
-        //     ?.let { acraProperties.load(FileInputStream(it)) }
-        // val acraUri = acraProperties.getProperty("ACRA_URI", "")
-        // val acraLogin = acraProperties.getProperty("ACRA_LOGIN", "")
-        // val acraPassword = acraProperties.getProperty("ACRA_PASSWORD", "")
-        // buildConfigField("String", "ACRA_URI", "\"$acraUri\"")
-        // buildConfigField("String", "ACRA_LOGIN", "\"$acraLogin\"")
-        // buildConfigField("String", "ACRA_PASSWORD", "\"$acraPassword\"")
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
+        }
         val debug by getting {
             applicationIdSuffix = ".dev"
             versionNameSuffix = "-${getCommitCount()}"
             isPseudoLocalesEnabled = true
+
+            // 1. Force debug flavor to read your secure local config
+            signingConfig = signingConfigs.getByName("debug")
         }
         val release by getting {
             isMinifyEnabled = Config.enableCodeShrink
@@ -55,6 +97,9 @@ android {
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
 
             buildConfigField("String", "BUILD_TIME", "\"${getBuildTime(useLastCommitTime = true)}\"")
+
+            // 2. Force production release flavor to use your secure keys
+            signingConfig = signingConfigs.getByName("release")
         }
 
         val commonMatchingFallbacks = listOf(release.name)

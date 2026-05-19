@@ -30,7 +30,7 @@ fun AnimeDownloadQueueScreen(
     contentPadding: PaddingValues,
     scope: CoroutineScope,
     screenModel: AnimeDownloadQueueScreenModel,
-    downloadList: List<AnimeDownloadHeaderItem>,
+    downloadList: List<AnimeDownloadItem>,
     nestedScrollConnection: NestedScrollConnection,
 ) {
     Scaffold {
