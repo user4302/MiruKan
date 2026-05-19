@@ -23,6 +23,8 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 - **Project Context Initialization:** Updated the initialization configuration in `settings.gradle.kts` to identify the root project structure natively as **MiruKan** rather than inheriting the legacy naming footprint.
 - **CI Artifact Retrieval Target:** Reconfigured the GitHub Actions artifact upload path patterns to capture standard production-signed production binaries (`*-release.apk`) rather than legacy unsigned outputs.
 - **Unified Split APK Extraction:** Swapped strict individual architecture targets for a dynamic wildcard matcher (`*.apk`) to cleanly wrap and bundle all 5 split compilation variants (Universal, ARM64, ARMEABI, X86, X86_64) into the CI distribution archive.
+- **Standardized Asset Naming Format:** Restructured the release binary artifact convention to position version tags immediately following the application name (e.g., `mirukan-v1.0.0-arm64-v8a.apk`) to optimize alphabetical sorting and logical grouping within release listings.
+- **Release Trigger Consolidation:** Refactored workflow filters to restrict release-draft generation exclusively to official Git version tags (`refs/tags/v*`) and manual workflow dispatches, preventing redundant execution and duplicate drafts on standard pushes or merges to the `main` branch.
 
 ### Fixed
 - **CI Pipeline Constraints:** Stripped hardcoded conditional guards within the GitHub Actions configuration files that locked deployment executions exclusively to the upstream repository, routing builds to target your custom environment workspace seamlessly.
@@ -32,6 +34,8 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 
 ### Improved
 - **Download Core:** Enhanced overall download queue stability and background thread reordering behavior ([@user4302](https://github.com/user4302)).
+- **Conditional Compilation Matrix:** Introduced an operational branch toggle (`IS_RELEASE`) in `build_push.yml` that routes manual UI workflow dispatches to build only the lightweight Universal package (`assembleReleaseUniversal`), cutting test execution times down drastically while reserving full-architecture matrix compiles strictly for official version tags.
+- **Resilient Post-Build Artifact Mapping:** Overhauled the post-build file cleanup and checksum indexing logic into a dynamic shell routine capable of handling missing architecture splits gracefully without failing the entire compilation workflow pipeline (`fail_on_unmatched_files: false`).
 
 ### Removed
 - **Redundant Third-Party Signing:** Eliminated the legacy external `r0adkll/sign-android-release` pipeline action to clear out multi-step build processing overhead.
