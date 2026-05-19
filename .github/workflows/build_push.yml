@@ -28,13 +28,10 @@ jobs:
         run: |
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION_TAG=${GITHUB_REF#refs/tags/}
-            IS_RELEASE="true"
           else
             VERSION_TAG="v1.0.0-${GITHUB_SHA::7}"
-            IS_RELEASE="false"
           fi
           echo "VERSION_TAG=$VERSION_TAG" >> $GITHUB_ENV
-          echo "IS_RELEASE=$IS_RELEASE" >> $GITHUB_ENV
 
       - name: Set up JDK
         uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4.7.0
@@ -44,8 +41,6 @@ jobs:
 
       - name: Set up gradle
         uses: gradle/actions/setup-gradle@94baf225fe0a508e581a564467443d0e2379123b # v4.3.0
-        with:
-          cache-encryption-key: ${{ secrets.GRADLE_CACHE_ENCRYPTION_KEY }}
 
       - name: Check code format
         run: ./gradlew spotlessCheck
@@ -60,43 +55,31 @@ jobs:
           KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
           ALIAS: ${{ secrets.ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: |
-          if [ "${{ env.IS_RELEASE }}" = "true" ]; then
-            echo "Official tag release: Compiling all split architectures..."
-            ./gradlew assembleRelease -Penable-updater --build-cache --parallel --configure-on-demand
-          else
-            echo "Manual check/dev push: Compiling only the Universal package..."
-            ./gradlew assembleReleaseUniversal -Penable-updater --build-cache --parallel --configure-on-demand
-          fi
+        run: ./gradlew assembleRelease -Penable-updater
 
       - name: Run unit tests
         run: ./gradlew testReleaseUnitTest
 
       - name: Clean up and calculate checksums
-        if: (startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch') && github.repository == 'user4302/MiruKan'
+        if: github.repository == 'user4302/MiruKan'
         run: |
           set -e
           cd app/build/outputs/apk/release/
 
-          # Function to safely process files only if Gradle outputted them
-          process_apk() {
-            local src=$1
-            local dest=$2
-            local env_var=$3
-            if [ -f "$src" ]; then
-              mv "$src" "$dest"
-              echo "$env_var=$(sha256sum $dest | awk '{ print $1 }')" >> $GITHUB_ENV
-            else
-              echo "$src not found, skipping."
-              echo "$env_var=Skipped (Development Build)" >> $GITHUB_ENV
-            fi
-          }
+          mv app-universal-release.apk mirukan-${{ env.VERSION_TAG }}-universal.apk
+          echo "APK_UNIVERSAL_SHA=$(sha256sum mirukan-${{ env.VERSION_TAG }}-universal.apk | awk '{ print $1 }')" >> $GITHUB_ENV
 
-          process_apk "app-universal-release.apk" "mirukan-${{ env.VERSION_TAG }}-universal.apk" "APK_UNIVERSAL_SHA"
-          process_apk "app-arm64-v8a-release.apk" "mirukan-${{ env.VERSION_TAG }}-arm64-v8a.apk" "APK_ARM64_V8A_SHA"
-          process_apk "app-armeabi-v7a-release.apk" "mirukan-${{ env.VERSION_TAG }}-armeabi-v7a.apk" "APK_ARMEABI_V7A_SHA"
-          process_apk "app-x86-release.apk" "mirukan-${{ env.VERSION_TAG }}-x86.apk" "APK_X86_SHA"
-          process_apk "app-x86_64-release.apk" "mirukan-${{ env.VERSION_TAG }}-x86_64.apk" "APK_X86_64_SHA"
+          mv app-arm64-v8a-release.apk mirukan-${{ env.VERSION_TAG }}-arm64-v8a.apk
+          echo "APK_ARM64_V8A_SHA=$(sha256sum mirukan-${{ env.VERSION_TAG }}-arm64-v8a.apk | awk '{ print $1 }')" >> $GITHUB_ENV
+
+          mv app-armeabi-v7a-release.apk mirukan-${{ env.VERSION_TAG }}-armeabi-v7a.apk
+          echo "APK_ARMEABI_V7A_SHA=$(sha256sum mirukan-${{ env.VERSION_TAG }}-armeabi-v7a.apk | awk '{ print $1 }')" >> $GITHUB_ENV
+
+          mv app-x86-release.apk mirukan-${{ env.VERSION_TAG }}-x86.apk
+          echo "APK_X86_SHA=$(sha256sum mirukan-${{ env.VERSION_TAG }}-x86.apk | awk '{ print $1 }')" >> $GITHUB_ENV
+
+          mv app-x86_64-release.apk mirukan-${{ env.VERSION_TAG }}-x86_64.apk
+          echo "APK_X86_64_SHA=$(sha256sum mirukan-${{ env.VERSION_TAG }}-x86_64.apk | awk '{ print $1 }')" >> $GITHUB_ENV
 
       - name: Upload All Release APKs
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -111,13 +94,12 @@ jobs:
           path: app/build/outputs/mapping/release
 
       - name: Create Release
-        if: (startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch') && github.repository == 'user4302/MiruKan'
+        if: (startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') && github.repository == 'user4302/MiruKan'
         uses: softprops/action-gh-release@c95fe1489396fe8a9eb87c0abf8aa5b2ef267fda # v2.2.1
         with:
           tag_name: ${{ env.VERSION_TAG }}
           name: MiruKan ${{ env.VERSION_TAG }}
           generate_release_notes: true
-          fail_on_unmatched_files: false
           body: |
             ---
 
