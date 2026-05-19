@@ -129,7 +129,8 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
                 val isDownloading = download.status == AnimeDownload.State.DOWNLOADING
                 findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading
                 findItem(R.id.move_to_bottom).isVisible =
-                    bindingAdapterPosition != adapter.itemCount - 1 && !isDownloading
+                    bindingAdapterPosition != adapter.itemCount - 1 &&
+                    !isDownloading
                 findItem(R.id.move_to_top_series).isVisible = !isDownloading
                 findItem(R.id.move_to_bottom_series).isVisible = !isDownloading
             },
