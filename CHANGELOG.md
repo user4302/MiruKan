@@ -14,6 +14,11 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 ## [Unreleased]
 
 ### Added
+-
+
+## [1.0.0] - 2026-05-19
+
+### Added
 - **Visual Rebrand Overhaul:** Transformed the entire user interface identity from the legacy system to **MiruKan**. This includes designing and embedding native custom app icons, updated splash layout architectures, and relative asset matrices.
 - **Neon Theme Engine:** Refactored the core global color mapping sheets to replace stock styles with a striking dark-navy base paired with high-contrast lime green focus accents across layout layers.
 - **Download Queue Size Indicators:** Integrated real-time data metrics within the download manager queue view, displaying an explicit size counter tracking current downloaded bytes alongside total file sizes for ongoing streams.
