@@ -60,7 +60,8 @@ class AnimeDownloadQueueScreenModel(
             if (item is AnimeDownloadItem) {
                 when (menuItem.itemId) {
                     R.id.move_to_top, R.id.move_to_bottom -> {
-                        val items = adapter?.currentItems?.filterIsInstance<AnimeDownloadItem>()?.toMutableList() ?: return
+                        val items =
+                            adapter?.currentItems?.filterIsInstance<AnimeDownloadItem>()?.toMutableList() ?: return
                         val index = items.indexOf(item)
                         if (index != -1) {
                             items.removeAt(index)

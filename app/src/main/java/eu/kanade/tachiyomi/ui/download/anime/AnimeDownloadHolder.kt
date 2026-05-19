@@ -55,7 +55,8 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             notifyDownloadedPages()
         }
 
-        binding.reorder.visibility = if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
+        binding.reorder.visibility =
+            if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
     }
 
     /**
@@ -71,7 +72,8 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             binding.downloadProgress.isIndeterminate = false
             binding.downloadProgress.setProgressCompat(download.progress, true)
         }
-        binding.reorder.visibility = if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
+        binding.reorder.visibility =
+            if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
     }
 
     /**
@@ -89,9 +91,18 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             val downloadedSize = android.text.format.Formatter.formatFileSize(context, download.bytesDownloaded)
             binding.downloadProgressText.text = if (download.totalBytes > 0) {
                 val totalSize = android.text.format.Formatter.formatFileSize(context, download.totalBytes)
-                context.stringResource(AYMR.strings.episode_download_progress_with_size, progressText, downloadedSize, totalSize)
+                context.stringResource(
+                    AYMR.strings.episode_download_progress_with_size,
+                    progressText,
+                    downloadedSize,
+                    totalSize,
+                )
             } else {
-                context.stringResource(AYMR.strings.episode_download_progress_with_downloaded_size, progressText, downloadedSize)
+                context.stringResource(
+                    AYMR.strings.episode_download_progress_with_downloaded_size,
+                    progressText,
+                    downloadedSize,
+                )
             }
         } else {
             binding.downloadProgressText.text = progressText

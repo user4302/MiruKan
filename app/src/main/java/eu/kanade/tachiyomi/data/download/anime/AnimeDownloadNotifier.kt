@@ -103,9 +103,18 @@ internal class AnimeDownloadNotifier(private val context: Context) {
                 val downloadedSize = android.text.format.Formatter.formatFileSize(context, download.bytesDownloaded)
                 if (download.totalBytes > 0) {
                     val totalSize = android.text.format.Formatter.formatFileSize(context, download.totalBytes)
-                    context.stringResource(AYMR.strings.episode_download_progress_with_size, downloadingProgressText, downloadedSize, totalSize)
+                    context.stringResource(
+                        AYMR.strings.episode_download_progress_with_size,
+                        downloadingProgressText,
+                        downloadedSize,
+                        totalSize,
+                    )
                 } else {
-                    context.stringResource(AYMR.strings.episode_download_progress_with_downloaded_size, downloadingProgressText, downloadedSize)
+                    context.stringResource(
+                        AYMR.strings.episode_download_progress_with_downloaded_size,
+                        downloadingProgressText,
+                        downloadedSize,
+                    )
                 }
             } else {
                 downloadingProgressText

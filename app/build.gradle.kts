@@ -2,8 +2,8 @@ import mihon.buildlogic.Config
 import mihon.buildlogic.getBuildTime
 import mihon.buildlogic.getCommitCount
 import mihon.buildlogic.getGitSha
-import java.util.Properties
 import java.io.FileInputStream
+import java.util.Properties
 
 // Read the untracked local.properties file safely
 val localProperties = Properties().apply {
@@ -49,7 +49,9 @@ android {
                 keyPassword = masterPass
             } else {
                 // Local desktop machine fallback route
-                val path = localProperties.getProperty("release.keystore.path") ?: localProperties.getProperty("debug.keystore.path")
+                val path =
+                    localProperties.getProperty("release.keystore.path")
+                        ?: localProperties.getProperty("debug.keystore.path")
                 if (!path.isNullOrEmpty()) {
                     storeFile = file(path)
                     val localPass = localProperties.getProperty("release.keystore.pass")

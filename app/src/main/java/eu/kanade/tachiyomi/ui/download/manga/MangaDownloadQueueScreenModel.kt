@@ -66,7 +66,8 @@ class MangaDownloadQueueScreenModel(
             if (item is MangaDownloadItem) {
                 when (menuItem.itemId) {
                     R.id.move_to_top, R.id.move_to_bottom -> {
-                        val items = adapter?.currentItems?.filterIsInstance<MangaDownloadItem>()?.toMutableList() ?: return
+                        val items =
+                            adapter?.currentItems?.filterIsInstance<MangaDownloadItem>()?.toMutableList() ?: return
                         val index = items.indexOf(item)
                         if (index != -1) {
                             items.removeAt(index)
