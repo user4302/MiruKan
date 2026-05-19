@@ -20,6 +20,13 @@ jobs:
     name: Build app
     runs-on: ubuntu-latest
 
+    # ELEVATED HERE: Available automatically to all execution steps below
+    env:
+      SIGNING_KEY_FILE: ${{ runner.temp }}/keystore.jks
+      KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+      ALIAS: ${{ secrets.ALIAS }}
+      KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
     steps:
       - name: Clone repo
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -50,11 +57,6 @@ jobs:
           echo "${{ secrets.SIGNING_KEY }}" | base64 --decode > ${{ runner.temp }}/keystore.jks
 
       - name: Build app
-        env:
-          SIGNING_KEY_FILE: ${{ runner.temp }}/keystore.jks
-          KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
-          ALIAS: ${{ secrets.ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: ./gradlew assembleRelease -Penable-updater
 
       - name: Run unit tests
