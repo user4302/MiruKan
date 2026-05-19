@@ -25,7 +25,7 @@ shortcutHelper.setFilePath("./shortcuts.xml")
 
 android {
     signingConfigs {
-// 1. Keep your local debug setup working seamlessly
+        // 1. Your standard local debug configuration
         getByName("debug") {
             val path = localProperties.getProperty("debug.keystore.path")
             if (!path.isNullOrEmpty()) {
@@ -36,14 +36,27 @@ android {
             }
         }
 
-        // 2. Add the production release configuration using the exact same properties
+        // 2. The Hybrid Release Setup: Works perfectly on BOTH GitHub and your local PC!
         create("release") {
-            val path = localProperties.getProperty("debug.keystore.path")
-            if (!path.isNullOrEmpty()) {
-                storeFile = file(path)
-                storePassword = localProperties.getProperty("debug.keystore.pass")
-                keyAlias = localProperties.getProperty("debug.key.alias")
-                keyPassword = localProperties.getProperty("debug.key.pass")
+            val envKeyFile = System.getenv("SIGNING_KEY_FILE")
+
+            if (!envKeyFile.isNullOrEmpty()) {
+                // Cloud pipeline execution route
+                storeFile = file(envKeyFile)
+                val masterPass = System.getenv("KEY_STORE_PASSWORD")
+                storePassword = masterPass
+                keyAlias = System.getenv("ALIAS")
+                keyPassword = masterPass
+            } else {
+                // Local desktop machine fallback route
+                val path = localProperties.getProperty("release.keystore.path") ?: localProperties.getProperty("debug.keystore.path")
+                if (!path.isNullOrEmpty()) {
+                    storeFile = file(path)
+                    val localPass = localProperties.getProperty("release.keystore.pass")
+                    storePassword = localPass
+                    keyAlias = localProperties.getProperty("release.key.alias")
+                    keyPassword = localProperties.getProperty("release.key.pass") ?: localPass
+                }
             }
         }
     }
