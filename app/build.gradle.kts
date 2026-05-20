@@ -31,8 +31,8 @@ android {
             if (!path.isNullOrEmpty()) {
                 storeFile = file(path)
                 storePassword = localProperties.getProperty("debug.keystore.pass")
-                keyAlias = localProperties.getProperty("debug.key.alias")
-                keyPassword = localProperties.getProperty("debug.key.pass")
+                keyAlias = localProperties.getProperty("debug.keystore.alias")
+                keyPassword = storePassword
             }
         }
 
@@ -56,8 +56,8 @@ android {
                     storeFile = file(path)
                     val localPass = localProperties.getProperty("release.keystore.pass")
                     storePassword = localPass
-                    keyAlias = localProperties.getProperty("release.key.alias")
-                    keyPassword = localProperties.getProperty("release.key.pass") ?: localPass
+                    keyAlias = localProperties.getProperty("release.keystore.alias")
+                    keyPassword = localProperties.getProperty("release.keystore.pass") ?: localPass
                 }
             }
         }
