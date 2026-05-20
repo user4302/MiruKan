@@ -13,8 +13,18 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 
 ## [Unreleased]
 
-### Added
--
+### Changed
+- **Iconography Standardization:** Replaced legacy `ic_mika_green` and `ic_mika_white` resources with a unified vector-based asset (`ic_launcher_foreground`) across notification services for Library updates, Backups, and Extension installers.
+- **Adaptive Icon Architecture:** Redesigned `ic_launcher_foreground` and introduced `ic_launcher_monochrome` layers, configuring theme and variant-safe background pairing for both `main` and `debug` targets.
+
+### Improved
+- **Logo Header Scalability:** Refactored the `LogoHeader` Compose component to drop monochromatic color-clashing filters, enabling clean raw color rendering, and optimized its visual layout dimensions.
+
+### Removed
+- **Legacy Theme Assets:** Purged unused Mika-themed vector drawables and removed legacy density-specific `.webp` app icon files to streamline the resources repository size.
+
+### Other
+- **Keystore Property Alignment:** Standardized key property naming conventions in `build.gradle.kts` to unify configurations between debug and release keystore environment profiles.
 
 ## [1.0.0] - 2026-05-19
 
