@@ -11,7 +11,7 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 - `Fixed` - for any bug fixes.
 - `Other` - for technical architectural updates.
 
-## [Unreleased]
+## [1.0.1] - 2026-05-21
 
 ### Changed
 - **Iconography Standardization:** Replaced legacy `ic_mika_green` and `ic_mika_white` resources with a unified vector-based asset (`ic_launcher_foreground`) across notification services for Library updates, Backups, and Extension installers.
