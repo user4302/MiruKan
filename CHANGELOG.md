@@ -11,6 +11,17 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 - `Fixed` - for any bug fixes.
 - `Other` - for technical architectural updates.
 
+## [unreleased]
+
+### Improved
+- **Extension Notifications:** Updated `AnimeExtensionInstallService` and `MangaExtensionInstallService` to utilize the flat, monochromatic `ic_notification_default` vector asset for small notification indicators rather than falling back to the launcher foreground asset.
+
+### Added
+- **Notification Resources:** Introduced the new `ic_notification_default` vector drawables across both `main` and `debug` build resource directories to enforce unified asset coverage.
+
+### Removed
+- **Legacy Graphics:** Permanently pruned obsolete drawables and upstream branding residues, specifically removing `ic_ani.xml`, `ic_ani_monochrome_launcher.xml`, and the legacy splash asset `ic_tachi_splash.xml`.
+
 ## [1.0.1] - 2026-05-21
 
 ### Changed
