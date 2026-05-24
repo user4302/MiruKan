@@ -19,3 +19,6 @@ local.properties
 /docs/superpowers/
 /.artifacts/
 .vscode/
+/.specify/
+.roo/.logs/
+.roo/.secrets/
