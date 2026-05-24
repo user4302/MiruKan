@@ -113,7 +113,9 @@ class MangaDownloadQueueScreenModel(
         screenModelScope.launch {
             downloadManager.queueState
                 .map { downloads ->
-                    downloads.map { MangaDownloadItem(it) }
+                    downloads.mapIndexed { index, download ->
+                        MangaDownloadItem(download, index == 0)
+                    }
                 }
                 .collect { newList -> _state.update { newList } }
         }

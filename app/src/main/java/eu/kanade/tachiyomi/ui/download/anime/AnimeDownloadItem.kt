@@ -10,10 +10,15 @@ import eu.kanade.tachiyomi.data.download.anime.model.AnimeDownload
 
 class AnimeDownloadItem(
     val download: AnimeDownload,
+    val isActive: Boolean = false,
 ) : AbstractFlexibleItem<AnimeDownloadHolder>() {
 
     override fun getLayoutRes(): Int {
-        return R.layout.download_item
+        return if (isActive || download.status == AnimeDownload.State.DOWNLOADING) {
+            R.layout.download_item_active
+        } else {
+            R.layout.download_item
+        }
     }
 
     /**
@@ -43,14 +48,14 @@ class AnimeDownloadItem(
         position: Int,
         payloads: MutableList<Any>,
     ) {
-        holder.bind(download)
+        holder.bind(download, isActive)
     }
 
     /**
      * Returns true if this item is draggable.
      */
     override fun isDraggable(): Boolean {
-        return download.status != AnimeDownload.State.DOWNLOADING
+        return !isActive && download.status != AnimeDownload.State.DOWNLOADING
     }
 
     override fun equals(other: Any?): Boolean {

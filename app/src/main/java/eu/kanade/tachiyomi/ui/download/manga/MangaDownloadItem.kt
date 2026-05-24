@@ -10,10 +10,15 @@ import eu.kanade.tachiyomi.data.download.manga.model.MangaDownload
 
 class MangaDownloadItem(
     val download: MangaDownload,
+    val isActive: Boolean = false,
 ) : AbstractFlexibleItem<MangaDownloadHolder>() {
 
     override fun getLayoutRes(): Int {
-        return R.layout.download_item
+        return if (isActive || download.status == MangaDownload.State.DOWNLOADING) {
+            R.layout.download_item_active
+        } else {
+            R.layout.download_item
+        }
     }
 
     /**
@@ -43,14 +48,14 @@ class MangaDownloadItem(
         position: Int,
         payloads: MutableList<Any>,
     ) {
-        holder.bind(download)
+        holder.bind(download, isActive)
     }
 
     /**
      * Returns true if this item is draggable.
      */
     override fun isDraggable(): Boolean {
-        return download.status != MangaDownload.State.DOWNLOADING
+        return !isActive && download.status != MangaDownload.State.DOWNLOADING
     }
 
     override fun equals(other: Any?): Boolean {

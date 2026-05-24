@@ -14,7 +14,8 @@ local.properties
 
 # macOS specific files
 .DS_Store
-/app/debug/*
-/app/release/*
-/docs/superpowers/*
-/.artifacts/*
+/app/debug/
+/app/release/
+/docs/superpowers/
+/.artifacts/
+.vscode/

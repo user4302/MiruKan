@@ -373,7 +373,7 @@
     <string name="manga_categories">Manga Categories</string>
     <string name="general_categories">Categories</string>
     <string name="anime_categories">Anime Categories</string>
-    <string name="entries">Library entries</string>
+    <string name="entries">Manga</string>
     <string name="chapters_episodes">Chapters and episodes</string>
     <string name="episodes">Episodes</string>
     <string name="backup_settings_warning">Warning: Backing up settings will store your track passwords as well, do not share this backup file!</string>
@@ -441,8 +441,8 @@
     <string name="unofficial_extension_message_aniyomi">This extension is not from the official list.</string>
     <string name="unofficial_anime_extension_message">This extension is not from the official list.</string>
     <string name="episode_download_progress">%1$d%%</string>
-    <string name="episode_download_progress_with_size">%1$s (%2$s / %3$s)</string>
-    <string name="episode_download_progress_with_downloaded_size">%1$s (%2$s)</string>
+    <string name="episode_download_progress_with_size">%2$s / %3$s</string>
+    <string name="episode_download_progress_with_downloaded_size">%2$s</string>
     <string name="pref_remove_exclude_categories_manga">Excluded manga categories</string>
     <string name="pref_remove_exclude_categories_anime">Excluded anime categories</string>
     <string name="pref_category_external_downloader">External downloader</string>

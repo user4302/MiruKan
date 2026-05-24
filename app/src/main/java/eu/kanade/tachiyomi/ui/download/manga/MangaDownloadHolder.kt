@@ -28,14 +28,16 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
     }
 
     private lateinit var download: MangaDownload
+    private var isActive: Boolean = false
 
     /**
      * Binds this holder with the given category.
      *
      * @param download the download to bind.
      */
-    fun bind(download: MangaDownload) {
+    fun bind(download: MangaDownload, isActive: Boolean = false) {
         this.download = download
+        this.isActive = isActive
         // Update the chapter name.
         binding.chapterTitle.text = download.chapter.name
 
@@ -54,7 +56,8 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
             notifyDownloadedPages()
         }
 
-        binding.reorder.visibility = if (download.status == MangaDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
+        // Hide reorder icon for active downloads (DOWNLOADING or paused active)
+        binding.reorder.visibility = if (isActive || download.status == MangaDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
     }
 
     /**
@@ -66,7 +69,14 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
             binding.downloadProgress.max = pages.size * 100
         }
         binding.downloadProgress.setProgressCompat(download.totalProgress, true)
-        binding.reorder.visibility = if (download.status == MangaDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
+        val percentage = if (binding.downloadProgress.max > 0) {
+            (download.totalProgress * 100) / binding.downloadProgress.max
+        } else {
+            0
+        }
+        binding.progressPercentage.text = "$percentage%"
+        // Hide reorder icon for active downloads
+        binding.reorder.visibility = if (isActive || download.status == MangaDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
     }
 
     /**
@@ -99,11 +109,11 @@ class MangaDownloadHolder(private val view: View, val adapter: MangaDownloadAdap
             menuRes = R.menu.download_single,
             initMenu = {
                 val isDownloading = download.status == MangaDownload.State.DOWNLOADING
-                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading
+                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading && !isActive
                 findItem(R.id.move_to_bottom).isVisible =
-                    bindingAdapterPosition != adapter.itemCount - 1 && !isDownloading
-                findItem(R.id.move_to_top_series).isVisible = !isDownloading
-                findItem(R.id.move_to_bottom_series).isVisible = !isDownloading
+                    bindingAdapterPosition != adapter.itemCount - 1 && !isDownloading && !isActive
+                findItem(R.id.move_to_top_series).isVisible = !isDownloading && !isActive
+                findItem(R.id.move_to_bottom_series).isVisible = !isDownloading && !isActive
             },
             onMenuItemClick = {
                 adapter.downloadItemListener.onMenuItemClick(bindingAdapterPosition, this)

@@ -14,10 +14,20 @@ The format is a modified version of [Keep a Changelog](https://keepachangelog.co
 ## [unreleased]
 
 ### Improved
+- **Download Queue UI:** Implemented specialized `download_item_active.xml` layout to provide distinct visual styling for downloads at the top of the queue or currently in progress.
+- **Queue Visibility:** Updated `MangaDownloadItem` and `AnimeDownloadItem` to dynamically switch layouts based on active status, ensuring paused active downloads retain their active styling.
+- **Progress Tracking:** Added percentage text tracking to download holders for real-time progress updates with proper bottom-right constraint alignment.
+- **Drag Interaction:** Disabled dragging and hidden reorder handles/context menu movement options for active download items to prevent queue disruption.
+- **Localization:** Refined progress formatting strings and renamed "Library entries" to "Manga" for clarity.
 - **Extension Notifications:** Updated `AnimeExtensionInstallService` and `MangaExtensionInstallService` to utilize the flat, monochromatic `ic_notification_default` vector asset for small notification indicators rather than falling back to the launcher foreground asset.
 
 ### Added
+- **Active Download Layout:** Created `download_item_active.xml` with MaterialCardView styling for elevated visual distinction of active queue items.
+- **Queue Flagging:** Updated `MangaDownloadQueueScreenModel` and `AnimeDownloadQueueScreenModel` to flag the first item in the queue as active via `index == 0` check.
 - **Notification Resources:** Introduced the new `ic_notification_default` vector drawables across both `main` and `debug` build resource directories to enforce unified asset coverage.
+
+### Other
+- **Git Ignore:** Standardized directory patterns and added `.vscode/` to `.gitignore`.
 
 ### Removed
 - **Legacy Graphics:** Permanently pruned obsolete drawables and upstream branding residues, specifically removing `ic_ani.xml`, `ic_ani_monochrome_launcher.xml`, and the legacy splash asset `ic_tachi_splash.xml`.

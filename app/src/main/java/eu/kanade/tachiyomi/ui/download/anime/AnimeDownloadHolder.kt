@@ -29,14 +29,16 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
     }
 
     private lateinit var download: AnimeDownload
+    private var isActive: Boolean = false
 
     /**
      * Binds this holder with the given category.
      *
      * @param download the download to bind.
      */
-    fun bind(download: AnimeDownload) {
+    fun bind(download: AnimeDownload, isActive: Boolean = false) {
         this.download = download
+        this.isActive = isActive
         // Update the chapter name.
         binding.chapterTitle.text = download.episode.name
 
@@ -55,8 +57,9 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             notifyDownloadedPages()
         }
 
+        // Hide reorder icon for active downloads (DOWNLOADING or paused active)
         binding.reorder.visibility =
-            if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
+            if (isActive || download.status == AnimeDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
     }
 
     /**
@@ -72,8 +75,10 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             binding.downloadProgress.isIndeterminate = false
             binding.downloadProgress.setProgressCompat(download.progress, true)
         }
+        binding.progressPercentage.text = "${download.progress}%"
+        // Hide reorder icon for active downloads
         binding.reorder.visibility =
-            if (download.status == AnimeDownload.State.DOWNLOADING) View.INVISIBLE else View.VISIBLE
+            if (isActive || download.status == AnimeDownload.State.DOWNLOADING) View.GONE else View.VISIBLE
     }
 
     /**
@@ -127,12 +132,12 @@ class AnimeDownloadHolder(private val view: View, val adapter: AnimeDownloadAdap
             menuRes = R.menu.download_single,
             initMenu = {
                 val isDownloading = download.status == AnimeDownload.State.DOWNLOADING
-                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading
+                findItem(R.id.move_to_top).isVisible = bindingAdapterPosition > 1 && !isDownloading && !isActive
                 findItem(R.id.move_to_bottom).isVisible =
                     bindingAdapterPosition != adapter.itemCount - 1 &&
-                    !isDownloading
-                findItem(R.id.move_to_top_series).isVisible = !isDownloading
-                findItem(R.id.move_to_bottom_series).isVisible = !isDownloading
+                    !isDownloading && !isActive
+                findItem(R.id.move_to_top_series).isVisible = !isDownloading && !isActive
+                findItem(R.id.move_to_bottom_series).isVisible = !isDownloading && !isActive
             },
             onMenuItemClick = {
                 adapter.downloadItemListener.onMenuItemClick(bindingAdapterPosition, this)

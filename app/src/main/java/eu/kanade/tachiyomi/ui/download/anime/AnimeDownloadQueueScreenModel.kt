@@ -107,7 +107,9 @@ class AnimeDownloadQueueScreenModel(
         screenModelScope.launch {
             downloadManager.queueState
                 .map { downloads ->
-                    downloads.map { AnimeDownloadItem(it) }
+                    downloads.mapIndexed { index, download ->
+                        AnimeDownloadItem(download, index == 0)
+                    }
                 }
                 .collect { newList -> _state.update { newList } }
         }
