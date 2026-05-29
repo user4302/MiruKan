@@ -29,3 +29,5 @@ local.properties
 /.gemini/settings.json
 gradle_compile_output.txt
 gradle_processDebugResources.log
+compile_output.txt
+test_output.txt

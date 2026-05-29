@@ -1,5 +1,6 @@
 package eu.kanade.tachiyomi.ui.download.manga
 
+import eu.kanade.tachiyomi.data.download.manga.model.MangaDownload
 import eu.kanade.tachiyomi.ui.download.manga.MangaDownloadItem
 
 /**
@@ -26,4 +27,31 @@ data class DownloadAccordionState(
 
     val failedCount: Int
         get() = failedItems.size
+
+    companion object {
+        fun fromItems(
+            items: List<MangaDownloadItem>,
+            completedItems: List<MangaDownloadItem> = emptyList(),
+        ): DownloadAccordionState {
+            val activeItem = items.firstOrNull { it.isActive }
+            val pendingItems = items.filter {
+                !it.isActive && it.download.status.let { status ->
+                    status == MangaDownload.State.QUEUE || status == MangaDownload.State.NOT_DOWNLOADED
+                }
+            }
+            val allCompletedItems = (items.filter {
+                !it.isActive && it.download.status == MangaDownload.State.DOWNLOADED
+            } + completedItems).distinctBy { it.download.chapter.id }
+            val failedItems = items.filter {
+                !it.isActive && it.download.status == MangaDownload.State.ERROR
+            }
+
+            return DownloadAccordionState(
+                activeItem = activeItem,
+                pendingItems = pendingItems,
+                completedItems = allCompletedItems,
+                failedItems = failedItems,
+            )
+        }
+    }
 }

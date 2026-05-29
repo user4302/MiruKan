@@ -7,7 +7,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -25,6 +28,7 @@ import tachiyomi.presentation.core.components.material.Scaffold
 import tachiyomi.presentation.core.screens.EmptyScreen
 import kotlin.math.roundToInt
 
+import eu.kanade.tachiyomi.ui.download.anime.DownloadAccordionState
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -55,10 +59,12 @@ fun AnimeDownloadQueueScreen(
     contentPadding: PaddingValues,
     scope: CoroutineScope,
     screenModel: AnimeDownloadQueueScreenModel,
-    downloadList: List<AnimeDownloadItem>,
     nestedScrollConnection: NestedScrollConnection,
 ) {
     val accordionState by screenModel.accordionState.collectAsState()
+    val downloadList by remember(accordionState) {
+        derivedStateOf { screenModel.buildDownloadItems(accordionState) }
+    }
 
     Scaffold {
         Column(modifier = Modifier.padding(contentPadding)) {
@@ -66,7 +72,7 @@ fun AnimeDownloadQueueScreen(
                 ActiveAnimeDownloadItem(item = it, onCancel = { screenModel.cancel(listOf(it.download)) })
             }
 
-            if (downloadList.isEmpty()) {
+            if (downloadList.isEmpty() && accordionState.activeItem == null) {
                 EmptyScreen(
                     stringRes = MR.strings.information_no_downloads,
                 )

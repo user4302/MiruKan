@@ -21,9 +21,12 @@ fun Screen.mangaDownloadTab(
     val navigator = LocalNavigator.currentOrThrow
     val scope = rememberCoroutineScope()
     val screenModel = rememberScreenModel { MangaDownloadQueueScreenModel() }
-    val downloadList by screenModel.state.collectAsState()
+    val accordionState by screenModel.accordionState.collectAsState()
+    val downloadList by remember(accordionState) {
+        derivedStateOf { screenModel.buildDownloadItems(accordionState) }
+    }
     val downloadCount by remember {
-        derivedStateOf { downloadList.size }
+        derivedStateOf { screenModel.state.value.size }
     }
 
     return TabContent(
@@ -34,7 +37,6 @@ fun Screen.mangaDownloadTab(
                 contentPadding = contentPadding,
                 scope = scope,
                 screenModel = screenModel,
-                downloadList = downloadList,
                 nestedScrollConnection = nestedScrollConnection,
             )
         },

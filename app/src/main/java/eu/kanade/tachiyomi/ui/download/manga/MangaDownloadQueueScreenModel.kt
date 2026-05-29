@@ -23,6 +23,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.StateFlow
 import eu.davidea.flexibleadapter.items.AbstractFlexibleItem
+import eu.kanade.tachiyomi.ui.download.manga.DownloadAccordionState
 import eu.kanade.tachiyomi.ui.download.manga.AccordionType
 import uy.kohesive.injekt.Injekt
 import uy.kohesive.injekt.api.get
@@ -145,26 +146,7 @@ class MangaDownloadQueueScreenModel(
     }
 
     private fun computeAccordionState(items: List<MangaDownloadItem>): DownloadAccordionState {
-        val activeItem = items.firstOrNull { it.isActive }
-        val pendingItems = items.filter {
-            !it.isActive && it.download.status.let { status ->
-                status == MangaDownload.State.QUEUE || status == MangaDownload.State.NOT_DOWNLOADED
-            }
-        }
-        val completedItems = (items.filter {
-            !it.isActive && it.download.status == MangaDownload.State.DOWNLOADED
-        } + _completedItems.value).distinctBy { it.download.chapter.id }
-
-        val failedItems = items.filter {
-            !it.isActive && it.download.status == MangaDownload.State.ERROR
-        }
-
-        return DownloadAccordionState(
-            activeItem = activeItem,
-            pendingItems = pendingItems,
-            completedItems = completedItems,
-            failedItems = failedItems,
-        )
+        return DownloadAccordionState.fromItems(items, _completedItems.value)
     }
 
     fun toggleAccordion(type: AccordionType) {
@@ -215,12 +197,11 @@ class MangaDownloadQueueScreenModel(
 
     fun buildDownloadItems(state: DownloadAccordionState): List<AbstractFlexibleItem<*>> {
         val items = mutableListOf<AbstractFlexibleItem<*>>()
-        state.activeItem?.let { items.add(it) }
 
         if (state.pendingCount > 0) {
             items.add(AccordionHeaderItem(
                 AccordionType.PENDING,
-                "Pending Items",
+                AccordionType.PENDING.label,
                 state.pendingCount,
                 state.pendingExpanded,
             ))
@@ -232,7 +213,7 @@ class MangaDownloadQueueScreenModel(
         if (state.completedCount > 0) {
             items.add(AccordionHeaderItem(
                 AccordionType.COMPLETED,
-                "Completed Items",
+                AccordionType.COMPLETED.label,
                 state.completedCount,
                 state.completedExpanded,
             ))
@@ -244,7 +225,7 @@ class MangaDownloadQueueScreenModel(
         if (state.failedCount > 0) {
             items.add(AccordionHeaderItem(
                 AccordionType.FAILED,
-                "Failed Items",
+                AccordionType.FAILED.label,
                 state.failedCount,
                 state.failedExpanded,
             ))
