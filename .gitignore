@@ -23,3 +23,9 @@ local.properties
 .roo/.logs/
 .roo/.secrets/
 .gemini/commands/
+.github/agents/
+.github/prompts/
+.github/copilot-instructions.md
+/.gemini/settings.json
+gradle_compile_output.txt
+gradle_processDebugResources.log

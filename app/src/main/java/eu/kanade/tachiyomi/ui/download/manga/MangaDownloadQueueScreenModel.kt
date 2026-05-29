@@ -21,6 +21,9 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.StateFlow
+import eu.davidea.flexibleadapter.items.AbstractFlexibleItem
+import eu.kanade.tachiyomi.ui.download.manga.AccordionType
 import uy.kohesive.injekt.Injekt
 import uy.kohesive.injekt.api.get
 
@@ -30,6 +33,16 @@ class MangaDownloadQueueScreenModel(
 
     private val _state = MutableStateFlow(emptyList<MangaDownloadItem>())
     val state = _state.asStateFlow()
+
+    private val _completedItems = MutableStateFlow(emptyList<MangaDownloadItem>())
+
+    private val completedItems = _completedItems.asStateFlow()
+
+    private val _accordionState = MutableStateFlow(DownloadAccordionState())
+    val accordionState: StateFlow<DownloadAccordionState> = _accordionState.asStateFlow()
+
+    private val _event = MutableStateFlow<DownloadQueueEvent?>(null)
+    val event: StateFlow<DownloadQueueEvent?> = _event.asStateFlow()
 
     lateinit var controllerBinding: DownloadListBinding
 
@@ -107,6 +120,13 @@ class MangaDownloadQueueScreenModel(
                 }
             }
         }
+        override fun onHeaderToggle(type: AccordionType) {
+            toggleAccordion(type)
+        }
+
+        override fun onHeaderClear(type: AccordionType) {
+            _event.value = DownloadQueueEvent.ShowClearConfirmDialog(type)
+        }
     }
 
     init {
@@ -117,8 +137,123 @@ class MangaDownloadQueueScreenModel(
                         MangaDownloadItem(download, index == 0)
                     }
                 }
-                .collect { newList -> _state.update { newList } }
+                .collect { newList ->
+                    _state.update { newList }
+                    _accordionState.update { computeAccordionState(newList) }
+                }
         }
+    }
+
+    private fun computeAccordionState(items: List<MangaDownloadItem>): DownloadAccordionState {
+        val activeItem = items.firstOrNull { it.isActive }
+        val pendingItems = items.filter {
+            !it.isActive && it.download.status.let { status ->
+                status == MangaDownload.State.QUEUE || status == MangaDownload.State.NOT_DOWNLOADED
+            }
+        }
+        val completedItems = (items.filter {
+            !it.isActive && it.download.status == MangaDownload.State.DOWNLOADED
+        } + _completedItems.value).distinctBy { it.download.chapter.id }
+
+        val failedItems = items.filter {
+            !it.isActive && it.download.status == MangaDownload.State.ERROR
+        }
+
+        return DownloadAccordionState(
+            activeItem = activeItem,
+            pendingItems = pendingItems,
+            completedItems = completedItems,
+            failedItems = failedItems,
+        )
+    }
+
+    fun toggleAccordion(type: AccordionType) {
+        _accordionState.update { currentState ->
+            when (type) {
+                AccordionType.PENDING -> currentState.copy(pendingExpanded = !currentState.pendingExpanded)
+                AccordionType.COMPLETED -> currentState.copy(completedExpanded = !currentState.completedExpanded)
+                AccordionType.FAILED -> currentState.copy(failedExpanded = !currentState.failedExpanded)
+            }
+        }
+    }
+
+    fun confirmClear(type: AccordionType) {
+        when (type) {
+            AccordionType.PENDING -> clearPending()
+            AccordionType.COMPLETED -> clearCompleted()
+            AccordionType.FAILED -> clearFailed()
+        }
+        _event.value = null
+    }
+
+    fun dismissDialog() {
+        _event.value = null
+    }
+
+    private fun clearPending() {
+        val pendingDownloads = _state.value.filter {
+            !it.isActive && (it.download.status == MangaDownload.State.QUEUE || it.download.status == MangaDownload.State.NOT_DOWNLOADED)
+        }.map { it.download }
+        if (pendingDownloads.isNotEmpty()) {
+            cancel(pendingDownloads)
+        }
+    }
+
+    private fun clearFailed() {
+        val failedDownloads = _state.value.filter {
+            it.download.status == MangaDownload.State.ERROR
+        }.map { it.download }
+        if (failedDownloads.isNotEmpty()) {
+            cancel(failedDownloads)
+        }
+    }
+
+    private fun clearCompleted() {
+        _completedItems.value = emptyList()
+        _accordionState.update { computeAccordionState(_state.value) }
+    }
+
+    fun buildDownloadItems(state: DownloadAccordionState): List<AbstractFlexibleItem<*>> {
+        val items = mutableListOf<AbstractFlexibleItem<*>>()
+        state.activeItem?.let { items.add(it) }
+
+        if (state.pendingCount > 0) {
+            items.add(AccordionHeaderItem(
+                AccordionType.PENDING,
+                "Pending Items",
+                state.pendingCount,
+                state.pendingExpanded,
+            ))
+            if (state.pendingExpanded) {
+                items.addAll(state.pendingItems)
+            }
+        }
+
+        if (state.completedCount > 0) {
+            items.add(AccordionHeaderItem(
+                AccordionType.COMPLETED,
+                "Completed Items",
+                state.completedCount,
+                state.completedExpanded,
+            ))
+            if (state.completedExpanded) {
+                items.addAll(state.completedItems)
+            }
+        }
+
+        if (state.failedCount > 0) {
+            items.add(AccordionHeaderItem(
+                AccordionType.FAILED,
+                "Failed Items",
+                state.failedCount,
+                state.failedExpanded,
+            ))
+            if (state.failedExpanded) {
+                items.addAll(state.failedItems)
+            }
+        }
+
+        return items
     }
 
     override fun onDispose() {
@@ -184,6 +319,9 @@ class MangaDownloadQueueScreenModel(
             }
             MangaDownload.State.DOWNLOADED -> {
                 cancelProgressJob(download)
+                if (_completedItems.value.none { it.download.chapter.id == download.chapter.id }) {
+                    _completedItems.update { it + MangaDownloadItem(download, false) }
+                }
                 onUpdateProgress(download)
                 onUpdateDownloadedPages(download)
             }
@@ -192,6 +330,7 @@ class MangaDownloadQueueScreenModel(
             }
             else -> {}
         }
+        _accordionState.update { computeAccordionState(_state.value) }
     }
 
     /**

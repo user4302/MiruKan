@@ -25,6 +25,31 @@ import tachiyomi.presentation.core.components.material.Scaffold
 import tachiyomi.presentation.core.screens.EmptyScreen
 import kotlin.math.roundToInt
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.ListItem
+import androidx.compose.material3.Text
+import androidx.compose.runtime.collectAsState
+
+@Composable
+fun ActiveAnimeDownloadItem(item: AnimeDownloadItem, onCancel: () -> Unit) {
+    ListItem(
+        headlineContent = { Text(text = item.download.episode.name) },
+        supportingContent = { Text(text = item.download.anime.title) },
+        trailingContent = {
+            IconButton(onClick = onCancel) {
+                Icon(
+                    imageVector = Icons.Default.Close,
+                    contentDescription = "Cancel",
+                )
+            }
+        },
+    )
+}
+
 @Composable
 fun AnimeDownloadQueueScreen(
     contentPadding: PaddingValues,
@@ -33,61 +58,67 @@ fun AnimeDownloadQueueScreen(
     downloadList: List<AnimeDownloadItem>,
     nestedScrollConnection: NestedScrollConnection,
 ) {
+    val accordionState by screenModel.accordionState.collectAsState()
+
     Scaffold {
-        if (downloadList.isEmpty()) {
-            EmptyScreen(
-                stringRes = MR.strings.information_no_downloads,
-                modifier = Modifier.padding(contentPadding),
-            )
-            return@Scaffold
-        }
+        Column(modifier = Modifier.padding(contentPadding)) {
+            accordionState.activeItem?.let {
+                ActiveAnimeDownloadItem(item = it, onCancel = { screenModel.cancel(listOf(it.download)) })
+            }
 
-        val density = LocalDensity.current
-        val layoutDirection = LocalLayoutDirection.current
-        val left = with(density) { contentPadding.calculateLeftPadding(layoutDirection).toPx().roundToInt() }
-        val top = with(density) { contentPadding.calculateTopPadding().toPx().roundToInt() }
-        val right = with(density) { contentPadding.calculateRightPadding(layoutDirection).toPx().roundToInt() }
-        val bottom = with(density) { contentPadding.calculateBottomPadding().toPx().roundToInt() }
+            if (downloadList.isEmpty()) {
+                EmptyScreen(
+                    stringRes = MR.strings.information_no_downloads,
+                )
+            } else {
+                val density = LocalDensity.current
+                val layoutDirection = LocalLayoutDirection.current
+                val left = with(density) { contentPadding.calculateLeftPadding(layoutDirection).toPx().roundToInt() }
+                val top = with(density) { contentPadding.calculateTopPadding().toPx().roundToInt() }
+                val right = with(density) { contentPadding.calculateRightPadding(layoutDirection).toPx().roundToInt() }
+                val bottom = with(density) { contentPadding.calculateBottomPadding().toPx().roundToInt() }
 
-        Box(modifier = Modifier.nestedScroll(nestedScrollConnection)) {
-            AndroidView(
-                modifier = Modifier.fillMaxWidth(),
-                factory = { context ->
-                    screenModel.controllerBinding = DownloadListBinding.inflate(
-                        LayoutInflater.from(context),
+                Box(modifier = Modifier.nestedScroll(nestedScrollConnection)) {
+                    AndroidView(
+                        modifier = Modifier.fillMaxWidth(),
+                        factory = { context ->
+                            screenModel.controllerBinding = DownloadListBinding.inflate(
+                                LayoutInflater.from(context),
+                            )
+                            screenModel.adapter = AnimeDownloadAdapter(screenModel.listener)
+                            screenModel.controllerBinding.root.adapter = screenModel.adapter
+                            screenModel.adapter?.isHandleDragEnabled = true
+                            screenModel.controllerBinding.root.layoutManager = LinearLayoutManager(
+                                context,
+                            )
+
+                            ViewCompat.setNestedScrollingEnabled(screenModel.controllerBinding.root, true)
+
+                            scope.launchUI {
+                                screenModel.getDownloadStatusFlow()
+                                    .collect(screenModel::onStatusChange)
+                            }
+                            scope.launchUI {
+                                screenModel.getDownloadProgressFlow()
+                                    .collect(screenModel::onUpdateDownloadedPages)
+                            }
+
+                            screenModel.controllerBinding.root
+                        },
+                        update = {
+                            screenModel.controllerBinding.root
+                                .updatePadding(
+                                    left = left,
+                                    top = top,
+                                    right = right,
+                                    bottom = bottom,
+                                )
+
+                            screenModel.adapter?.updateDataSet(downloadList)
+                        },
                     )
-                    screenModel.adapter = AnimeDownloadAdapter(screenModel.listener)
-                    screenModel.controllerBinding.root.adapter = screenModel.adapter
-                    screenModel.adapter?.isHandleDragEnabled = true
-                    screenModel.controllerBinding.root.layoutManager = LinearLayoutManager(
-                        context,
-                    )
-
-                    ViewCompat.setNestedScrollingEnabled(screenModel.controllerBinding.root, true)
-
-                    scope.launchUI {
-                        screenModel.getDownloadStatusFlow()
-                            .collect(screenModel::onStatusChange)
-                    }
-                    scope.launchUI {
-                        screenModel.getDownloadProgressFlow()
-                            .collect(screenModel::onUpdateDownloadedPages)
-                    }
-
-                    screenModel.controllerBinding.root
-                },
-                update = {
-                    screenModel.controllerBinding.root
-                        .updatePadding(
-                            left = left,
-                            top = top,
-                            right = right,
-                            bottom = bottom,
-                        )
-
-                    screenModel.adapter?.updateDataSet(downloadList)
-                },
-            )
+                }
+            }
         }
     }
 }

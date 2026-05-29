@@ -32,5 +32,7 @@ class MangaDownloadAdapter(val downloadItemListener: DownloadItemListener) : Fle
     interface DownloadItemListener {
         fun onItemReleased(position: Int)
         fun onMenuItemClick(position: Int, menuItem: MenuItem)
+        fun onHeaderToggle(type: AccordionType)
+        fun onHeaderClear(type: AccordionType)
     }
 }
